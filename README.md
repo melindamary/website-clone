@@ -14,5 +14,5 @@ This project is a clone of Amazon Prime Video, providing a platform to stream vi
 
 ## Technologies Used
 
-* Frontend: HTML, CSS, JavaScript, Firebase
+* Frontend: HTML, CSS, Bootstrap, JavaScript, Firebase
 * APIs: Various APIs for user authentication, video streaming, and content management
