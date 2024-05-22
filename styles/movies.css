@@ -9,5 +9,44 @@ body{
     background-color: var(--body-color);
     color: var(--text-color);
     font-family: "Roboto", sans-serif;
+    overflow-x: auto;
 }
+
+.scrollable-images-container {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrollable-images-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px;
+   
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+    min-width: 18rem; 
+    margin-right: 20px; 
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
 
