@@ -21,18 +21,10 @@ body{
     display: none;
 }
 
-.card-container {
-    display: flex;
-    overflow-x: auto;
-    padding: 20px;
-    gap: 20px;
-   
-}
 
 .card {
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
     min-width: 18rem; 
     margin-right: 20px; 
     overflow: hidden;
@@ -67,11 +59,7 @@ body{
     display: flex;
     background: linear-gradient(to right, rgba(0, 0, 0, 0.9) 30%, rgba(0, 0, 0, 0) 100%);
 }
-.carousel-caption .info {
-    color: #fff;
-    z-index: 10;
-    max-width: 30%;
-}
+
 .carousel-caption .info h5 {
     font-size: 1.5rem;
 }
@@ -100,13 +88,6 @@ body{
     margin-right: 1px; 
 }
 
-.col-auto {
-    flex-grow: 0; 
-}
-
-.mr-1 {
-    margin-right: 5px; 
-}
 
 .more-details-button{
     background-color: white;
