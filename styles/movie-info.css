@@ -1,0 +1,75 @@
+body{
+    height:100vh;
+}
+.ps-4percent{
+    padding-left: 4%;
+}
+.pt-8percent{
+    padding-top: 8%;
+}
+.pt-4percent{
+    padding-top: 4%;
+}
+.me-2percent{
+    margin-right: 1.5%;
+}
+.me-1percent{
+    margin-right: 1%;
+}
+.me-point-3percent{
+    margin-right: 0.3%;
+}
+.fs-12{
+    font-size: 12px;
+}
+.fs-14{
+    font-size: 14px;
+}
+.fs-28{
+    font-size: 38px;
+}
+.fw-600{
+    font-weight: 600;
+}
+.bg-black{
+    background-color: black;
+}
+.movie-details-div{
+    height: 90%;
+    width: 100%;
+}
+
+#uhd{
+    height: 12px;
+    font-size: 12px;
+    margin-top: -2px;
+    font-weight: 600;
+}
+.boxed-div{
+    height: 14px;
+    border-radius: 2px;
+    width: auto;
+    text-align: center;
+    padding: 0px 5px 2px;
+}
+
+#movie-overview{
+    width: 70%;
+    text-align: justify;
+}
+
+.movie-info-buttons{
+    border: none;
+    border-radius: 5px;
+    height: 45px;
+    padding: 0px 18px;
+}
+
+.bg-transparent-gray{
+    background-color: rgba(108,117,125,0.6);
+}
+.border-circle{
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+}

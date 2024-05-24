@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Video: Aavesham</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/movie-info.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black d-flex">
+      <a class="navbar-brand text-white mx-5" href="#">prime video</a>
+      <button
+        class="navbar-toggler mx-5"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse mx-5" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-white" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Store</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Live TV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Categories</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Movie Details Section -->
+    <div id="movie-details" class="container-fluid movie-details-div bg-black">
+      <h2 id="movie-title" class="text-white pt-8percent ps-4percent">
+        <!--Movie Title-->
+      </h2>
+      <p id="movie-overview" class="text-white pt-4percent ps-4percent">
+        <!--Movie Overview-->
+      </p>
+
+      <div id="movie-stats" class="text-white ps-4percent d-flex">
+        <p class="text-secondary fs-14 me-2percent fw-600">
+          IMDb <span id="movie-vote-average"></span>
+        </p>
+        <p class="text-secondary fs-14 me-2percent fw-600">2 h 35 min</p>
+        <p class="text-secondary fs-14 me-2percent fw-600">
+          <span id="movie-release-year"></span>
+        </p>
+        <div class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent">
+          <p id="uhd">UHD</p>
+        </div>
+        <div class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent">
+          <p id="uhd">U/A 13+</p>
+        </div>
+        <div class="bg-transparent-gray border-rounded boxed-div mt-1">
+          <p id="uhd">icon</p>
+        </div>
+      </div>
+
+      <div id="genre" class="text-white ps-4percent d-flex fs-14">
+        <p class="me-2percent"><a href="#" class="text-white text-decoration-underline">Genre</a></p>
+        <p><a href="#" class="text-white text-decoration-underline">Genre</a></p>
+      </div>
+
+      <div id="prime-membership" class="d-flex ps-4percent">
+        <div id="check-circle-icon" class="me-1percent text-primary fs-14"><i class="bi bi-check-circle"></i></div>
+        <p class="text-white fs-14">Watch with a Prime membership</p>
+      </div>
+
+      <div id="buttons" class="ps-4percent d-flex">
+        <button id="watch-with-prime" class="movie-info-buttons border-rounded fs-14 fw-600 me-2percent">Watch with Prime</button>
+        <button id="rent-uhd" class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent">
+            <span>Rent</span>
+            <span>UHD ₹279</span>
+        </button>
+        <button id="rent-uhd" class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent">
+            <span>More purchase</span>
+            <span>options</span>
+        </button>
+
+        <!-- Icons buttons -->
+        <button id="trailer-button" class="movie-info-buttons border-circle fs-28 fw-600  bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+            <i class="button-icons bi bi-plus"></i>
+        </button>
+        <button id="watchlist-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+            <i class="bi bi-plus fs-"></i>
+        </button>
+        <button id="like-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+            <i class="bi bi-plus fs-"></i>
+        </button>
+        <button id="dislike-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+            <i class="bi bi-plus fs-"></i>
+        </button>
+        <button id="share-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+            <i class="bi bi-plus fs-"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="" class="container-fluid movie-details-div bg-black"></div>
+
+    <script src="./scripts/movie-info.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
