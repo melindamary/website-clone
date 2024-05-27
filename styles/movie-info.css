@@ -1,14 +1,22 @@
 body{
     height:100vh;
+    padding: 0px;
+    margin:0px;
 }
 .ps-4percent{
     padding-left: 4%;
+}
+.pe-4percent{
+    padding-right: 4%;
 }
 .pt-8percent{
     padding-top: 8%;
 }
 .pt-4percent{
-    padding-top: 4%;
+    padding-top: 3%;
+}
+.w-10{
+    width: 11%;
 }
 .me-2percent{
     margin-right: 1.5%;
@@ -19,26 +27,38 @@ body{
 .me-point-3percent{
     margin-right: 0.3%;
 }
+.bg-black{
+    background-color: black;
+}
 .fs-12{
     font-size: 12px;
 }
 .fs-14{
     font-size: 14px;
 }
+.fs-18{
+    font-size: 18px;
+}
+.fs-20{
+    font-size: 20px;
+}
 .fs-28{
+    font-size: 24px;
+}
+.fs-38{
     font-size: 38px;
 }
+
 .fw-600{
     font-weight: 600;
 }
-.bg-black{
-    background-color: black;
+.bold{
+    font-weight: bold;
 }
 .movie-details-div{
-    height: 90%;
+    height: 100%;
     width: 100%;
 }
-
 #uhd{
     height: 12px;
     font-size: 12px;
@@ -65,6 +85,21 @@ body{
     padding: 0px 18px;
 }
 
+#movie-info-subnav{
+    width: 100%;
+    padding: 0px 3px 2px 5px;
+    margin-top: 1.5rem;
+}
+
+#movie-info-subnav button{
+    border: none;
+    color: rgb(192, 192, 192);
+    background-color: rgba(0,0,0,0);
+}
+
+#movie-info-subnav button:hover{
+    color: white;
+}
 .bg-transparent-gray{
     background-color: rgba(108,117,125,0.6);
 }
@@ -72,4 +107,24 @@ body{
     border-radius: 50%;
     width: 45px;
     height: 45px;
+}
+
+#more-info{
+    height: auto;
+    padding-bottom: 50px;
+}
+.button-icons{
+    margin-top: -6px;
+}
+#horizontal-rule{
+    height: 3px;
+    background-color: rgba(128,128,128,0.5);
+    width:95%;
+}
+.underline{
+    border-bottom: solid 1px white;
+}
+.underline:hover{
+    text-decoration: none;
+    cursor: pointer;
 }

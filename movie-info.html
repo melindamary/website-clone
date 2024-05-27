@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime Video: Aavesham</title>
+    <title>Prime Video: Movie Name</title>
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
@@ -45,74 +45,182 @@
     </nav>
 
     <!-- Movie Details Section -->
-    <div id="movie-details" class="container-fluid movie-details-div bg-black">
-      <h2 id="movie-title" class="text-white pt-8percent ps-4percent">
-        <!--Movie Title-->
-      </h2>
-      <p id="movie-overview" class="text-white pt-4percent ps-4percent">
-        <!--Movie Overview-->
-      </p>
-
-      <div id="movie-stats" class="text-white ps-4percent d-flex">
-        <p class="text-secondary fs-14 me-2percent fw-600">
-          IMDb <span id="movie-vote-average"></span>
+    
+    <div class="d-flex flex-column flex-wrap">
+      <div id="movie-details" class="container-fluid flex-wrap movie-details-div bg-black">
+        <div
+          id="website-logo"
+          class="text-primary d-flex justify-content-end pe-4percent bold fs-28 pt-2"
+        >
+          prime
+        </div>
+        <h2 id="movie-title" class="text-white pt-4percent ps-4percent bold">
+          <!--Movie Title-->
+        </h2>
+        <p id="movie-overview" class="text-white pt-4percent ps-4percent">
+          <!--Movie Overview-->
         </p>
-        <p class="text-secondary fs-14 me-2percent fw-600">2 h 35 min</p>
-        <p class="text-secondary fs-14 me-2percent fw-600">
-          <span id="movie-release-year"></span>
-        </p>
-        <div class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent">
-          <p id="uhd">UHD</p>
+  
+        <div id="movie-stats" class="text-white ps-4percent d-flex flex-wrap">
+          <p class="text-secondary fs-14 me-2percent fw-600">
+            IMDb <span id="movie-vote-average"></span>
+          </p>
+          <p class="text-secondary fs-14 me-2percent fw-600">2 h 35 min</p>
+          <p class="text-secondary fs-14 me-2percent fw-600">
+            <span id="movie-release-year"></span>
+          </p>
+          <div
+            class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent"
+          >
+            <p id="uhd">UHD</p>
+          </div>
+          <div
+            class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent"
+          >
+            <p id="uhd">U/A 13+</p>
+          </div>
+          <div class="bg-transparent-gray border-rounded boxed-div mt-1">
+            <p id="uhd">icon</p>
+          </div>
         </div>
-        <div class="bg-transparent-gray border-rounded boxed-div mt-1 me-point-3percent">
-          <p id="uhd">U/A 13+</p>
+  
+        <div id="genre" class="text-white ps-4percent d-flex fs-14">
+          <p class="me-2percent">
+            <a href="#" class="text-white text-decoration-underline">Genre</a>
+          </p>
+          <p>
+            <a href="#" class="text-white text-decoration-underline">Genre</a>
+          </p>
         </div>
-        <div class="bg-transparent-gray border-rounded boxed-div mt-1">
-          <p id="uhd">icon</p>
+  
+        <div id="prime-membership" class="d-flex ps-4percent">
+          <div id="check-circle-icon" class="me-1percent text-primary fs-14">
+            <i class="bi bi-check-circle"></i>
+          </div>
+          <p class="text-white fs-14">Watch with a Prime membership</p>
         </div>
-      </div>
-
-      <div id="genre" class="text-white ps-4percent d-flex fs-14">
-        <p class="me-2percent"><a href="#" class="text-white text-decoration-underline">Genre</a></p>
-        <p><a href="#" class="text-white text-decoration-underline">Genre</a></p>
-      </div>
-
-      <div id="prime-membership" class="d-flex ps-4percent">
-        <div id="check-circle-icon" class="me-1percent text-primary fs-14"><i class="bi bi-check-circle"></i></div>
-        <p class="text-white fs-14">Watch with a Prime membership</p>
-      </div>
-
-      <div id="buttons" class="ps-4percent d-flex">
-        <button id="watch-with-prime" class="movie-info-buttons border-rounded fs-14 fw-600 me-2percent">Watch with Prime</button>
-        <button id="rent-uhd" class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent">
+  
+        <div id="buttons" class="ps-4percent d-flex flex-wrap flex-fill align-items-center">
+          <button
+            id="watch-with-prime"
+            class="movie-info-buttons border-rounded fs-14 fw-600 me-2percent"
+          >
+            Watch with Prime
+          </button>
+          <button
+            id="rent-uhd"
+            class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent"
+          >
             <span>Rent</span>
             <span>UHD ₹279</span>
-        </button>
-        <button id="rent-uhd" class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent">
+          </button>
+          <button
+            id="rent-uhd"
+            class="movie-info-buttons border-rounded fs-14 fw-600 d-flex flex-column bg-transparent-gray text-white me-2percent"
+          >
             <span>More purchase</span>
             <span>options</span>
-        </button>
-
-        <!-- Icons buttons -->
-        <button id="trailer-button" class="movie-info-buttons border-circle fs-28 fw-600  bg-transparent-gray text-white me-1percent d-flex justify-content-center">
+          </button>
+  
+          <!-- Icons buttons -->
+          <button
+            id="trailer-button"
+            class="flex-wrap movie-info-buttons border-circle fs-38 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center"
+          >
             <i class="button-icons bi bi-plus"></i>
-        </button>
-        <button id="watchlist-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
-            <i class="bi bi-plus fs-"></i>
-        </button>
-        <button id="like-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
-            <i class="bi bi-plus fs-"></i>
-        </button>
-        <button id="dislike-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
-            <i class="bi bi-plus fs-"></i>
-        </button>
-        <button id="share-button" class="movie-info-buttons border-circle fs-28 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center">
-            <i class="bi bi-plus fs-"></i>
-        </button>
+          </button>
+          <button
+            id="watchlist-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center"
+          >
+            <i class="button-icons bi bi-plus fs-"></i>
+          </button>
+          <button
+            id="like-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center"
+          >
+            <i class="button-icons bi bi-plus fs-"></i>
+          </button>
+          <button
+            id="dislike-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center"
+          >
+            <i class="button-icons bi bi-plus fs-"></i>
+          </button>
+          <button
+            id="share-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-transparent-gray text-white me-1percent d-flex justify-content-center"
+          >
+            <i class="button-icons bi bi-plus fs-"></i>
+          </button>
+        </div>
+  
+        <div
+          id="info-text"
+          class="ps-4percent d-flex text-secondary fs-14 fw-600 mt-2"
+        >
+          <p>
+            Rentals include 30 days to start watching this video and 48 hours to
+            finish once started.
+          </p>
+        </div>
+  
+        <div id="movie-info-subnav" class="container-fluid d-flex flex-wrap justify-content-center">
+          <div class="d-flex justify-content-center">
+            
+              <button
+                class="fs-20 fw-600 text-decoration-none"
+                onclick="showtab('related-movies-tab')"
+              >
+                Related
+              </button>
+            
+            
+              <button
+                class="fs-20 fw-600 text-decoration-none"
+                onclick="showtab('details-tab')"
+              >
+                Details
+              </button>
+            
+          </div>
+        </div>
+      </div>
+  
+      <div id="more-info" class="container-fluid movie-details-div bg-black">
+        <!-- <div id="related-movies-tab" class="w-50"><p class="text-white"> hello</p></div> -->
+        <div id="details-tab" class="text-white ps-4percent pt-5">
+          <p class="fs-20 bold">More info</p>
+          <p class="fs-18 bold">Content advisory</p>
+          <p class="text-secondary fs-18 bold">Appropriate for age 7 and above</p>
+          <p class="fs-18 bold">Audio languages</p>
+          <p id="lang" class="text-secondary fs-18 bold"><!--Language--></p>
+          <p class="fs-18 bold">Directors</p>
+          <p id="directors"></p>
+          <p class="fs-18 bold">Producers</p>
+          <p id="producers"></p>
+          <p class="fs-18 bold">Starring</p>
+          <p id="actors"></p>
+          <p class="text-secondary fs-18 bold mt-5">
+            By clicking play, you agree to our
+            <a
+              href="https://www.primevideo.com/help/ref=atv_dp_terms?nodeId=202095490"
+              class="text-white bold text-decoration-underline"
+              >Terms of Use</a
+            >.
+          </p>
+          <div id="horizontal-rule" class="mt-5"></div>
+          <div>
+            <h4 class="mt-5">Feedback</h4>
+            <a class="fs-18 text-white underline">Send us feedback</a>
+          </div>
+          <div>
+            <h4 class="mt-5">Support</h4>
+            <a class="fs-18 text-white underline">Get help</a>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div id="" class="container-fluid movie-details-div bg-black"></div>
 
     <script src="./scripts/movie-info.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
