@@ -33,37 +33,57 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
     let date = new Date(movies[1].release_date);
     movieReleaseYear.innerHTML = date.getFullYear();
 
+    let movieId = movies[1].id;
+    let apiKey = "fecc5cdef79b7df334829626012d2f21";
+
+    console.log(movies[1].genre_ids);
+    let movieGenres = movies[1].genre_ids;
+
+    // Genres for movie
+    fetch("https://api.themoviedb.org/3/genre/movie/list?", options)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log("genres", response.genres);
+        let genres = response.genres;
+
+        movieGenres.map((movieGenre) => {
+          let paraElement = document.createElement("p");
+          paraElement.style.marginRight = "2%";
+          let anchorElement = document.createElement("a");
+          anchorElement.style.textDecoration = "underline";
+          anchorElement.style.cursor = "pointer";
+          let textNode = document.createTextNode(
+            genres.filter((genre) => genre.id == movieGenre)[0].name
+          );
+          anchorElement.appendChild(textNode);
+          paraElement.appendChild(anchorElement);
+          let movieGenreDiv = document.getElementById("genre");
+          movieGenreDiv.appendChild(paraElement);
+        });
+      });
+
+    // Audio languages (translations)
     const languageNames = new Intl.DisplayNames(["en"], {
       type: "language",
     });
     let movieLanguage = document.getElementById("lang");
-    movieLanguage.innerHTML = languageNames.of(movies[1].original_language);
+    fetch(
+      `https://api.themoviedb.org/3/movie/${movieId}/translations?`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.translations);
+        let audioLanguages = response.translations;
+        for (let i = 0; i < audioLanguages.length; i++) {
+          movieLanguage.append(audioLanguages[i].name);
+          if (i < audioLanguages.length - 1) {
+            movieLanguage.append(", ");
+          }
+        }
+      });
 
-    let movieId = movies[1].id;
-    let apiKey = "fecc5cdef79b7df334829626012d2f21";
-
-    console.log(movies[1].genre_ids)
-    let movieGenres = movies[1].genre_ids;
-
-    fetch("https://api.themoviedb.org/3/genre/movie/list?", options)
-    .then((response) => response.json())
-    .then((response) => {
-      console.log("genres",response.genres)
-      let genres = response.genres;
-
-      movieGenres.map(movieGenre => {
-
-        let paraElement = document.createElement('p');
-        paraElement.style.marginRight = "2%";
-        let anchorElement = document.createElement('a');
-        let textNode = document.createTextNode(genres.filter(genre => genre.id == movieGenre)[0].name)
-        
-        anchorElement.appendChild(textNode)
-      })
-
-    })
-
-
+    // Movie Credits (Cast and Crew)
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/credits?/api_key=${apiKey}`,
       options
@@ -79,7 +99,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         console.log(directors);
         let movieDirectors = document.getElementById("directors");
         for (let i = 0; i < directors.length; i++) {
-          
           let span = document.createElement("span");
           span.style.color = "white";
           span.style.fontSize = "large";
@@ -105,7 +124,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         let movieProducers = document.getElementById("producers");
 
         for (let i = 0; i < producers.length; i++) {
-
           let span = document.createElement("span");
           span.style.color = "white";
           span.style.fontSize = "large";
@@ -133,7 +151,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         let movieActors = document.getElementById("actors");
 
         for (let i = 0; i < 3; i++) {
-
           let span = document.createElement("span");
           span.style.color = "white";
           span.style.fontSize = "large";
@@ -155,4 +172,3 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
       });
   })
   .catch((err) => console.error(err));
-

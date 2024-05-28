@@ -1,130 +1,152 @@
-body{
-    height:100vh;
-    padding: 0px;
-    margin:0px;
+body {
+  height: 100vh;
+  padding: 0px;
+  margin: 0px;
 }
-.ps-4percent{
-    padding-left: 4%;
+.ps-4percent {
+  padding-left: 4%;
 }
-.pe-4percent{
-    padding-right: 4%;
+.pe-4percent {
+  padding-right: 4%;
 }
-.pt-8percent{
-    padding-top: 8%;
+.pt-8percent {
+  padding-top: 8%;
 }
-.pt-4percent{
-    padding-top: 3%;
+.pt-4percent {
+  padding-top: 3%;
 }
-.w-10{
-    width: 11%;
+.w-10 {
+  width: 11%;
 }
-.me-2percent{
-    margin-right: 1.5%;
+.me-2percent {
+  margin-right: 1.5%;
 }
-.me-1percent{
-    margin-right: 1%;
+.me-1percent {
+  margin-right: 1%;
 }
-.me-point-3percent{
-    margin-right: 0.3%;
+.me-point-3percent {
+  margin-right: 0.3%;
 }
-.bg-black{
-    background-color: black;
+.bg-black {
+  background-color: black;
 }
-.fs-12{
-    font-size: 12px;
+.movie-details-div {
+  height: 100%;
+  width: 100%;
 }
-.fs-14{
-    font-size: 14px;
+.fs-12 {
+  font-size: 12px;
 }
-.fs-18{
-    font-size: 18px;
+.fs-14 {
+  font-size: 14px;
 }
-.fs-20{
-    font-size: 20px;
+.fs-18 {
+  font-size: 18px;
 }
-.fs-28{
-    font-size: 24px;
+.fs-20 {
+  font-size: 20px;
 }
-.fs-38{
-    font-size: 38px;
+.fs-28 {
+  font-size: 24px;
 }
-
-.fw-600{
-    font-weight: 600;
-}
-.bold{
-    font-weight: bold;
-}
-.movie-details-div{
-    height: 100%;
-    width: 100%;
-}
-#uhd{
-    height: 12px;
-    font-size: 12px;
-    margin-top: -2px;
-    font-weight: 600;
-}
-.boxed-div{
-    height: 14px;
-    border-radius: 2px;
-    width: auto;
-    text-align: center;
-    padding: 0px 5px 2px;
+.fs-38 {
+  font-size: 38px;
 }
 
-#movie-overview{
-    width: 70%;
-    text-align: justify;
+.fw-600 {
+  font-weight: 600;
+}
+.bold {
+  font-weight: bold;
+}
+.hidden {
+  display: none; /* Hide by default */
+}
+#uhd {
+  height: 12px;
+  font-size: 12px;
+  margin-top: -2px;
+  font-weight: 600;
+}
+.boxed-div {
+  height: 14px;
+  border-radius: 2px;
+  width: auto;
+  text-align: center;
+  padding: 0px 5px 2px;
 }
 
-.movie-info-buttons{
-    border: none;
-    border-radius: 5px;
-    height: 45px;
-    padding: 0px 18px;
+#movie-overview {
+  width: 70%;
+  text-align: justify;
 }
 
-#movie-info-subnav{
-    width: 100%;
-    padding: 0px 3px 2px 5px;
-    margin-top: 1.5rem;
+.movie-info-buttons {
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  padding: 0px 18px;
 }
 
-#movie-info-subnav button{
-    border: none;
-    color: rgb(192, 192, 192);
-    background-color: rgba(0,0,0,0);
+#movie-info-subnav {
+  width: 100%;
+  padding: 0px 3px 2px 5px;
+  margin-top: 1.5rem;
 }
 
-#movie-info-subnav button:hover{
-    color: white;
-}
-.bg-transparent-gray{
-    background-color: rgba(108,117,125,0.6);
-}
-.border-circle{
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
+#movie-info-subnav button {
+  border: none;
+  color: rgb(192, 192, 192);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-#more-info{
-    height: auto;
-    padding-bottom: 50px;
+#movie-info-subnav button:hover {
+  color: white;
 }
-.button-icons{
-    margin-top: -6px;
+.bg-transparent-gray {
+  background-color: rgba(108, 117, 125, 0.6);
 }
-#horizontal-rule{
-    height: 3px;
-    background-color: rgba(128,128,128,0.5);
-    width:95%;
+.border-circle {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
 }
-.underline{
-    border-bottom: solid 1px white;
+#more-info {
+  height: auto;
+  padding-bottom: 50px;
 }
-.underline:hover{
-    text-decoration: none;
-    cursor: pointer;
+.button-icons {
+  margin-top: -6px;
+}
+#horizontal-rule {
+  height: 3px;
+  background-color: rgba(128, 128, 128, 0.5);
+  width: 95%;
+}
+.underline {
+  border-bottom: solid 1px white;
+}
+.underline:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+#related-movies-tab {
+  height: 100vh;
+}
+.color-blue {
+  color: #79b8f3;
+}
+.color-storm-petrel {
+  color: #8197a4;
+}
+#lang {
+  width: 58%;
+  word-wrap: break-word;
+  text-align: justify;
+}
+#brand-logo {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 78%;
 }
