@@ -9,12 +9,14 @@ body{
     background-color: var(--body-color);
     color: var(--text-color);
     font-family: "Roboto", sans-serif;
-    overflow-x: auto;
 }
+
+
 
 .scrollable-images-container {
     overflow-x: auto;
     white-space: nowrap;
+    padding: 0;
 }
 
 .scrollable-images-container::-webkit-scrollbar {
@@ -29,6 +31,12 @@ body{
     margin-right: 20px; 
     overflow: hidden;
     transition: transform 2s ease;
+    position: relative;
+    aspect-ratio:16/9
+}
+
+.card:hover{
+    transform: scale(1.1) translateY(-30px); 
 }
 
 .card-details {
@@ -41,10 +49,12 @@ body{
     left: 0;
     width: 100%;
     box-sizing: border-box;
+    text-wrap: wrap;
+    font-size: smaller;
 }
 
 .card:hover {
-    transform: scale(1.3);
+    transform: scale(1.1);
     z-index: 1;
 }
 
@@ -108,6 +118,58 @@ body{
 
 .more-details-button{
     background-color: white;
+}
+
+.number{
+    font-size: 5rem;
+    font-weight: bolder;
+}
+
+/* .card:hover{
+    height: 380px;
+} */
+
+.slide-container {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+    padding: 10px;
+}
+
+.slide-card {
+    width: 50rem;
+    height: 30rem;
+    border-radius: 0.75rem;
+    background-size: cover;
+    cursor: pointer;
+    overflow: hidden;
+    margin: 0 10px;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.6s cubic-bezier(.28,-0.03,0,0.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    background-color: white
+}
+
+.slide-card > .row {
+    width: 100%;
+    background-color: white;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+}
+
+input {
+    display: none;
+}
+
+input:checked + label {
+    width: 200rem;
+}
+
+.slide-card[for="c1"]{
+    background-image: url(../images/guruvayoor.png);
 }
 
 

@@ -1,6 +1,6 @@
 const apiKey = "68878f95957e5338131429885d26e879";
 const genreId = 28;
-const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`;
+const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&adult="false"`;
 const imageBaseUrl = "http://image.tmdb.org/t/p/w500";
 
 async function fetchMovies() {
@@ -65,7 +65,7 @@ function populateCarousel(movies) {
 }
 
 async function fetchTrailer(movieId) {
-	const videosUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}`;
+	const videosUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&adult="false"`;
 
 	try {
 		const response = await fetch(videosUrl);
@@ -118,7 +118,7 @@ async function setupCarousel(trailerUrl) {
 
 async function fetchMoviesByGenre(...genreId) {
 	const genresQuery = genreId.join(",");
-	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genresQuery}`;
+	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genresQuery}&adult="false"`;
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
@@ -130,7 +130,7 @@ async function fetchMoviesByGenre(...genreId) {
 }
 
 async function fetchLatestMovies() {
-	const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`;
+	const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&adult="false"`;
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
@@ -143,7 +143,7 @@ async function fetchLatestMovies() {
 }
 
 async function fetchMoviesByLanguage(language) {
-	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_original_language=${language}`;
+	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_original_language=${language}&adult="false"`;
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
@@ -153,6 +153,10 @@ async function fetchMoviesByLanguage(language) {
 		return [];
 	}
 }
+
+//to dynamically create a card, first write a base html for it then in js using createelement card can be created
+//set the class for it so that the styles can be applied and after dynamically creating the element append it
+// so that it can be shown as a list.
 
 function createMovieCard(movie) {
 	const card = document.createElement("div");
@@ -166,9 +170,10 @@ function createMovieCard(movie) {
 
 	const cardDetails = document.createElement("div");
 	cardDetails.className = "card-details";
+	const overviewFirstLine = movie.overview.split(".")[0];
 	cardDetails.innerHTML = `
 		<p>${movie.title}</p>
-        <p>${movie.overview}</p>
+        <p>${overviewFirstLine}</p>
         <p>Rating: ${movie.vote_average}</p>
     `;
 
@@ -219,6 +224,34 @@ async function populateSectionLatestMovies(containerId) {
 	});
 }
 
+async function topIndianMovies(containerId) {
+	const container = document
+		.getElementById(containerId)
+		.querySelector(".d-flex");
+	const movies = await fetchLatestMovies();
+
+	container.innerHTML = "";
+
+	movies.slice(0, 10).forEach((movie, index) => {
+		const movieContainer = document.createElement("div");
+		movieContainer.style.display = "flex";
+		movieContainer.style.alignItems = "center";
+		movieContainer.style.marginBottom = "10px";
+
+		const numberElement = document.createElement("div");
+		numberElement.className = "number";
+		numberElement.textContent = index + 1;
+		numberElement.style.marginRight = "10px";
+
+		const card = createMovieCard(movie);
+
+		movieContainer.appendChild(numberElement);
+		movieContainer.appendChild(card);
+
+		container.appendChild(movieContainer);
+	});
+}
+
 populateSection("action-adventure-movies", 12, 28);
 populateSectionLanguage("english-movies");
 populateSection("drama-movies", 18);
@@ -234,4 +267,5 @@ populateSection("war-movies", 10752);
 populateSection("fiction-movies", 878);
 populateSection("western-movies", 37);
 populateSection("documentaries", 99);
+topIndianMovies("top-movies", "number");
 fetchMovies();
