@@ -12,8 +12,10 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
   .then((response) => {
     console.log(response.results);
     let movies = response.results;
-    let imgSrc = movies[1].backdrop_path;
+    let movieId = movies[1].id;
+    let apiKey = "fecc5cdef79b7df334829626012d2f21";
 
+    let imgSrc = movies[1].backdrop_path;
     let movieDetailsDiv = document.getElementById("movie-details");
     movieDetailsDiv.style.backgroundImage = `linear-gradient(90deg,rgba(0,0,0,1), rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url("http://image.tmdb.org/t/p/w500/${imgSrc}")`;
     movieDetailsDiv.style.backgroundSize = "cover";
@@ -32,9 +34,6 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
     let movieReleaseYear = document.getElementById("movie-release-year");
     let date = new Date(movies[1].release_date);
     movieReleaseYear.innerHTML = date.getFullYear();
-
-    let movieId = movies[1].id;
-    let apiKey = "fecc5cdef79b7df334829626012d2f21";
 
     console.log(movies[1].genre_ids);
     let movieGenres = movies[1].genre_ids;
@@ -62,6 +61,12 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         });
       });
 
+    // Movie Trailer
+    document.getElementById("trailer-button").onclick = () => {
+      console.log("button clicked")
+      window.location.href = `trailer.html?movieId=${movieId}`
+    }
+    
     // Audio languages (translations)
     const languageNames = new Intl.DisplayNames(["en"], {
       type: "language",
@@ -70,18 +75,18 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
     fetch(
       `https://api.themoviedb.org/3/movie/${movieId}/translations?`,
       options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response.translations);
-        let audioLanguages = response.translations;
-        for (let i = 0; i < audioLanguages.length; i++) {
-          movieLanguage.append(audioLanguages[i].name);
-          if (i < audioLanguages.length - 1) {
-            movieLanguage.append(", ");
-          }
+    ).then((response) => response.json())
+    .then((response) => {
+      console.log(response.translations)
+      let audioLanguages = response.translations;
+      for(let i=0; i<audioLanguages.length; i++){
+        movieLanguage.append(audioLanguages[i].name)
+        if(i<audioLanguages.length-1){
+          movieLanguage.append(", ")
         }
-      });
+      }
+
+    });
 
     // Movie Credits (Cast and Crew)
     fetch(
@@ -169,6 +174,14 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
             movieActors.append(span);
           }
         }
-      });
+    });
+
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?`, options)
+    .then((response) => response.json())
+    .then((response) => {
+      console.log(response.results);
+    })
+
   })
   .catch((err) => console.error(err));
+

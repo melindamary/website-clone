@@ -1,74 +1,74 @@
-body {
-  height: 100vh;
+body{
+  height:100vh;
   padding: 0px;
-  margin: 0px;
+  margin:0px;
 }
-.ps-4percent {
+.ps-4percent{
   padding-left: 4%;
 }
-.pe-4percent {
+.pe-4percent{
   padding-right: 4%;
 }
-.pt-8percent {
+.pt-8percent{
   padding-top: 8%;
 }
-.pt-4percent {
+.pt-4percent{
   padding-top: 3%;
 }
-.w-10 {
+.w-10{
   width: 11%;
 }
-.me-2percent {
+.me-2percent{
   margin-right: 1.5%;
 }
-.me-1percent {
+.me-1percent{
   margin-right: 1%;
 }
-.me-point-3percent {
+.me-point-3percent{
   margin-right: 0.3%;
 }
-.bg-black {
+.bg-black{
   background-color: black;
 }
-.movie-details-div {
+.movie-details-div{
   height: 100%;
   width: 100%;
 }
-.fs-12 {
+.fs-12{
   font-size: 12px;
 }
-.fs-14 {
+.fs-14{
   font-size: 14px;
 }
-.fs-18 {
+.fs-18{
   font-size: 18px;
 }
-.fs-20 {
+.fs-20{
   font-size: 20px;
 }
-.fs-28 {
+.fs-28{
   font-size: 24px;
 }
-.fs-38 {
+.fs-38{
   font-size: 38px;
 }
 
-.fw-600 {
+.fw-600{
   font-weight: 600;
 }
-.bold {
+.bold{
   font-weight: bold;
 }
 .hidden {
   display: none; /* Hide by default */
 }
-#uhd {
+#uhd{
   height: 12px;
   font-size: 12px;
   margin-top: -2px;
   font-weight: 600;
 }
-.boxed-div {
+.boxed-div{
   height: 14px;
   border-radius: 2px;
   width: auto;
@@ -76,77 +76,126 @@ body {
   padding: 0px 5px 2px;
 }
 
-#movie-overview {
+#movie-overview{
   width: 70%;
   text-align: justify;
 }
 
-.movie-info-buttons {
+.movie-info-buttons{
   border: none;
   border-radius: 5px;
   height: 45px;
   padding: 0px 18px;
 }
 
-#movie-info-subnav {
+#movie-info-subnav{
   width: 100%;
   padding: 0px 3px 2px 5px;
   margin-top: 1.5rem;
 }
 
-#movie-info-subnav button {
+#movie-info-subnav button{
   border: none;
   color: rgb(192, 192, 192);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0,0,0,0);
 }
 
-#movie-info-subnav button:hover {
+#movie-info-subnav button:hover{
   color: white;
 }
-.bg-transparent-gray {
-  background-color: rgba(108, 117, 125, 0.6);
+.bg-transparent-gray{
+  background-color: rgba(108,117,125,0.6);
 }
-.border-circle {
+.border-circle{
   border-radius: 50%;
   width: 45px;
   height: 45px;
 }
-#more-info {
+#more-info{
   height: auto;
   padding-bottom: 50px;
 }
-.button-icons {
+.button-icons{
   margin-top: -6px;
+  border: none;
+  outline: none;
 }
-#horizontal-rule {
+#horizontal-rule{
   height: 3px;
-  background-color: rgba(128, 128, 128, 0.5);
-  width: 95%;
+  background-color: rgba(128,128,128,0.5);
+  width:95%;
 }
-.underline {
+.underline{
   border-bottom: solid 1px white;
 }
-.underline:hover {
+.underline:hover{
   text-decoration: none;
   cursor: pointer;
 }
-#related-movies-tab {
+
+#related-movies-tab{
   height: 100vh;
 }
-.color-blue {
+
+.color-blue{
   color: #79b8f3;
 }
-.color-storm-petrel {
+.color-storm-petrel{
   color: #8197a4;
 }
-#lang {
+#lang{
   width: 58%;
   word-wrap: break-word;
   text-align: justify;
 }
-#brand-logo {
+#brand-logo{
   background-size: contain;
   background-repeat: no-repeat;
   height: 32px;
   width: 78%;
+}
+.trailer-container{
+  height: 100vh;
+}
+#trailer-button{
+  background-image: url("../assets/movie-video.svg");
+  background-position: center;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+}
+#watchlist-button{
+  background-image: url("../assets/plus.svg");
+}
+#like-button{
+  background-image: url("../assets/thumbs-up.svg");
+}
+#dislike-button{
+  background-image: url("../assets/thumbs-up.svg");
+  transform: rotate(180deg);
+}
+#share-button{
+  background-image: url("../assets/share.svg");
+}
+#watchlist-button, #like-button, #dislike-button, #share-button{
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+}
+#close-button{
+  background-image: url("../assets/close-icon.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 5%;
+  width: 2%;
+  background-color: rgba(0,0,0,0);
+  border: none;
+  position: relative;
+  margin-left: 73%;
+  margin-bottom: 1%;
+  padding: 1%;
+} 
+#close-button:hover{
+  border: none;
+  background-color: gray;
 }

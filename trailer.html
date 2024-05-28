@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Trailer</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/movie-info.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+</head>
+<body class="p-0 m-0" onload="playTrailer()">
+    <div class="trailer-container bg-black d-flex flex-column justify-content-center align-items-center">
+        <button id="close-button" onclick="window.location.href='movie-info.html'">
+        </button>
+        <iframe id="trailer-video" class="w-75 h-75"
+        > 
+        </iframe> 
+    </div>
+    <script src="./scripts/trailer.js"></script>
+</body>
+</html>
