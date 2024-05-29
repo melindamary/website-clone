@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
 :root{
     --body-color:black;
     --text-color:white;
@@ -8,13 +7,16 @@
 body{
     background-color: var(--body-color);
     color: var(--text-color);
-    font-family: "Roboto", sans-serif;
+    font-family: 'Amazon Ember Display', sans-serif;
+    font-weight: 700;
+    font-size: large;
 }
 
 
 
 .scrollable-images-container {
-    overflow-x: auto;
+    overflow-x: scroll;
+    /* overflow: hidden; */
     white-space: nowrap;
     padding: 0;
 }
@@ -129,31 +131,45 @@ body{
     height: 380px;
 } */
 
+
+.slide-wrapper {
+    overflow-x: scroll;
+    width: 108rem; 
+    white-space: nowrap; 
+}
+
+.slide-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 .slide-container {
-    display: flex;
-    overflow-x: auto; /* Allows horizontal scrolling if needed */
-    padding: 10px;
+    display: inline-block; 
+    transition: transform 0.5s ease-in-out;
+    white-space: nowrap; 
+    height: 30rem; 
 }
 
 .slide-card {
-    width: 50rem;
+    width: 230px;
     height: 30rem;
     border-radius: 0.75rem;
     background-size: cover;
     cursor: pointer;
-    overflow: hidden;
     margin: 0 10px;
-    display: flex;
-    align-items: flex-end;
-    transition: 0.6s cubic-bezier(.28,-0.03,0,0.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
-    background-color: white
+    display: inline-block; 
+    vertical-align: top; 
+    transition: width 0.6s cubic-bezier(.28,-0.03,0,0.99), transform 0.6s cubic-bezier(.28,-0.03,0,0.99); /* Smooth transition */
+    background-color: white;
+}
+
+.slide-card:hover {
+    width: 50rem;
 }
 
 .slide-card > .row {
     width: 100%;
     background-color: white;
-    color: white;
+    color: black; 
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -163,15 +179,3 @@ body{
 input {
     display: none;
 }
-
-input:checked + label {
-    width: 200rem;
-}
-
-.slide-card[for="c1"]{
-    background-image: url(../images/guruvayoor.png);
-}
-
-
-
-

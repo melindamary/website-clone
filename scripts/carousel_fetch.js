@@ -130,7 +130,7 @@ async function fetchMoviesByGenre(...genreId) {
 }
 
 async function fetchLatestMovies() {
-	const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&adult="false"`;
+	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_origin_country=IN&sort_by=popularity.desc&primary_release_year=2024&primary_release_date.lte=2024-05-29`;
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
@@ -162,14 +162,16 @@ function createMovieCard(movie) {
 	const card = document.createElement("div");
 	card.className = "card";
 	card.style.width = "18rem";
-
-	const img = document.createElement("img");
-	img.className = "card-img-top";
-	img.src = `${imageBaseUrl}${movie.poster_path}`;
-	img.alt = movie.title;
+	card.style.backgroundImage = `url(${imageBaseUrl}${movie.poster_path})`;
+	card.style.backgroundSize = "cover";
+	card.style.backgroundPosition = "center";
+	card.style.color = "white";
 
 	const cardDetails = document.createElement("div");
 	cardDetails.className = "card-details";
+	cardDetails.style.background = "rgba(0, 0, 0, 0.5)";
+	cardDetails.style.padding = "10px";
+
 	const overviewFirstLine = movie.overview.split(".")[0];
 	cardDetails.innerHTML = `
 		<p>${movie.title}</p>
@@ -177,7 +179,6 @@ function createMovieCard(movie) {
         <p>Rating: ${movie.vote_average}</p>
     `;
 
-	card.appendChild(img);
 	card.appendChild(cardDetails);
 	return card;
 }
@@ -251,6 +252,42 @@ async function topIndianMovies(containerId) {
 		container.appendChild(movieContainer);
 	});
 }
+
+document.addEventListener("DOMContentLoaded", async function () {
+	const slideContainer = document.querySelector(".slide-container");
+
+	const fetchMovies = async () => {
+		const response = await fetch(
+			`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`
+		);
+		const data = await response.json();
+		return data.results;
+	};
+
+	const movies = await fetchMovies();
+
+	slideContainer.innerHTML = "";
+
+	movies.forEach((movie, index) => {
+		if (index <= 6) {
+			const inputId = `c${index + 1}`;
+
+			const inputElement = document.createElement("input");
+			inputElement.type = "radio";
+			inputElement.name = "slide";
+			inputElement.id = inputId;
+			if (index === 0) inputElement.checked = true;
+
+			const labelElement = document.createElement("label");
+			labelElement.htmlFor = inputId;
+			labelElement.className = "slide-card";
+			labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+
+			slideContainer.appendChild(inputElement);
+			slideContainer.appendChild(labelElement);
+		}
+	});
+});
 
 populateSection("action-adventure-movies", 12, 28);
 populateSectionLanguage("english-movies");

@@ -1,24 +1,68 @@
-<article class="DQJcsT">
-    <button class="jG2zso">
-        <div class="ZkG5T5">
-            <span class="ukoo6j mG+ov4"></span>
-        </div>
-        <span class="aC2GcO">
-            <article class="Z9dd1d _56AITU" data-card-title="Rathnam" data-card-entity-type="Movie" data-card-position="0" data-card-can-hover="true" data-testid="card">
-                <section class="KMJBuq Zwe5a0" data-testid="card-section">
-                    <div class="km3sbT _6Ee48g" data-testid="packshot">
-                        <a href="/detail/0RZZJDELXWBKKH4GTJ26M1ILNP/ref=atv_mv_hom_c_FCDh42_brws_6_1?jic=8%7CEgRzdm9k" class="_3HZFFn" role="button">Rathnam</a>
-                        <div class="om7nme _9DLJTq" style="aspect-ratio:16/9">
-                            <picture>
-                                <source type="image/webp" srcset="https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX360_FMwebp_.jpg 360w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX480_FMwebp_.jpg 480w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX720_FMwebp_.jpg 720w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX1080_FMwebp_.jpg 1080w" sizes="(max-width: 28em) 260px, (max-width: 55em) 260px, (max-width: 80em) 390px, (max-width: 100em) 390px, (max-width: 150em) 540px, 540px">
-                                <source type="image/jpeg" srcset="https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX360_FMjpg_.jpg 360w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX480_FMjpg_.jpg 480w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX720_FMjpg_.jpg 720w, https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX1080_FMjpg_.jpg 1080w" sizes="(max-width: 28em) 260px, (max-width: 55em) 260px, (max-width: 80em) 390px, (max-width: 100em) 390px, (max-width: 150em) 540px, 540px">
-                                <img alt="" class="pmtwKl M5+zU- Ah1hNY" style="aspect-ratio:16/9" src="https://m.media-amazon.com/images/S/pv-target-images/65aab4b22b8521f1efb0b658c381a11740eefccce48ae1b91784ba324be1ad54._UR1920,1080_SX720_FMjpg_.jpg" data-testid="base-image" loading="lazy">
-                            </picture>
-                        </div>
-                    </div>
-                </section>
-                <div class="N9hMx3 yLrUM0"></div>
-            </article>
-        </span>
-    </button>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Image Expand</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .movie-container {
+            position: relative;
+            width: 200px;
+            /* Adjust to the size of your portrait image */
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .movie-image {
+            width: 100%;
+            transition: all 0.5s ease;
+        }
+
+        .movie-container.expanded .movie-image {
+            width: auto;
+            max-width: none;
+            height: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="movie-container">
+        <img src="./images/aavesham.jpg" alt="Movie Portrait" class="movie-image" id="movieImage">
+    </div>
+
+    <script>
+        document.getElementById('movieImage').addEventListener('click', function () {
+            const container = this.parentElement;
+            container.classList.toggle('expanded');
+
+            if (container.classList.contains('expanded')) {
+                this.src = './images/aavesham.jpg'; // Change to your landscape image
+            } else {
+                this.src = './images/aavesham.jpg'; // Change back to your portrait image
+            }
+        });
+    </script>
+
+</body>
+
+
+
+
+
+
+</html>
