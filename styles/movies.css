@@ -30,7 +30,7 @@ body{
     border-radius: 8px;
     min-width: 18rem;
     margin-right: 20px;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: transform 0.3s ease;
     position: relative;
     aspect-ratio: 16/9;
@@ -39,14 +39,17 @@ body{
 }
 
 .card:hover {
-    /* transform: scale(1.1);
-    z-index: 2; */
+    transform: scale(1.1);
+    z-index: 2;
     border-radius: 8px 8px 0 0;
+    transition-delay: 0.2s;
 }
 
 .card:hover .card-details{
     transform: scale(1.1);
     z-index: 2;
+    transition-delay: 0.2s;
+    display: block;
 }
 
 .card-details {
@@ -54,11 +57,20 @@ body{
     background-color: #fff;
     border-radius: 0 0 8px 8px;
     width: 18rem;
+    height: 18rem; /* Fixed height */
+    overflow: hidden; /* Hide overflow content */
     padding: 10px;
     position: absolute;
-    /* left: 3rem; */
     transition: opacity 0.3s ease;
-    
+}
+
+.card-details p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
 }
 
 .card-img-top {
@@ -129,6 +141,15 @@ body{
     font-weight: bolder;
 }
 
+
+.plus:hover{
+    background-color: white !important;
+    transform: scale(1.2);
+}
+.plus:hover svg path {
+    fill: black; /* Change the fill color here */
+}
+
 /* .card:hover{
     height: 380px;
 } */
@@ -148,7 +169,7 @@ body{
     display: inline-block; 
     white-space: nowrap; 
     height: 30rem; 
-    margin-left: 10rem;
+    width: 100%;
 }
 
 .slide-card {
@@ -173,10 +194,6 @@ body{
     transition: width 0.6s cubic-bezier(.28,-0.03,0,0.99);
 }
 
-/* .slide-card:hover ~ .slide-card {
-    transform: translateX(230px);
-    margin-right: 20px;  
-} */
 
 .slide-card > .row {
     width: 100%;
@@ -191,3 +208,42 @@ body{
 input {
     display: none;
 }
+
+
+
+.tooltip {
+    visibility: hidden;
+    width: 10rem;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 120%; /* Position the tooltip above the button */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent; /* Black arrow pointing down */
+}
+
+.more-details-button:hover .tooltip,
+.custom-plus-size:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
