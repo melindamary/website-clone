@@ -5,12 +5,12 @@
 }
 
 body{
-    background-color: var(--body-color);
+    /* background-color: var(--body-color); */
     color: var(--text-color);
     font-family: 'Amazon Ember Display', sans-serif;
     font-weight: 700;
     font-size: large;
-    /* background-color: white; */
+    background-color: white;
 }
 
 
@@ -29,7 +29,6 @@ body{
 .card {
     border-radius: 8px;
     min-width: 18rem;
-    margin-right: 20px;
     overflow: hidden;
     transition: transform 0.3s ease;
     position: relative;
@@ -49,16 +48,31 @@ body{
     z-index: 2;
 }
 
+.test-container:hover{
+    transform: scale(1.1);
+    z-index: 2;
+}
+
 .card-details {
     /* display: none; */
-    background-color: #fff;
+    background-color: black;
     border-radius: 0 0 8px 8px;
-    width: 18rem;
+    width: inherit;
     padding: 10px;
     position: absolute;
     /* left: 3rem; */
     transition: opacity 0.3s ease;
     
+}
+
+.card-details-test{
+      background-color: black;
+      border-radius: 0 0 8px 8px;
+      width: auto;
+      display: block;
+      padding: 10px;
+      position: absolute;
+      transition: opacity 0.3s ease;
 }
 
 .card-img-top {
@@ -146,9 +160,10 @@ body{
 
 .slide-container {
     display: inline-block; 
+    transition: transform 0.5s ease-in-out;
     white-space: nowrap; 
     height: 30rem; 
-    margin-left: 10rem;
+    position: relative;
 }
 
 .slide-card {
@@ -166,17 +181,15 @@ body{
 }
 
 .slide-card:hover {
-    /* transform: scaleX(2); */
+    transform: scaleX(2);
     z-index: 1; 
-    width: 53.3rem;
-    height: 30rem;
-    transition: width 0.6s cubic-bezier(.28,-0.03,0,0.99);
+    
 }
 
-/* .slide-card:hover ~ .slide-card {
+.slide-card:hover ~ .slide-card {
     transform: translateX(230px);
     margin-right: 20px;  
-} */
+}
 
 .slide-card > .row {
     width: 100%;

@@ -1,7 +1,7 @@
 const apiKey = "68878f95957e5338131429885d26e879";
 const genreId = 28;
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&adult="false"`;
-const imageBaseUrl = "http://image.tmdb.org/t/p/w500";
+const imageBaseUrl = "http://image.tmdb.org/t/p/w1280";
 
 async function fetchMovies() {
 	try {
@@ -162,25 +162,46 @@ function createMovieCard(movie) {
 	const card = document.createElement("div");
 	card.className = "card";
 	card.style.width = "18rem";
-	card.style.backgroundImage = `url(${imageBaseUrl}${movie.poster_path})`;
+	card.style.backgroundImage = `url(${imageBaseUrl}${movie.backdrop_path})`;
 	card.style.backgroundSize = "cover";
 	card.style.backgroundPosition = "center";
 	card.style.color = "white";
+	card.style.position = "relative";
 
+	card.addEventListener("mouseenter", () => showCardDetails(movie, card));
+	card.addEventListener("mouseleave", hideCardDetails);
+	return card;
+}
+
+function showCardDetails(movie, card) {
 	const cardDetails = document.createElement("div");
 	cardDetails.className = "card-details";
-	cardDetails.style.background = "rgba(0, 0, 0, 0.5)";
-	cardDetails.style.padding = "10px";
+	cardDetails.style.background = "black";
+	cardDetails.style.color = "white"; // Ensure text is visible on black background
 
 	const overviewFirstLine = movie.overview.split(".")[0];
 	cardDetails.innerHTML = `
-		<p>${movie.title}</p>
+        <p>${movie.title}</p>
         <p>${overviewFirstLine}</p>
         <p>Rating: ${movie.vote_average}</p>
     `;
 
-	card.appendChild(cardDetails);
-	return card;
+	// Position card details below the card
+	const cardRect = card.getBoundingClientRect();
+	cardDetails.style.top = `${cardRect.bottom + window.scrollY + 5}px`; // 10px margin
+	cardDetails.style.left = `${cardRect.left + window.scrollX}px`;
+
+	document.body.appendChild(cardDetails);
+	card._cardDetails = cardDetails; // Store reference to the card details element
+}
+
+function hideCardDetails(event) {
+	const card = event.currentTarget;
+	const cardDetails = card._cardDetails;
+	if (cardDetails) {
+		document.body.removeChild(cardDetails);
+		delete card._cardDetails; // Remove reference to the card details element
+	}
 }
 
 async function populateSection(containerId, genreId) {
@@ -269,23 +290,28 @@ document.addEventListener("DOMContentLoaded", async function () {
 	slideContainer.innerHTML = "";
 
 	movies.forEach((movie, index) => {
-		if (index <= 6) {
-			const inputId = `c${index + 1}`;
+		const inputId = `c${index + 1}`;
 
-			const inputElement = document.createElement("input");
-			inputElement.type = "radio";
-			inputElement.name = "slide";
-			inputElement.id = inputId;
-			if (index === 0) inputElement.checked = true;
+		const inputElement = document.createElement("input");
+		inputElement.type = "radio";
+		inputElement.name = "slide";
+		inputElement.id = inputId;
+		if (index === 0) inputElement.checked = true;
 
-			const labelElement = document.createElement("label");
-			labelElement.htmlFor = inputId;
-			labelElement.className = "slide-card";
+		const labelElement = document.createElement("label");
+		labelElement.htmlFor = inputId;
+		labelElement.className = "slide-card";
+		labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+		labelElement.addEventListener("mouseenter", () => {
+			labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
+		});
+
+		labelElement.addEventListener("mouseleave", () => {
 			labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+		});
 
-			slideContainer.appendChild(inputElement);
-			slideContainer.appendChild(labelElement);
-		}
+		slideContainer.appendChild(inputElement);
+		slideContainer.appendChild(labelElement);
 	});
 });
 
