@@ -13,6 +13,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
     console.log(response.results);
     let movies = response.results;
     let movieId = movies[1].id;
+    console.log(movieId)
     let apiKey = "fecc5cdef79b7df334829626012d2f21";
 
     let imgSrc = movies[1].backdrop_path;
@@ -61,7 +62,7 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         });
       });
 
-    // Movie Trailer
+    // Movie Trailer Button onclick
     document.getElementById("trailer-button").onclick = () => {
       console.log("button clicked")
       window.location.href = `trailer.html?movieId=${movieId}`
@@ -176,11 +177,58 @@ fetch("https://api.themoviedb.org/3/movie/now_playing", options)
         }
     });
 
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}/similar?`, options)
+    // Related Movies
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?`, options)
     .then((response) => response.json())
     .then((response) => {
-      console.log(response.results);
-    })
+        console.log("Similar movies", response.results);
+  
+        let similarMovies = response.results;
+        let relatedMoviesContent = document.getElementById('related-movies-content');
+        similarMovies.forEach(similarMovie => {
+            let movieId = similarMovie.id;
+            let imgSrc = similarMovie.poster_path;
+            let movieCard = document.createElement('div');
+            movieCard.classList.add('movie-card');
+            let movieImage = document.createElement('img');
+            movieImage.classList.add('movie-image');
+            movieImage.style.height = "45%";
+            movieImage.style.width = "100%";
+            movieImage.style.objectFit = "cover";
+            movieImage.style.objectPosition = "center";
+            movieImage.style.borderRadius = "10px";
+  
+            movieImage.src = `http://image.tmdb.org/t/p/w500/${imgSrc}`;
+            let movieCardDetails = document.createElement('div');
+            movieCardDetails.classList.add('movie-card-details');
+            movieCardDetails.innerHTML = `
+                <h4>${similarMovie.title}</h4>
+                <p>${similarMovie.overview}</p>
+            `;
+  
+            movieImage.addEventListener('mouseover', () => {
+                movieCardDetails.style.display = 'block';
+                movieCard.style.transform = 'scale(1.10)';
+                movieImage.style.borderBottomLeftRadius = "0px"
+                movieImage.style.borderBottomRightRadius = "0px"
+            });
+  
+            movieCard.addEventListener('mouseout', () => {
+                movieCardDetails.style.display = 'none';
+                movieCard.style.transform = 'scale(1)';
+                movieImage.style.borderBottomLeftRadius = "10px"
+                movieImage.style.borderBottomRightRadius = "10px"
+            });
+ 
+            movieImage.addEventListener('click', () => {
+              window.location.href = `movie-info-design copy.html?movieId=${movieId}`;
+            })
+  
+            relatedMoviesContent.appendChild(movieCard);
+            movieCard.appendChild(movieImage);
+            movieCard.appendChild(movieCardDetails);
+        });
+    });
 
   })
   .catch((err) => console.error(err));
