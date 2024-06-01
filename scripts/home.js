@@ -3,6 +3,7 @@ const b1 = document.querySelector(".b1");
 const b2 = document.querySelector(".b2");
 const b3 = document.querySelector(".b3");
 var backgroundImagesArray;
+// setTimeout(checkScreenWidth, 2000);
 
 function displayBackgroundImages() {
     db.ref("/BackgroundImages")
@@ -144,7 +145,6 @@ function yourFunction() {
 
 checkScreenWidth();
 window.addEventListener('resize', checkScreenWidth);
-
 
 //languages
 //Hindi
