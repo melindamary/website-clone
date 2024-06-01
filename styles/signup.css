@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logo-container img {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#sign-in-form {
+    border: 0.009cm solid rgb(228, 223, 223);
+    border-style: ridge;
+    border-radius: 0.2cm;
+    align-items: center;
+}
+
+.form-container {
+    margin: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#form-title {
+    font-weight: 200;
+    font-size: 30px;
+}
+
+.input-container {
+    position: relative;
+    margin-top: 8px;
+}
+
+.input-container label {
+    font-weight: bold;
+}
+
+.input-container input {
+    width: 319px;
+    height: 25px;
+    border: 1px solid #d3c2c2;
+    border-radius: 2px;
+    padding: 5px;
+    background: transparent;
+}
+
+.mobile-input {
+    display: flex;
+    align-items: center;
+}
+
+.mobile-input select,
+.mobile-input input {
+    border: 1px solid #d3c2c2;
+}
+
+.mobile-input select {
+    font-family: sans-serif;
+    font-weight: bold;
+    height: 37px;
+    width: 80px;
+    border-radius: 4px;
+    margin-right: 25px;
+    text-align: center;
+    box-shadow: 0px 5px 4px rgba(92, 92, 92, 0.2);
+}
+
+.mobile-input input {
+    flex: 1;
+    border-radius: 0 4px 4px 0;
+    width: 210px;
+}
+
+.help-links {
+    margin: 0.3cm;
+    margin-top: 20px;
+    font-size: 12px;
+    list-style-type: square;
+}
+
+.help-links a {
+    color: rgb(52, 121, 181);
+    text-decoration: none;
+}
+
+#continue-button {
+    background-color: #e2df22;
+    border: rgb(238, 177, 23);
+    border-radius: 0.2cm;
+    width: 330px;
+    margin-top: 10px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#continue-button:hover {
+    background-color: #e9ad15;
+    border: rgb(225, 167, 19);
+}
+
+.form-body p {
+    font-size: 85%;
+    margin: 12px 0;
+    font-weight: 100;
+    white-space: pre-line;
+}
+
+#form-body2{
+    margin-top: 25px;
+    display: none;
+}
+
+
+.footer ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer ul li a {
+    color: #0066c0;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.footer a {
+    margin: 10px;
+}
+
+.footer hr,
+.form-body hr {
+    background-color: #f3f3f5;
+    color: #b6c4c7;
+    border: 1px solid rgb(238, 220, 234);
+    margin: 20px 15% 0 15%;
+    margin-bottom: 25px;
+    box-shadow: 0px 7px 25px 1px;
+}
+
+.footer p {
+    text-align: center;
+    margin: 10px;
+    font-weight: 0;
+    font-size: 12px;
+    color: rgb(68, 68, 68);
+    margin-bottom: 40px;
+}
+
+.form-body p a {
+    color: rgb(52, 121, 181);
+    text-decoration: none;
+}
+
+.help-links {
+    list-style-type: none;
+    padding: 0;
+}
+
+.help-links li {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.help-links li::before {
+    content: "\25B6";
+    position: absolute;
+    left: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 5px;
+}
+
+#text1 {
+    margin-top: -15px;
+}
+
+#text2 {
+    margin-top: 0px;
+}
+
+#mobile-number,
+#email,
+#username,
+#password {
+    font-family: sans-serif;
+    background: transparent;
+}
+
+#username:focus,
+#mobile-number:focus,
+#email:focus,
+#username:focus,
+#password:focus,
+#country-code:focus {
+    box-shadow: 0px 0px 3px 3px rgba(35, 167, 211, 0.5);
+    border-color: rgb(116, 116, 116);
+    outline: none!important;
+}
