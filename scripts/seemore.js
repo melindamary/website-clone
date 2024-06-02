@@ -79,13 +79,13 @@ function createMovieCard(movie, id) {
         </div>
         `;
 
-		// Position card details below the card
+	
 		const cardRect = card.getBoundingClientRect();
-		cardDetails.style.top = `${cardRect.bottom + window.scrollY + 5}px`; // 5px margin
+		cardDetails.style.top = `${cardRect.bottom + window.scrollY + 5}px`; 
 		cardDetails.style.left = `${cardRect.left + window.scrollX}px`;
 
 		document.body.appendChild(cardDetails);
-		card._cardDetails = cardDetails; // Store reference to the card details element
+		card._cardDetails = cardDetails;
 	}
 
 	function hideCardDetails(event) {
@@ -93,7 +93,7 @@ function createMovieCard(movie, id) {
 		const cardDetails = card._cardDetails;
 		if (cardDetails) {
 			document.body.removeChild(cardDetails);
-			delete card._cardDetails; // Remove reference to the card details element
+			delete card._cardDetails; 
 		}
 	}
 	return card;
@@ -154,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function getGenreName(genreId, mediaType = "movie") {
 	try {
-		// Fetch list of genres
 		const response = await fetch(
 			`https://api.themoviedb.org/3/genre/${mediaType}/list?api_key=${apiKey}`
 		);
@@ -163,7 +162,6 @@ async function getGenreName(genreId, mediaType = "movie") {
 		}
 		const data = await response.json();
 
-		// Find genre name by ID
 		const genre = data.genres.find((genre) => genre.id === genreId);
 		if (genre) {
 			console.log("Genre Name:", genre.name);

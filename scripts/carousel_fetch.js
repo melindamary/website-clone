@@ -2,10 +2,14 @@ const apiKey = "68878f95957e5338131429885d26e879";
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&adult="false"`;
 const imageBaseUrl = "http://image.tmdb.org/t/p/w1280";
 
+//navbar
+
 document.getElementById("hamburger").onclick = function () {
 	var menu = document.getElementById("menu");
 	menu.classList.toggle("show");
 };
+
+//carousel
 
 async function fetchMovies() {
 	try {
@@ -112,7 +116,7 @@ async function setupCarousel(movie, carouselItem) {
 		});
 
 		carouselItem.addEventListener("mouseleave", () => {
-			videoElement.src = ""; // Stop the video
+			videoElement.src = "";
 			videoElement.classList.add("d-none");
 			carouselItem.style.backgroundImage = `url(${imageBaseUrl}${movie.backdrop_path})`;
 		});
@@ -120,6 +124,8 @@ async function setupCarousel(movie, carouselItem) {
 		videoElement.classList.add("d-none");
 	}
 }
+
+//fetch based on genre
 
 async function fetchMoviesByGenre(...genreId) {
 	const genresQuery = genreId.join(",");
@@ -314,13 +320,12 @@ function showCardDetails(flag, movie, card) {
 	`;
 	}
 
-	// Position card details below the card
 	const cardRect = card.getBoundingClientRect();
-	cardDetails.style.top = `${cardRect.bottom + window.scrollY + 5}px`; // 5px margin
+	cardDetails.style.top = `${cardRect.bottom + window.scrollY + 5}px`; 
 	cardDetails.style.left = `${cardRect.left + window.scrollX}px`;
 
 	document.body.appendChild(cardDetails);
-	card._cardDetails = cardDetails; // Store reference to the card details element
+	card._cardDetails = cardDetails; 
 }
 
 function hideCardDetails(event) {
@@ -328,7 +333,7 @@ function hideCardDetails(event) {
 	const cardDetails = card._cardDetails;
 	if (cardDetails) {
 		document.body.removeChild(cardDetails);
-		delete card._cardDetails; // Remove reference to the card details element
+		delete card._cardDetails; 
 	}
 }
 
