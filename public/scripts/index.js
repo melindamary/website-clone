@@ -218,8 +218,8 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
                             </div>
                             <div class="row d-flex align-items-center ">
                                 <div class="col-auto">
-                                    <button class="btn more-details-button p-3 d-none d-md-block"
-                                        style="font-size: 1.3rem;">More details</button>
+                                    <a class="btn more-details-button p-3 d-none d-md-block"
+                                        style="font-size: 1.3rem;" href="movie-info-design.html?movieId=${movie.id}">More details</a>
                                 </div>
                                 <div class="col-auto mt-2">
                                     <a href="#"
