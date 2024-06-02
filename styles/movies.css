@@ -10,7 +10,6 @@ body{
     font-family: 'Amazon Ember Display', sans-serif;
     font-weight: 700;
     font-size: large;
-    /* background-color: white; */
 }
 
 .navbar {
@@ -117,7 +116,6 @@ body{
 
 .scrollable-images-container {
     overflow-x: scroll;
-    /* overflow: hidden; */
     white-space: nowrap;
     padding: 0;
 }
@@ -130,7 +128,6 @@ body{
     border-radius: 8px;
     min-width: 18rem;
     margin-right: 20px;
-    /* overflow: hidden; */
     transition: transform 0.3s ease;
     position: relative;
     aspect-ratio: 16/9;
@@ -153,12 +150,11 @@ body{
 }
 
 .card-details {
-    /* display: none; */
     background-color: #fff;
     border-radius: 0 0 8px 8px;
     width: 19rem;
-    height: 18rem; /* Fixed height */
-    overflow: hidden; /* Hide overflow content */
+    height: 18rem; 
+    overflow: hidden;
     padding: 10px;
     position: absolute;
     transition: opacity 0.3s ease;
@@ -260,14 +256,8 @@ body{
     transform: scale(1.2);
 }
 .plus:hover svg path {
-    fill: black; /* Change the fill color here */
+    fill: black; 
 }
-
-
-
-/* .card:hover{
-    height: 380px;
-} */
 
 
 .slide-wrapper {
@@ -302,7 +292,6 @@ body{
 }
 
 .slide-card:hover {
-    /* transform: scaleX(2); */
     z-index: 1; 
     width: 53.3rem;
     height: 30rem;
@@ -336,7 +325,7 @@ input {
     padding: 5px 10px;
     position: absolute;
     z-index: 1;
-    bottom: 120%; /* Position the tooltip above the button */
+    bottom: 120%; 
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -348,12 +337,12 @@ input {
 .tooltip::after {
     content: "";
     position: absolute;
-    top: 100%; /* Arrow at the bottom of the tooltip */
+    top: 100%; 
     left: 50%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: black transparent transparent transparent; /* Black arrow pointing down */
+    border-color: black transparent transparent transparent; 
 }
 
 .more-details-button:hover .tooltip,
