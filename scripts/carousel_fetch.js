@@ -1,5 +1,4 @@
 const apiKey = "68878f95957e5338131429885d26e879";
-const genreId = 28;
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&adult="false"`;
 const imageBaseUrl = "http://image.tmdb.org/t/p/w1280";
 
@@ -10,7 +9,6 @@ async function fetchMovies() {
 			throw new Error("Network response was not ok");
 		}
 		const data = await response.json();
-		console.log(data.results);
 		populateCarousel(data.results);
 		fetchli(data.results);
 	} catch (error) {
@@ -46,8 +44,7 @@ function populateCarousel(movies) {
 
 	movies.forEach((movie, index) => {
 		if (index < 10) {
-			const trailerUrl = fetchTrailer(movie.id);
-			setupCarousel(trailerUrl);
+			setupCarousel(movie.id);
 			const carouselItem = template.cloneNode(true);
 			carouselItem.classList.remove("template");
 			if (index === 0) carouselItem.classList.add("active");
@@ -59,13 +56,15 @@ function populateCarousel(movies) {
 			carouselItem.querySelector(".movie-carousel-name").textContent =
 				movie.title;
 
+			setupCarousel(movie, carouselItem);
+
 			carouselInner.appendChild(carouselItem);
 		}
 	});
 }
 
 async function fetchTrailer(movieId) {
-	const videosUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&adult="false"`;
+	const videosUrl = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${apiKey}&adult=false`;
 
 	try {
 		const response = await fetch(videosUrl);
@@ -79,7 +78,7 @@ async function fetchTrailer(movieId) {
 		);
 
 		return trailers.length > 0
-			? `https://www.youtube.com/watch?v=${trailers[0].key}`
+			? `https://www.youtube.com/embed/${trailers[0].key}?autoplay=1`
 			: null;
 	} catch (error) {
 		console.error(`Error fetching data: ${error}`);
@@ -87,37 +86,33 @@ async function fetchTrailer(movieId) {
 	}
 }
 
-async function setupCarousel(trailerUrl) {
-	const carouselInner = document.getElementById("carousel-inner");
-	const template = document.querySelector(".carousel-item.template");
+async function setupCarousel(movie, carouselItem) {
+	const videoElement = carouselItem.querySelector(".carousel-video");
+	const trailerUrl = await fetchTrailer(movie.id);
 
-	const newItem = template.cloneNode(true);
-	newItem.classList.remove("template");
-	newItem.classList.add("active");
-
-	const videoElement = newItem.querySelector(".carousel-video");
-	const imageElement = newItem.querySelector(".carousel-image");
+	carouselItem.style.backgroundImage = `url(${imageBaseUrl}${movie.backdrop_path})`;
+	carouselItem.querySelector(".movie-carousel-name").textContent = movie.title;
 
 	if (trailerUrl) {
-		videoElement.src = trailerUrl;
-		videoElement.classList.remove("d-none");
-		imageElement.classList.add("d-none");
+		carouselItem.addEventListener("mouseenter", () => {
+			videoElement.src = trailerUrl;
+			videoElement.classList.remove("d-none");
+			carouselItem.style.backgroundImage = "none";
+		});
 
-		videoElement.addEventListener("ended", () => {
+		carouselItem.addEventListener("mouseleave", () => {
+			videoElement.src = ""; // Stop the video
 			videoElement.classList.add("d-none");
-			imageElement.classList.remove("d-none");
+			carouselItem.style.backgroundImage = `url(${imageBaseUrl}${movie.backdrop_path})`;
 		});
 	} else {
 		videoElement.classList.add("d-none");
 	}
-
-	imageElement.src = imageBaseUrl;
-
-	carouselInner.appendChild(newItem);
 }
 
 async function fetchMoviesByGenre(...genreId) {
 	const genresQuery = genreId.join(",");
+	console.log(genresQuery);
 	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genresQuery}&adult="false"`;
 	try {
 		const response = await fetch(url);
@@ -134,7 +129,6 @@ async function fetchLatestMovies() {
 	try {
 		const response = await fetch(url);
 		const data = await response.json();
-		console.log(data);
 		return data.results;
 	} catch (error) {
 		console.error("Fetch operation error:", error);
@@ -219,11 +213,7 @@ function generateCarousel(movie) {
     `;
 }
 
-//to dynamically create a card, first write a base html for it then in js using createelement card can be created
-//set the class for it so that the styles can be applied and after dynamically creating the element append it
-// so that it can be shown as a list.
-
-function createMovieCard(movie, id) {
+function createMovieCard(flag, movie, id) {
 	const card = document.createElement("div");
 	card.className = "card";
 	card.style.width = "18rem";
@@ -233,13 +223,15 @@ function createMovieCard(movie, id) {
 	card.style.color = "white";
 	card.style.position = "relative";
 	if (id != 1) {
-		card.addEventListener("mouseenter", () => showCardDetails(movie, card));
+		card.addEventListener("mouseenter", () =>
+			showCardDetails(flag, movie, card)
+		);
 		card.addEventListener("mouseleave", hideCardDetails);
 	}
 	return card;
 }
 
-function showCardDetails(movie, card) {
+function showCardDetails(flag, movie, card) {
 	const cardDetails = document.createElement("div");
 	cardDetails.className = "card-details";
 	cardDetails.style.background = "black";
@@ -247,7 +239,8 @@ function showCardDetails(movie, card) {
 	cardDetails.style.padding = "10px";
 
 	const overviewFirstLine = movie.overview.split(".")[0];
-	cardDetails.innerHTML = `
+	if (flag === "n") {
+		cardDetails.innerHTML = `
 	<div class="col-auto">
 		<div class="card-details-header" style="display: flex; justify-content: space-between; align-items: center;">
 			<p class="mb-0 mb-md-2" style="font-weight:normal;font-size:0.9rem;">
@@ -279,6 +272,37 @@ function showCardDetails(movie, card) {
         <p>Rating: ${movie.vote_average}</p>
 	</div>
 	`;
+	} else {
+		cardDetails.innerHTML = `
+	<div class="col-auto">
+	<div style="display: flex; align-items: center;">
+	<svg class="fbl-icon _3UMk3x _1a_Ljt NbhXwl" viewBox="0 0 24 24" height="20" width="20" role="img" aria-hidden="true"><title>Store Filled</title><svg width="24" height="24" fill="yellow" xmlns="http://www.w3.org/2000/svg"><path d="M9.503 2.041 C 8.483 2.217,7.556 2.976,7.202 3.925 C 7.027 4.393,7.001 4.639,7.001 5.849 L 7.000 6.998 4.869 7.009 L 2.738 7.020 2.539 7.122 C 2.312 7.239,2.102 7.491,2.040 7.720 C 2.011 7.828,2.002 9.427,2.011 12.809 C 2.024 17.275,2.031 17.766,2.092 18.013 C 2.358 19.085,2.821 19.909,3.550 20.605 C 4.122 21.152,4.727 21.515,5.465 21.754 C 6.194 21.990,5.896 21.980,12.000 21.980 C 18.104 21.980,17.806 21.990,18.535 21.754 C 20.034 21.268,21.241 20.077,21.737 18.593 C 21.990 17.837,21.974 18.211,21.989 12.804 C 22.004 7.245,22.024 7.622,21.702 7.300 C 21.400 6.998,21.420 7.000,19.073 7.000 L 17.000 7.000 17.000 5.858 C 17.000 4.609,16.970 4.349,16.766 3.849 C 16.499 3.193,15.964 2.633,15.296 2.312 C 14.674 2.013,14.813 2.026,12.120 2.016 C 10.789 2.011,9.611 2.023,9.503 2.041 M14.340 4.066 C 14.593 4.153,14.847 4.407,14.934 4.660 C 14.989 4.822,15.000 5.033,15.000 5.927 L 15.000 7.000 16.000 7.000 L 17.000 7.000 17.000 9.573 C 17.000 12.477,17.008 12.394,16.701 12.701 C 16.521 12.881,16.242 13.000,16.000 13.000 C 15.758 13.000,15.479 12.881,15.299 12.701 C 14.992 12.394,15.000 12.477,15.000 9.573 L 15.000 7.000 12.000 7.000 L 9.000 7.000 9.000 9.573 C 9.000 12.477,9.008 12.394,8.701 12.701 C 8.310 13.092,7.690 13.092,7.299 12.701 C 6.992 12.394,7.000 12.477,7.000 9.573 L 7.000 7.000 8.000 7.000 L 9.000 7.000 9.000 5.927 C 9.000 4.691,9.021 4.577,9.300 4.298 C 9.596 4.002,9.550 4.007,11.983 4.003 C 13.897 4.000,14.168 4.008,14.340 4.066 " fill="yellow" stroke="none" fill-rule="evenodd"></path></svg>
+	</svg>
+	<p style="margin-left:0.5rem; font-size:1rem" class="text-warning"> Available for Rent</p>
+	
+	</div>
+		
+		<div style="display: flex; justify-content: space-between; align-items: center;">
+			<p style="margin: 0;">${movie.title}</p>
+			<div class="button-group" style="display: flex; gap: 10px;">
+				<a href="#" class="custom-plus-size text-white text-decoration-none rounded-circle" style="width: 39px; height: 39px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+					<svg width="18" height="18" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z" fill="white" />
+					</svg>
+				</a>
+				<a href="#" class="custom-play-button text-white text-decoration-none rounded-circle" style="width: 40px; height: 40px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+					<svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" >
+						<path d="M6.79 5.09294C6.71524 5.0397 6.62726 5.00808 6.53572 5.00152C6.44418 4.99497 6.35259 5.01373 6.27101 5.05576C6.18942 5.0978 6.12098 5.16147 6.07317 5.23982C6.02537 5.31817 6.00006 5.40816 6 5.49994V10.4999C6.00006 10.5917 6.02537 10.6817 6.07317 10.7601C6.12098 10.8384 6.18942 10.9021 6.27101 10.9441C6.35259 10.9861 6.44418 11.0049 6.53572 10.9984C6.62726 10.9918 6.71524 10.9602 6.79 10.9069L10.29 8.40694C10.3548 8.36068 10.4076 8.29962 10.4441 8.22883C10.4806 8.15804 10.4996 8.07956 10.4996 7.99994C10.4996 7.92031 10.4806 7.84184 10.4441 7.77104C10.4076 7.70025 10.3548 7.63919 10.29 7.59294L6.79 5.09294Z" fill="white"/>
+						<path d="M0 4C0 3.46957 0.210714 2.96086 0.585786 2.58579C0.960859 2.21071 1.46957 2 2 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V12C16 12.5304 15.7893 13.0391 15.4142 13.4142C15.0391 13.7893 14.5304 14 14 14H2C1.46957 14 0.960859 13.7893 0.585786 13.4142C0.210714 13.0391 0 12.5304 0 12V4ZM15 4C15 3.73478 14.8946 3.48043 14.7071 3.29289C14.5196 3.10536 14.2652 3 14 3H2C1.73478 3 1.48043 3.10536 1.29289 3.29289C1.10536 3.48043 1 3.73478 1 4V12C1 12.2652 1.10536 12.5196 1.29289 12.7071C1.48043 12.8946 1.73478 13 2 13H14C14.2652 13 14.5196 12.8946 14.7071 12.7071C14.8946 12.5196 15 12.2652 15 12V4Z" fill="white"/>
+					</svg>
+				</a>
+			</div>
+		</div>
+	<p style="color: #AAAAAA;">${overviewFirstLine}</p>
+        <p>Rating: ${movie.vote_average}</p>
+	</div>
+	`;
+	}
 
 	// Position card details below the card
 	const cardRect = card.getBoundingClientRect();
@@ -298,21 +322,22 @@ function hideCardDetails(event) {
 	}
 }
 
-async function populateSection(containerId, genreId) {
+async function populateSection(containerId, flag, ...genreId) {
 	const container = document
 		.getElementById(containerId)
 		.querySelector(".d-flex");
-	const movies = await fetchMoviesByGenre(genreId);
+	// console.log(genreId);
+	const movies = await fetchMoviesByGenre(...genreId);
 
 	container.innerHTML = "";
 
 	movies.forEach((movie) => {
-		const card = createMovieCard(movie);
+		const card = createMovieCard(flag, movie);
 		container.appendChild(card);
 	});
 }
 
-async function populateSectionLanguage(containerId) {
+async function populateSectionLanguage(containerId, flag) {
 	const container = document
 		.getElementById(containerId)
 		.querySelector(".d-flex");
@@ -321,12 +346,12 @@ async function populateSectionLanguage(containerId) {
 	container.innerHTML = "";
 
 	movies.forEach((movie) => {
-		const card = createMovieCard(movie);
+		const card = createMovieCard(flag, movie);
 		container.appendChild(card);
 	});
 }
 
-async function populateSectionLatestMovies(containerId) {
+async function populateSectionLatestMovies(containerId, flag) {
 	const container = document
 		.getElementById(containerId)
 		.querySelector(".d-flex");
@@ -335,12 +360,12 @@ async function populateSectionLatestMovies(containerId) {
 	container.innerHTML = "";
 
 	movies.forEach((movie) => {
-		const card = createMovieCard(movie);
+		const card = createMovieCard(flag, movie);
 		container.appendChild(card);
 	});
 }
 
-async function topIndianMovies(containerId) {
+async function topIndianMovies(containerId, flag) {
 	const container = document
 		.getElementById(containerId)
 		.querySelector(".d-flex");
@@ -349,7 +374,6 @@ async function topIndianMovies(containerId) {
 	container.innerHTML = "";
 
 	movies.slice(0, 10).forEach((movie, index) => {
-		console.log(movie.id);
 		const movieContainer = document.createElement("div");
 		movieContainer.style.display = "flex";
 		movieContainer.style.alignItems = "center";
@@ -374,21 +398,17 @@ async function topIndianMovies(containerId) {
 			numberElement.style.marginRight = "13px";
 			numberElement.style.color = "white";
 			const selectedMovieId = numberElement.dataset.movieId;
-			console.log(selectedMovieId);
 
 			const selectedMovie = movies.find(
 				(movie) => movie.id === Number(selectedMovieId)
 			);
 			if (selectedMovie) {
-				console.log(selectedMovie);
 				const carouselHTML = generateCarousel(selectedMovie);
-				console.log(carouselHTML);
 				document.getElementById("carousel-container").innerHTML = carouselHTML;
 			}
 		});
-		// console.log(numberElement.innerHTML);
 
-		const card = createMovieCard(movie, 1);
+		const card = createMovieCard(flag, movie, 1);
 		card.style.position = "relative";
 
 		movieContainer.appendChild(numberElement);
@@ -443,14 +463,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 					</div>
 					<div class="col-auto mt-2">
 						<a href="#"
-							class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle"
-							style="width: 60px; height: 60px; font-size: 2rem; line-height: 1; background-color:#DCDCDC; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+							class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle plus"
+							style="width: 60px; height: 60px; font-size: 2rem; line-height: 1; background-color:#33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
 							<svg width="30" height="30" viewBox="0 0 8 8" fill="none"
 								xmlns="http://www.w3.org/2000/svg" style="margin-left: 12px; margin-top: 10px;">
 								<path
 									d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z"
 									fill="white" />
 							</svg>
+							<span class="tooltip">Watchlist</span>
 						</a>
 					</div>
 				</div>
@@ -479,20 +500,59 @@ document.addEventListener("DOMContentLoaded", async function () {
 	});
 });
 
-populateSection("action-adventure-movies", 12, 28);
-populateSectionLanguage("english-movies");
-populateSection("drama-movies", 18);
-populateSectionLatestMovies("latest-movies");
-populateSection("mystery-movies", 9648, 53);
-populateSection("romance-movies", 10749);
-populateSection("comedy-movies", 35);
-populateSection("horror-movies", 27);
-populateSection("history-movies", 36);
-populateSection("family-movies", 10751);
-populateSection("fantasy-movies", 14);
-populateSection("war-movies", 10752);
-populateSection("fiction-movies", 878);
-populateSection("western-movies", 37);
-populateSection("documentaries", 99);
-topIndianMovies("top-movies", "number");
+document.addEventListener("DOMContentLoaded", function () {
+	let seeMoreLinks = document.querySelectorAll(".see-more-link");
+
+	seeMoreLinks.forEach(function (link) {
+		link.addEventListener("click", function (event) {
+			event.preventDefault();
+			let genreIds;
+			if (this.getAttribute("data-genre-id")) {
+				genreIds = this.getAttribute("data-genre-id").split(",");
+			}
+
+			let lang = this.getAttribute("data-lang");
+
+			let baseUrl = "./seemore.html";
+			let newUrl;
+			newUrl = baseUrl;
+			if (genreIds) {
+				newUrl += "?genreIds=" + genreIds.join(",");
+			}
+
+			if (lang) {
+				newUrl += "?lang=" + lang;
+			}
+
+			window.location.href = newUrl;
+		});
+	});
+});
+
+populateSection("action-adventure-movies", "n", 12, 28);
+populateSectionLanguage("english-movies", "n");
+populateSection("drama-movies", "n", 18);
+populateSectionLatestMovies("latest-movies", "n");
+populateSection("mystery-movies", "n", 9648, 53);
+populateSection("romance-movies", "n", 10749);
+populateSection("comedy-movies", "n", 35);
+populateSection("horror-movies", "n", 27);
+populateSection("history-movies", "n", 36);
+populateSection("family-movies", "n", 10751);
+populateSection("fantasy-movies", "n", 14);
+populateSection("war-movies", "n", 10752);
+populateSection("fiction-movies", "n", 878);
+populateSection("western-movies", "n", 37);
+populateSection("documentaries", "n", 99);
+topIndianMovies("top-movies", "n", "number");
+populateSection("action-adventure-movies-rent", "y", 12, 28);
+populateSectionLanguage("english-movies-rent", "y");
+populateSection("drama-movies-rent", "y", 18);
+populateSection("history-movies-rent", "y", 36);
+populateSection("family-movies-rent", "y", 10751);
+populateSection("fantasy-movies-rent", "y", 14);
+populateSection("war-movies-rent", "y", 10752);
+populateSection("fiction-movies-rent", "y", 878);
+populateSection("western-movies-rent", "y", 37);
+populateSection("documentaries-rent", "y", 99);
 fetchMovies();

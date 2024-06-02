@@ -19,8 +19,8 @@
 
         <div class="carousel-inner rounded" id="carousel-inner">
             <div class="carousel-item template">
-                <video class="carousel-video d-none" controls>
-                </video>
+                <iframe class="carousel-video d-none" frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen ></iframe>
                 <img class="carousel-image">
                 <div class="carousel-caption p-3 pt-5 ">
                     <div class="info text-left pl-3">
@@ -79,12 +79,14 @@
             </div>
         </div>
 
+        <div id="trailer-container"></div>
+
     </div>
 
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary">Prime</span> Action and Adventure Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="12,28">See More ></a>
         </div>
         <div class="scrollable-images-container" id="action-adventure-movies">
             <div class="d-flex p-2 pl-0 " id="card-wrapper">
@@ -96,7 +98,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> English Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-lang="en">See More ></a>
         </div>
         <div class="scrollable-images-container" id="english-movies">
             <div class="d-flex p-2 pl-0">
@@ -107,7 +109,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Drama Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="18">See More ></a>
         </div>
         <div class="scrollable-images-container" id="drama-movies">
             <div class="d-flex p-2 pl-0">
@@ -119,7 +121,6 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Latest Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
         </div>
         <div class="scrollable-images-container" id="latest-movies">
             <div class="d-flex p-2 pl-0">
@@ -130,7 +131,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Mystery and Thriller Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="9648,53">See More ></a>
         </div>
         <div class="scrollable-images-container" id="mystery-movies">
             <div class="d-flex p-2 pl-0">
@@ -141,7 +142,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Romance Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10749">See More ></a>
         </div>
         <div class="scrollable-images-container" id="romance-movies">
             <div class="d-flex p-2 pl-0">
@@ -152,7 +153,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Comedy Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="35">See More ></a>
         </div>
         <div class="scrollable-images-container" id="comedy-movies">
             <div class="d-flex p-2 pl-0">
@@ -163,7 +164,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Horror Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="27">See More ></a>
         </div>
         <div class="scrollable-images-container" id="horror-movies">
             <div class="d-flex p-2 pl-0">
@@ -187,7 +188,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> History Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="36">See More ></a>
         </div>
         <div class="scrollable-images-container" id="history-movies">
             <div class="d-flex p-2 pl-0">
@@ -198,7 +199,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Kids and Family Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10751">See More ></a>
         </div>
         <div class="scrollable-images-container" id="family-movies">
             <div class="d-flex p-2 pl-0">
@@ -209,7 +210,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Fantasy Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="14">See More ></a>
         </div>
         <div class="scrollable-images-container" id="fantasy-movies">
             <div class="d-flex p-2 pl-0">
@@ -220,7 +221,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Military and War Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10752">See More ></a>
         </div>
         <div class="scrollable-images-container" id="war-movies">
             <div class="d-flex p-2 pl-0">
@@ -231,7 +232,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Science Fiction Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="878">See More ></a>
         </div>
         <div class="scrollable-images-container" id="fiction-movies">
             <div class="d-flex p-2 pl-0">
@@ -242,7 +243,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Western Movies
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="37">See More ></a>
         </div>
         <div class="scrollable-images-container" id="western-movies">
             <div class="d-flex p-2 pl-0">
@@ -253,7 +254,7 @@
     <div class="container-fluid p-3 ml-3">
         <div class="heading p-1">
             <span class="text-primary ">Prime</span> Documentaries
-            <a href="#" class="text-white ml-3  text-decoration-none">See More ></a>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="99">See More ></a>
         </div>
         <div class="scrollable-images-container" id="documentaries">
             <div class="d-flex p-2 pl-0">
@@ -269,6 +270,131 @@
         <div id="carousel-container"></div>
 
         <div class="scrollable-images-container" id="top-movies">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="p-3 ml-3 heading p-1 text-warning" style="font-size: larger;">
+        Rented Movies
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1 text-warning">
+            Action and Adventure Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="12,28">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="action-adventure-movies-rent">
+            <div class="d-flex p-2 pl-0 " id="card-wrapper">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1 text-warning">
+            English Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-lang="en">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="english-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1 text-warning">
+            Drama Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="18">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="drama-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            History Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="36">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="history-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Kids and Family Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="10751">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="family-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Fantasy Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="14">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="fantasy-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Military and War Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="10752">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="war-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Science Fiction Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="878">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="fiction-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Western Movies
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="37">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="western-movies-rent">
+            <div class="d-flex p-2 pl-0">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3 text-warning">
+        <div class="heading p-1">
+            Documentaries
+            <a class="text-white ml-3  text-decoration-none see-more-link text-warning" data-genre-id="99">See More
+                ></a>
+        </div>
+        <div class="scrollable-images-container" id="documentaries-rent">
             <div class="d-flex p-2 pl-0">
             </div>
         </div>
