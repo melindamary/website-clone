@@ -10,6 +10,53 @@
 </head>
 
 <body>
+    <!-- navbar -->
+    
+    <div class="navbar">
+        <div class="spacer1"></div>
+        <a href="#" class="logo"
+          ><img
+            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+            alt="Logo"
+        /></a>
+        <div class="menu" id="menu">
+          <div class="dropdown">
+            <a href="#">Home</a>
+            <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#">Store</a>
+            <div class="dropdown-content">
+              <a href="#">Option 1</a>
+              <a href="#">Option 2</a>
+              <a href="#">Option 3</a>
+            </div>
+          </div>
+          <a href="#">Live TV</a>
+          <a href="#">Categories</a>
+
+          <div class="spacer"></div>
+
+          <div class="icon">🔍</div>
+          <a href="#">Try for Free</a>
+          <div class="dropdown">
+            <a href="#">EN</a>
+            <div class="dropdown-content">
+              <a href="#">HI</a>
+              <a href="#">ZH</a>
+              <a href="#">EN</a>
+            </div>
+          </div>
+          <div class="icon">👤</div>
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+      </div>
+
+
     <h1 class="pt-5 pl-4 ml-2">Movies</h1>
 
     <div id="demo" class="carousel slide h-10 p-3 ml-3 mr-3 " data-ride="carousel">
@@ -19,8 +66,8 @@
 
         <div class="carousel-inner rounded" id="carousel-inner">
             <div class="carousel-item template">
-                <iframe class="carousel-video d-none" frameborder="0"
-                    allow="autoplay; encrypted-media" allowfullscreen ></iframe>
+                <iframe class="carousel-video d-none" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
                 <img class="carousel-image">
                 <div class="carousel-caption p-3 pt-5 ">
                     <div class="info text-left pl-3">
@@ -54,9 +101,9 @@
                         </div>
                         <div class="row d-flex align-items-center ">
                             <div class="col-auto">
-                                <button class="btn more-details-button p-3 d-none d-md-block"
+                                <a class="btn more-details-button p-3 d-none d-md-block" id="more-details-button"
                                     style="font-size: 1.3rem;">More details
-                                </button>
+                                </a>
 
                             </div>
                             <div class="col-auto mt-2">

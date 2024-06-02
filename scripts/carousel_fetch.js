@@ -2,6 +2,11 @@ const apiKey = "68878f95957e5338131429885d26e879";
 const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&adult="false"`;
 const imageBaseUrl = "http://image.tmdb.org/t/p/w1280";
 
+document.getElementById("hamburger").onclick = function () {
+	var menu = document.getElementById("menu");
+	menu.classList.toggle("show");
+};
+
 async function fetchMovies() {
 	try {
 		const response = await fetch(url);
@@ -57,8 +62,15 @@ function populateCarousel(movies) {
 				movie.title;
 
 			setupCarousel(movie, carouselItem);
-
 			carouselInner.appendChild(carouselItem);
+
+			document
+				.getElementById("more-details-button")
+				.addEventListener("click", (event) => {
+					console.log("listener");
+					event.preventDefault();
+					window.location.href = `./movie-info-design.html?movieId=${movie.id}`;
+				});
 		}
 	});
 }
@@ -459,7 +471,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 				</div>
 				<div class="row d-flex align-items-center ">
 					<div class="col-auto">
-						<button class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;">More details</button>
+						<a class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;" href="movie-info-design.html?movieId=${movie.id}">More details</a>
 					</div>
 					<div class="col-auto mt-2">
 						<a href="#"
