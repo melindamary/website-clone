@@ -67,7 +67,6 @@ function populateCarousel(movies) {
 			document
 				.getElementById("more-details-button")
 				.addEventListener("click", (event) => {
-					console.log("listener");
 					event.preventDefault();
 					window.location.href = `./movie-info-design.html?movieId=${movie.id}`;
 				});
@@ -124,7 +123,6 @@ async function setupCarousel(movie, carouselItem) {
 
 async function fetchMoviesByGenre(...genreId) {
 	const genresQuery = genreId.join(",");
-	console.log(genresQuery);
 	const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${genresQuery}&adult="false"`;
 	try {
 		const response = await fetch(url);
@@ -338,7 +336,6 @@ async function populateSection(containerId, flag, ...genreId) {
 	const container = document
 		.getElementById(containerId)
 		.querySelector(".d-flex");
-	// console.log(genreId);
 	const movies = await fetchMoviesByGenre(...genreId);
 
 	container.innerHTML = "";
