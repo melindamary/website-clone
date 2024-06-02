@@ -1,74 +1,127 @@
-body{
-  height:100vh;
+body {
+  height: 100vh;
   padding: 0px;
-  margin:0px;
+  margin: 0px;
+  font-family: "Amazon Ember", sans-serif;
 }
-.ps-4percent{
+.navbar {
+  transition: background-color 0.3s ease;
+}
+.navbar.transparent {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: none;
+}
+.navbar .navbar-nav {
+  margin: auto;
+}
+.navbar .navbar-collapse {
+  justify-content: center;
+}
+.navbar-toggler {
+  margin: auto;
+}
+.navbar-nav .nav-item {
+  margin: 0 10px;
+}
+.nav-icon {
+  margin-top: 8px;
+}
+.ps-4percent {
   padding-left: 4%;
 }
-.pe-4percent{
+.pe-3percent {
+  padding-right: 3%;
+}
+.pe-4percent {
   padding-right: 4%;
 }
-.pt-8percent{
+
+.pt-8percent {
   padding-top: 8%;
 }
-.pt-4percent{
+.pt-1percent {
+  padding-top: 1%;
+}
+.pt-2percent {
+  padding-top: 2%;
+}
+.pt-4percent {
   padding-top: 3%;
 }
-.w-10{
+.w-10 {
   width: 11%;
 }
-.me-2percent{
+.me-2percent {
   margin-right: 1.5%;
 }
-.me-1percent{
+.me-1percent {
   margin-right: 1%;
 }
-.me-point-3percent{
+.me-point-3percent {
   margin-right: 0.3%;
 }
-.bg-black{
+.mt-neg-10px {
+  margin-top: -10px;
+}
+.bg-black {
   background-color: black;
 }
-.movie-details-div{
+.movie-details-div {
   height: 100%;
   width: 100%;
 }
-.fs-12{
+.fs-12 {
   font-size: 12px;
 }
-.fs-14{
+.fs-14 {
   font-size: 14px;
 }
-.fs-18{
+.fs-18 {
   font-size: 18px;
 }
-.fs-20{
+.fs-20 {
   font-size: 20px;
 }
-.fs-28{
+.fs-28 {
   font-size: 24px;
 }
-.fs-38{
+.fs-34 {
+  font-size: 34px;
+}
+.fs-38 {
   font-size: 38px;
 }
-
-.fw-600{
+.fs-50 {
+  font-size: 50px;
+}
+.fw-600 {
   font-weight: 600;
 }
-.bold{
+.bold {
   font-weight: bold;
 }
 .hidden {
   display: none; /* Hide by default */
 }
-#uhd{
-  height: 12px;
-  font-size: 12px;
+#website-logo {
+  letter-spacing: 0.05rem;
+}
+#uhd-div {
+  height: 20px;
+  margin-top: 5px;
+}
+#uhd {
+  height: 20px;
+  font-size: 16px;
   margin-top: -2px;
   font-weight: 600;
+  padding-bottom: 1px;
 }
-.boxed-div{
+.boxed-div {
   height: 14px;
   border-radius: 2px;
   width: auto;
@@ -76,130 +129,196 @@ body{
   padding: 0px 5px 2px;
 }
 
-#movie-overview{
+#movie-overview {
   width: 70%;
   text-align: justify;
 }
 
-.movie-info-buttons{
+.movie-info-buttons {
   border: none;
   border-radius: 5px;
-  height: 45px;
+  height: 55px;
   padding: 0px 18px;
+  color: #ffffff;
+  transition: 0.2s ease;
 }
-
-#movie-info-subnav{
+.movie-info-buttons:hover {
+  background-color: white;
+  color: #00050d;
+  transform: scale(1.1);
+}
+.movie-info-buttons:first-child {
+  background-color: white;
+  color: #00050d;
+}
+.movie-info-buttons:first-child:hover {
+  background-color: #e8e5e5;
+  color: #999999;
+}
+#movie-info-subnav {
   width: 100%;
   padding: 0px 3px 2px 5px;
   margin-top: 1.5rem;
 }
 
-#movie-info-subnav button{
+#movie-info-subnav button {
   border: none;
   color: rgb(192, 192, 192);
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
 }
 
-#movie-info-subnav button:hover{
+#movie-info-subnav button:hover {
   color: white;
 }
-.bg-transparent-gray{
-  background-color: rgba(108,117,125,0.6);
+.bg-transparent-gray {
+  background-color: rgba(108, 117, 125, 0.6);
 }
-.border-circle{
+.border-circle {
   border-radius: 50%;
   width: 45px;
   height: 45px;
 }
-#more-info{
+#more-info {
   height: auto;
   padding-bottom: 50px;
 }
-.button-icons{
+.button-icons {
   margin-top: -6px;
   border: none;
   outline: none;
 }
-#horizontal-rule{
+#horizontal-rule {
   height: 3px;
-  background-color: rgba(128,128,128,0.5);
-  width:95%;
+  background-color: rgba(128, 128, 128, 0.5);
+  width: 95%;
 }
-.underline{
+.underline {
   border-bottom: solid 1px white;
 }
-.underline:hover{
+.underline:hover {
   text-decoration: none;
   cursor: pointer;
 }
 
-#related-movies-tab{
+#related-movies-tab {
   height: 100vh;
 }
-
-.color-blue{
+#check-circle-icon {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #1399ff;
+}
+#check-circle-icon img {
+  margin-left: -8px;
+  margin-top: -8px;
+}
+.prime-blue {
+  color: #1399ff;
+}
+.color-gray {
+  color: #999999;
+}
+.color-gray4 {
+  color: #aaaaaa;
+}
+.color-blue {
   color: #79b8f3;
 }
-.color-storm-petrel{
+.bg-color-gray2 {
+  background-color: #33373d;
+}
+.bg-color-gray3 {
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
+.color-storm-petrel {
   color: #8197a4;
 }
-#lang{
+#lang,
+#subtitles {
   width: 58%;
   word-wrap: break-word;
   text-align: justify;
 }
-#brand-logo{
+#brand-logo {
   background-size: contain;
   background-repeat: no-repeat;
   height: 32px;
   width: 78%;
 }
-.trailer-container{
+.trailer-container {
   height: 100vh;
 }
-#trailer-button{
-  background-image: url("../assets/movie-video.svg");
+#trailer-button {
+  background-image: url("../assets/movie-info-page/movie-video.svg");
   background-position: center;
   background-size: 80% 80%;
   background-repeat: no-repeat;
 }
-#watchlist-button{
-  background-image: url("../assets/plus.svg");
+#trailer-button:hover {
+  background-image: url("../assets/movie-info-page/movie-video-black.svg");
 }
-#like-button{
-  background-image: url("../assets/thumbs-up.svg");
+#trailer-video {
+  width: 100%;
+  height: 100%;
 }
-#dislike-button{
-  background-image: url("../assets/thumbs-up.svg");
-  transform: rotate(180deg);
-}
-#share-button{
-  background-image: url("../assets/share.svg");
-}
-#watchlist-button, #like-button, #dislike-button, #share-button{
+#watchlist-button {
+  background-image: url("../assets/movie-info-page/plus.svg");
   background-position: center;
   background-size: 60% 60%;
   background-repeat: no-repeat;
 }
-#close-button{
-  background-image: url("../assets/close-icon.svg");
+#watchlist-button:hover {
+  background-image: url("../assets/movie-info-page/plus-black.svg");
+}
+#like-button {
+  background-image: url("../assets/movie-info-page/thumbs-up.svg");
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+}
+#like-button:hover {
+  background-image: url("../assets/movie-info-page/thumbs-up-black.svg");
+}
+#dislike-button {
+  background-image: url("../assets/movie-info-page/thumbs-up.svg");
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+}
+#dislike-button:hover {
+  background-image: url("../assets/movie-info-page/thumbs-up-black.svg");
+}
+#share-button {
+  background-image: url("../assets/movie-info-page/share.svg");
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+}
+#share-button:hover {
+  background-image: url("../assets/movie-info-page/share-black.svg");
+}
+#close-button {
+  background-image: url("../assets/movie-info-page/close-icon.svg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 5%;
   width: 2%;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border: none;
   position: relative;
-  margin-left: 73%;
-  margin-bottom: 1%;
+  margin-left: 98%;
+  margin-top: 0.5%;
   padding: 1%;
-} 
-#close-button:hover{
+}
+#close-button:hover {
   border: none;
   background-color: gray;
 }
-#related-movies-container{
+
+#related-movies-container {
   width: 100%;
   height: 500px;
   overflow-x: scroll;
@@ -208,10 +327,11 @@ body{
   margin-left: -20px;
   margin-top: -20px;
 }
-#related-movies-content{
+#related-movies-content {
   width: 6000px;
   height: 80%;
 }
+
 .movie-card {
   position: relative;
   width: 550px;
@@ -234,7 +354,7 @@ body{
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
 }
-::-webkit-scrollbar{
+#related-movies-tab ::-webkit-scrollbar {
   background-color: transparent;
 }
 .movie-card-details h4 {
@@ -242,6 +362,7 @@ body{
   font-size: 18px;
   font-weight: bold;
 }
+
 .movie-card-details p {
   margin: 0;
   font-size: 14px;
@@ -251,7 +372,7 @@ body{
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5; 
-  text-overflow: ellipsis;   
-  text-align: justify;     
+  -webkit-line-clamp: 5; /* Number of lines to show, adjust as needed */
+  text-overflow: ellipsis;
+  text-align: justify;
 }

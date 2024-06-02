@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const urlParams = new URLSearchParams(window.location.search);
   let movieId = urlParams.get('movieId');
-  if(movieId == undefined) movieId = 929590;
+  if(movieId == undefined) movieId = 748783;
   console.log("Hi",movieId);
 
   fetch(`https://api.themoviedb.org/3/movie/${movieId}`, options)
@@ -38,6 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
       let movieVoteAverage = document.getElementById("movie-vote-average");
       movieVoteAverage.innerHTML = movie.vote_average.toFixed(1);
   
+      let movieRuntime = document.getElementById("runtime");
+      const hours = Math.floor(movie.runtime / 60);
+      const minutes = movie.runtime % 60;
+      movieRuntime.innerHTML = hours + " h " + minutes + " min";
+      
       let movieReleaseYear = document.getElementById("movie-release-year");
       let date = new Date(movie.release_date);
       movieReleaseYear.innerHTML = date.getFullYear();
@@ -79,21 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
         type: "language",
       });
       let movieLanguage = document.getElementById("lang");
+      let audioLanguages = movie.spoken_languages;
+      for (let i = 0; i < audioLanguages.length; i++) {
+        movieLanguage.append(audioLanguages[i].name);
+        if (i < audioLanguages.length - 1) {
+          movieLanguage.append(", ");
+        }
+      }
+
       fetch(
         `https://api.themoviedb.org/3/movie/${movieId}/translations?`,
         options
-      ).then((response) => response.json())
-      .then((response) => {
-        console.log(response.translations)
-        let audioLanguages = response.translations;
-        for(let i=0; i<audioLanguages.length; i++){
-          movieLanguage.append(audioLanguages[i].name)
-          if(i<audioLanguages.length-1){
-            movieLanguage.append(", ")
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          let movieSubtitles = document.getElementById("subtitles");
+          console.log(response.translations);
+          let audioLanguages = response.translations;
+          for (let i = 0; i < audioLanguages.length; i++) {
+            movieSubtitles.append(audioLanguages[i].name);
+            if (i < audioLanguages.length - 1) {
+              movieSubtitles.append(", ");
+            }
           }
-        }
-  
-      });
+        });
   
       // Movie Credits (Cast and Crew)
       fetch(
@@ -182,6 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           }
       });
+
+      // Production Studio
+      let movieStudio = document.getElementById("studio");
+      movieStudio.innerHTML = movie.production_companies[0].name;
   
       // Related Movies
       fetch(`https://api.themoviedb.org/3/movie/${movieId}/recommendations?`, options)
