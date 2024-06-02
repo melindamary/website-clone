@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"rootDir": "./ts",
+		"outDir": "public/scripts",
+    	"module": "AMD",
+		"strict": true,
+		"noEmit": false,
+        "lib": [
+            "DOM",
+            "ES2016"
+        ]
+	}
+}
