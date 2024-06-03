@@ -115,7 +115,7 @@ function createMovieCard(movie, id) {
     card.addEventListener("mouseenter", () => showCardDetails(movie, card));
     card.addEventListener("mouseleave", hideCardDetails);
 	card.addEventListener("click",()=>{
-		window.location.href = `trailer.html?movieId=${movie.id}`
+		window.location.href = `movie-info.html?movieId=${movie.id}`
 	})
   }
   return card;
@@ -303,6 +303,83 @@ document.addEventListener("DOMContentLoaded", async function () {
   });
 });
 
+const sliderFunctionality = async () => {
+  const slideContainer = document.querySelector(".slide-container");
+
+  if (!slideContainer) return;
+
+  const fetchMovies = async () => {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}`
+    );
+    const data = await response.json();
+    return data.results;
+  };
+
+  const movies = await fetchMovies();
+
+  slideContainer.innerHTML = "";
+
+  movies.forEach((movie, index) => {
+    const inputId = `c${index + 1}`;
+
+    const inputElement = document.createElement("input");
+    inputElement.type = "radio";
+    inputElement.name = "slide";
+    inputElement.id = inputId;
+    if (index === 0) inputElement.checked = true;
+
+    const labelElement = document.createElement("label");
+    labelElement.htmlFor = inputId;
+    labelElement.style.position = "relative";
+    labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+    labelElement.addEventListener("mouseenter", () => {
+      labelElement.style.backgroundImage = `url(https://image.tmdb.org/t/p/w1280${movie.backdrop_path})`;
+      labelElement.innerHTML = `
+			<div class="p-3 pt-5" style="position: absolute; bottom: 0;">
+			<div class="info text-left pl-3">
+				<div class="row mb-5">
+					<div class="col-12">
+						<h4 class="movie-carousel-name">${movie.title}</h4>
+					</div>
+				</div>
+				<div class="row d-flex align-items-center ">
+					<div class="col-auto">
+						<a class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;" href="movie-info-design.html?movieId=${movie.id}">More details</a>
+					</div>
+					<div class="col-auto mt-2">
+						<a href="#"
+							class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle plus"
+							style="width: 60px; height: 60px; font-size: 2rem; line-height: 1; background-color:#33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+							<svg width="30" height="30" viewBox="0 0 8 8" fill="none"
+								xmlns="http://www.w3.org/2000/svg" style="margin-left: 12px; margin-top: 10px;">
+								<path
+									d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z"
+									fill="white" />
+							</svg>
+							<span class="tooltip">Watchlist</span>
+						</a>
+					</div>
+				</div>
+				<div class="row pt-4">
+					<div class="col-auto">
+						<p class="mb-0 mb-md-2 ">Watch with a Prime membership</p>
+					</div>
+					<div class="col" style="margin-top: 0.1rem;">
+						<p class="mb-0 d-none d-md-block fw-bold"><span class="px-2 py-1 rounded"
+								style="background-color: #33373d;">U/A 13+</span></p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+    `;
+    });
+
+    slideContainer.appendChild(inputElement);
+  });
+};
+
 fetchMovies();
 populateSection("action-adventure-movies", 12, 28);
 populateSectionLanguage("english-movies");
@@ -319,3 +396,4 @@ populateSection("war-movies", 10752);
 populateSection("fiction-movies", 878);
 populateSection("western-movies", 37);
 populateSection("documentaries", 99);
+sliderFunctionality();

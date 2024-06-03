@@ -268,3 +268,38 @@ body {
 /* .card:hover{
     height: 380px;
 } */
+
+.slide-wrapper {
+  width: 100%;
+  height: 30rem;
+  overflow-y: scroll;
+}
+
+.slide-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slide-card {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 0.75rem;
+  background-size: cover;
+  cursor: pointer;
+  margin: 0 10px;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  background-color: white;
+  transform-origin: left;
+}
+
+.slide-card:hover {
+  z-index: 1;
+  width: 53.3rem;
+  height: 30rem;
+  transition: width 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+}
+
+input {
+  display: none;
+}
