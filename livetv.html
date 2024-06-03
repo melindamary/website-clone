@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Tv</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="./style/style.css">
+</head>
+<body>
+<div class="navbar">
+          <div class="spacer1"></div>
+          <a href="#" class="logo"
+            ><img
+              src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+              alt="Logo"
+          /></a>
+          <div class="menu" id="menu">
+            <div class="dropdown">
+              <a href="#">Home</a>
+              <div class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a href="#">Store</a>
+              <div class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+              </div>
+            </div>
+            <a href="#">Live TV</a>
+            <a href="#">Categories</a>
+ 
+            <div class="spacer"></div>
+ 
+            <div class="icon">🔍</div>
+            <a href="#">Try for Free</a>
+            <div class="dropdown">
+              <a href="#">EN</a>
+              <div class="dropdown-content">
+                <a href="#">HI</a>
+                <a href="#">ZH</a>
+                <a href="#">EN</a>
+              </div>
+            </div>
+            <div class="icon">👤</div>
+          </div>
+          <div class="hamburger" id="hamburger">&#9776;</div>
+        </div>
+ 
+    <div class="row">
+       
+            <div class="custom-bg">
+                <h1 class="white-text">Live TV</h1>
+                <p class="yellow-text">Fancode: Live and upcoming events</p>
+            </div>
+       
+        </div>
+
+        <div class="row">
+          <div class="custom-bg">
+            <div class="container" id="cardContainer"></div>
+        </div>
+        </div>
+
+        <div class="row ">
+                <p class="yellow-text custom-bg">BBC Kids</p>
+        </div>
+
+            <div class="row">
+                
+                 <div class="image-logocontainer">  
+                  <img src="./assets/logo.png" alt="logo">
+                </div>
+                
+                <div id="cartoonList" class="container">
+                  <!-- Cartoon cards will be displayed here -->
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="cartoonModal" tabindex="-1" aria-labelledby="cartoonModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="cartoonModalLabel">Cartoon Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h2 id="modalCartoonTitle"></h2>
+                        <p id="modalCartoonDescription"></p>
+                        <img id="modalCartoonImage" src="" alt="Cartoon Image" style="width: 100%;">
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row ">
+                
+                    <p class="yellow-text custom-bg">BBC Player</p>
+                
+            </div>
+                <div class="row">
+                    
+                    <div class="image-logocontainer"> 
+                      <img src="./assets/logo.png" alt="logo">
+                    
+                    </div>
+                    
+                    <div id="characterList" class="container">
+                      <!-- Character cards will be displayed here -->
+                    </div>
+
+                    <div class="modal fade" id="characterModal" tabindex="-1" aria-labelledby="characterModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="characterModalLabel">Character Details</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <h2 id="modalCharacterName"></h2>
+                            <p id="modalCharacterDescription"></p>
+                            <img id="modalCharacterImage" src="" alt="Character Image" style="width: 100%;">
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+         
+                  </div>
+
+                  <div class="row ">
+                    
+                        <p class="yellow-text custom-bg">Discovery +</p>
+                    
+                </div>
+                    <div class="row">
+                        
+                        <div class="image-logocontainer"> 
+                          <img src="./assets/tlc.png" alt="logo">
+                        
+                        </div>
+                        <div id="coffeeList" class="container">
+                          <!-- Coffee cards will be displayed here -->
+                        </div>
+                        <div class="modal fade" id="coffeeModal" tabindex="-1" aria-labelledby="coffeeModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="coffeeModalLabel">Coffee Details</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                <h2 id="modalCoffeeTitle"></h2>
+                                <p id="modalCoffeeDescription"></p>
+                                <img id="modalCoffeeImage" src="" alt="Coffee Image" style="width: 100%;">
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        </div>
+                        
+                      <div class="row">   
+                        <p class="yellow-text custom-bg">Museum TV</p>
+                            
+                        </div>
+                        <div class="row">
+                          
+                          <div class="image-logocontainer"> 
+                            <img src="./assets/museum.png" alt="logo">
+                          </div>
+                          <div id="recipeList" class="container"></div>
+                          <div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="modalRecipeTitle" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="modalRecipeTitle"></h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <p id="modalRecipeDescription"></p>
+                                  <img id="modalRecipeImage" src="" alt="Recipe Image" class="img-fluid">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          </div>
+                          
+          
+                          </div>
+                          <div class="row ">
+                            
+                                <p class="yellow-text custom-bg">ManoramaMAX</p>
+                            
+                        </div>
+                        <div class="row">
+                          
+                          <div class="image-logocontainer"> 
+                            <img src="./assets/manorama max.png" alt="logo">
+                          
+                          </div>
+                         
+                          
+                          </div>
+                      
+              <div class="row ">
+                
+                    <p class="yellow-text custom-bg">MyZen Tv</p>
+                
+            </div>  
+            <div class="row">
+                
+                <div class="image-logocontainer"> 
+                  <img src="./assets/Myzen.png" alt="logo">
+                </div>
+                <div id="avatarContainer" class="container">
+                  <!-- Avatar info card will be displayed here -->
+                </div>
+                
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="avatarModal" tabindex="-1" aria-labelledby="avatarModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="avatarModalLabel">Avatar Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <h2 id="modalAvatarTitle"></h2>
+                        <p id="modalAvatarDescription"></p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>         
+              </div>
+    
+    
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./scripts/livetv.js"></script>
+</body>
+</html>
