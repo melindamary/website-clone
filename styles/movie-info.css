@@ -155,6 +155,42 @@ body {
   background-color: #e8e5e5;
   color: #999999;
 }
+.popup-text {
+  display: none;
+  position: absolute;
+  top: -40px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 80px;
+}
+#dislike-button .popup-text{
+  /* display: none; */
+  position: absolute;
+  top: 55px; /* Adjust this value as needed */
+  left: -25px;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100px;
+  transform: rotate(180deg);
+}
+
+#watchlist-button:hover .popup-text,
+#trailer-button:hover .popup-text,
+#like-button:hover .popup-text,
+#dislike-button:hover .popup-text,
+#share-button:hover .popup-text{
+  display: block;
+}
+
 .movie-info-card-button {
   border: none;
   border-radius: 5px;
