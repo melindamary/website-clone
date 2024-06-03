@@ -16,7 +16,7 @@
     />
     <style></style>
   </head>
-  <body onload="showMovie()">
+  <body>
     <!-- Navigation Bar -->
     <nav
       class="navbar navbar-expand-sm navbar-dark bg-black py-0 ps-4 fixed-top"
@@ -266,14 +266,14 @@
           <div class="d-flex justify-content-center">
             <button
               class="fs-20 fw-600 text-decoration-none toggle-button-1"
-              onclick="showtab('related-movies-tab', 1)"
+              onclick="showtab('related-movies-tab')"
             >
               Related
             </button>
 
             <button
               class="fs-20 fw-600 text-decoration-none toggle-button-2"
-              onclick="showtab('details-tab', 2)"
+              onclick="showtab('details-tab')"
             >
               Details
             </button>
@@ -359,8 +359,6 @@
     <script>
       const showtab = (tabName, btn) => {
         var tabs = document.querySelectorAll(".toggle-content");
-        var btn1 = document.querySelectorAll(".toggle-button-1");
-        var btn2 = document.querySelectorAll(".toggle-button-2");
         tabs.forEach((tab) => {
           if (tab.id === tabName) {
             tab.classList.remove("hidden");

@@ -27,8 +27,8 @@ body {
 .navbar-nav .nav-item {
   margin: 0 10px;
 }
-.nav-icon {
-  margin-top: 8px;
+.nav-icon{
+    margin-top: 8px;
 }
 .ps-4percent {
   padding-left: 4%;
@@ -155,6 +155,19 @@ body {
   background-color: #e8e5e5;
   color: #999999;
 }
+.movie-info-card-button {
+  border: none;
+  border-radius: 5px;
+  height: 55px;
+  padding: 0px 18px;
+  color: #ffffff;
+  transition: 0.2s ease;
+}
+.movie-info-card-button:hover {
+  background-color: white;
+  color: #00050d;
+  transform: scale(1.1);
+}
 #movie-info-subnav {
   width: 100%;
   padding: 0px 3px 2px 5px;
@@ -203,14 +216,24 @@ body {
 #related-movies-tab {
   height: 100vh;
 }
-#check-circle-icon {
+#check-circle-icon{
   height: 20px;
   width: 20px;
   border-radius: 50%;
   background-color: #1399ff;
 }
-#check-circle-icon img {
+#check-circle-icon img{
   margin-left: -8px;
+  margin-top: -8px;
+}
+#card-check-circle-icon{
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background-color: #1399ff;
+}
+#card-check-circle-icon img{
+  margin-left: -6px;
   margin-top: -8px;
 }
 .prime-blue {
@@ -354,6 +377,29 @@ body {
   box-sizing: border-box;
   border-radius: 0 0 10px 10px;
 }
+#card-watchlist-button {
+  background-image: url("../assets/movie-info-page/plus.svg");
+  background-position: center;
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+}
+#card-watchlist-button:hover {
+  background-image: url("../assets/movie-info-page/plus-black.svg");
+}
+#card-trailer-button {
+  background-image: url("../assets/movie-info-page/movie-video.svg");
+  background-position: center;
+  background-size: 80% 80%;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+}
+#card-trailer-button:hover {
+  background-image: url("../assets/movie-info-page/movie-video-black.svg");
+}
+
 #related-movies-tab ::-webkit-scrollbar {
   background-color: transparent;
 }
@@ -375,4 +421,16 @@ body {
   -webkit-line-clamp: 5; /* Number of lines to show, adjust as needed */
   text-overflow: ellipsis;
   text-align: justify;
+}
+
+.movie-details-buttons{
+  margin-right: 7%;
+  margin-top: -10px;
+}
+
+.movie-details-h4{
+  width: 90%;
+  text-wrap: wrap;
+  margin-top: -3px;
+  margin-bottom: 5px;
 }

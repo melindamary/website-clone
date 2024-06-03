@@ -212,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
           similarMovies.forEach(similarMovie => {
               let movieId = similarMovie.id;
               let imgSrc = similarMovie.poster_path;
+              let similarMovieDate = new Date(similarMovie.release_date);
               let movieCard = document.createElement('div');
               movieCard.classList.add('movie-card');
               let movieImage = document.createElement('img');
@@ -226,15 +227,37 @@ document.addEventListener('DOMContentLoaded', () => {
               let movieCardDetails = document.createElement('div');
               movieCardDetails.classList.add('movie-card-details');
               movieCardDetails.innerHTML = `
-                  <h4>${similarMovie.title}</h4>
-                  <p>${similarMovie.overview}</p>
+              <div id="prime-membership" class="d-flex">
+              <div id="card-check-circle-icon" class="me-1 fs-14 mt-1">
+               <img src="../assets/movie-info-page/checkmark-bold.svg" height="170%"/>
+              </div>
+              <p class="text-white fs-18">Watch with a Prime membership</p>
+             </div>
+             <div class="mt-3 d-flex">
+              <div class="movie-details-h4">${similarMovie.title}</div>
+              <div class="d-flex movie-details-buttons">
+              <button
+               id="card-watchlist-button"
+               class="ms-5 me-2 movie-info-card-button border-circle bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+               >
+              </button>
+              <button
+               id="card-trailer-button"
+               class="movie-info-card-button flex-wrap card-movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+             >
+              </button>
+              </div>
+             </div>
+             <p class="color-gray4 mb-1">${similarMovieDate.getFullYear()}</p>
+             <p>${similarMovie.overview}</p>
               `;
     
-              movieImage.addEventListener('mouseover', () => {
+              movieCard.addEventListener('mouseover', () => {
                   movieCardDetails.style.display = 'block';
                   movieCard.style.transform = 'scale(1.10)';
                   movieImage.style.borderBottomLeftRadius = "0px"
                   movieImage.style.borderBottomRightRadius = "0px"
+                  movieCard.style.cursor = "pointer";
               });
     
               movieCard.addEventListener('mouseout', () => {
