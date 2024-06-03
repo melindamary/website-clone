@@ -269,9 +269,6 @@ async function displayCoffees() {
 
 document.addEventListener('DOMContentLoaded', displayCoffees);
 
-
-
-
 (function() {
   async function fetchRecipes() {
     try {
@@ -280,7 +277,7 @@ document.addEventListener('DOMContentLoaded', displayCoffees);
         throw new Error('Failed to fetch recipes');
       }
       const data = await response.json();
-      return data;
+      return data.slice(0, 19); // Only take the first 19 recipes
     } catch (error) {
       console.error(error);
       return [];
@@ -293,8 +290,6 @@ document.addEventListener('DOMContentLoaded', displayCoffees);
     recipeCard.innerHTML = `
       <div class="card-body">
         <h5 class="card-title">${recipe.title}</h5>
-        <p class="card-description">${recipe.cuisine || 'No description available'}</p>
-        <span class="card-category">${recipe.mainIngredient || 'Category not available'}</span>
       </div>
     `;
     recipeCard.addEventListener('click', () => showModal(index));
@@ -335,3 +330,4 @@ document.addEventListener('DOMContentLoaded', displayCoffees);
 
 
 
+ 
