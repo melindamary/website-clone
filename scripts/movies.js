@@ -219,7 +219,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
                             <div class="row d-flex align-items-center ">
                                 <div class="col-auto">
                                     <a class="btn more-details-button p-3 d-none d-md-block"
-                                        style="font-size: 1.3rem;" href="movie-info-design.html?movieId=${movie.id}">More details</a>
+                                        style="font-size: 1.3rem;" href="./movie-info.html?movieId=${movie.id}">More details</a>
                                 </div>
                                 <div class="col-auto mt-2">
                                     <a href="#"
@@ -255,6 +255,9 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
             card.addEventListener("mouseenter", () => showCardDetails(flag, movie, card));
             card.addEventListener("mouseleave", hideCardDetails);
         }
+        card.addEventListener("click", () => {
+            window.location.href = `movie-info.html?movieId=${movie.id}`;
+          });
         return card;
     }
     function showCardDetails(flag, movie, card) {
@@ -474,7 +477,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
 				</div>
 				<div class="row d-flex align-items-center ">
 					<div class="col-auto">
-						<a class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;" href="movie-info-design.html?movieId=${movie.id}">More details</a>
+						<a class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;" href="./movie-info.html?movieId=${movie.id}">More details</a>
 					</div>
 					<div class="col-auto mt-2">
 						<a href="#"
