@@ -1,0 +1,270 @@
+/* @import url('https://fonts.cdnfonts.com/css/amazon-ember'); */
+:root {
+  --body-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+  font-family: "Amazon Ember Display", sans-serif;
+  font-weight: 700;
+  font-size: large;
+  /* background-color: white; */
+}
+
+.navbar {
+  background-color: black;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px !important;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 96px;
+  height: 18px !important;
+}
+
+.navbar a {
+  color: gray;
+  text-decoration: none;
+  padding: 0 15px;
+  line-height: 40px;
+}
+
+.navbar img {
+  height: 30px;
+}
+
+.navbar .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 100px;
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  color: #fff;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.spacer1 {
+  flex: 0.3;
+}
+
+.navbar .spacer {
+  flex: 0.5;
+}
+
+.navbar .icon {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+  }
+
+  .menu a,
+  .menu .dropdown,
+  .menu .icon {
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
+
+.scrollable-images-container {
+  overflow-x: scroll;
+  /* overflow: hidden; */
+  padding: 0;
+}
+
+.scrollable-images-container::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  border-radius: 8px;
+  min-width: 18rem;
+  margin-right: 20px;
+  /* overflow: hidden; */
+  transition: transform 0.3s ease;
+  position: relative;
+  aspect-ratio: 16/9;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  z-index: 2;
+  border-radius: 8px 8px 0 0;
+  transition-delay: 0.2s;
+}
+
+.card:hover .card-details {
+  transform: scale(1.1);
+  z-index: 2;
+  transition-delay: 0.2s;
+  display: block;
+}
+
+.card-details {
+  /* display: none; */
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  width: 19rem;
+  height: 18rem; /* Fixed height */
+  padding: 10px;
+  position: absolute;
+  transition: opacity 0.3s ease;
+}
+
+.card-details p {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.1);
+}
+.card-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  min-width: 18rem;
+}
+.carousel-item {
+  position: relative;
+  height: 23rem;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel-caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.9) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.carousel-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.carousel-caption .info h5 {
+  font-size: 1.5rem;
+}
+.carousel-caption .info p {
+  font-size: 1rem;
+}
+.carousel-caption .info button {
+  margin-top: 10px;
+}
+
+.carousel-indicators li {
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.custom-plus-size {
+  font-size: 2rem;
+}
+
+.custom-col {
+  margin-right: 1px;
+}
+
+.more-details-button {
+  background-color: white;
+}
+
+.number {
+  font-size: 5rem;
+  font-weight: bolder;
+}
+
+.plus:hover {
+  background-color: white !important;
+  transform: scale(1.2);
+}
+.plus:hover svg path {
+  fill: black; /* Change the fill color here */
+}
+
+/* .card:hover{
+    height: 380px;
+} */

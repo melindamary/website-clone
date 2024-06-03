@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Video | Subscribe, rent and buy movies and TV shows - watch now</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/store.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <div class="navbar">
+        <div class="spacer1"></div>
+        <a href="#" class="logo"><img src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+                alt="Logo" /></a>
+        <div class="menu" id="menu">
+            <div class="dropdown">
+                <a href="#">Home</a>
+                <div class="dropdown-content">
+                    <a href="#">All</a>
+                    <a href="#">Movies</a>
+                    <a href="#">TV Shows</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Store</a>
+                <div class="dropdown-content">
+                    <a href="#">All</a>
+                    <a href="#">Rent</a>
+                    <a href="#">Subscribe</a>
+                </div>
+            </div>
+            <a href="#">Live TV</a>
+            <a href="#">Categories</a>
+
+            <div class="spacer"></div>
+
+            <div class="icon"><i class='bx bx-search' style='color:#ffffff'></i></div>
+            <a href="#">Try for Free</a>
+            <div class="dropdown">
+                <a href="#">EN</a>
+                <div class="dropdown-content">
+                    <a href="#">HI</a>
+                    <a href="#">ZH</a>
+                    <a href="#">EN</a>
+                </div>
+            </div>
+            <div class="icon"><i class='bx bx-user' style='color:#969696'></i></div>
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+
+
+
+    <!-- Carousel -->
+
+    <div id="demo" class="carousel slide h-10 p-3 ml-3 mr-3 " data-ride="carousel">
+
+        <ul class="carousel-indicators">
+        </ul>
+
+        <div class="carousel-inner rounded" id="carousel-inner">
+            <div class="carousel-item template">
+                <iframe class="carousel-video d-none" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+                <img class="carousel-image">
+                <div class="carousel-caption p-3 pt-5 ">
+                    <div class="info text-left pl-3">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <h6 class="carousel-rank">#1 in India</h6>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-12">
+                                <h4 class="movie-carousel-name"></h4>
+                            </div>
+                        </div>
+                        <div class="row pt-4">
+                            <svg class="fbl-icon _3UMk3x _1a_Ljt _3H1cN4" viewBox="0 0 24 24" height="24" width="24"
+                                role="img" aria-hidden="true" style="margin-top: 0.5rem; margin-right: -0.6rem;">
+
+                            </svg>
+                            <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M11.120 2.039 C 8.641 2.287,6.414 3.362,4.761 5.107 C 1.806 8.228,1.158 12.819,3.137 16.623 C 3.620 17.552,4.164 18.288,4.938 19.061 C 5.930 20.051,7.038 20.789,8.272 21.278 C 11.634 22.610,15.313 22.080,18.200 19.845 C 18.637 19.507,19.507 18.637,19.845 18.200 C 21.256 16.378,22.000 14.236,22.000 12.000 C 22.000 7.432,18.842 3.387,14.430 2.303 C 13.446 2.062,12.028 1.948,11.120 2.039 M17.092 8.191 C 17.410 8.341,17.660 8.592,17.816 8.920 C 17.926 9.151,17.940 9.221,17.940 9.541 C 17.940 9.869,17.928 9.927,17.805 10.181 C 17.679 10.443,17.480 10.651,14.545 13.588 C 11.578 16.558,11.406 16.723,11.140 16.848 C 10.888 16.967,10.824 16.980,10.500 16.980 C 10.176 16.980,10.112 16.967,9.860 16.848 C 9.604 16.726,9.466 16.600,8.193 15.328 C 6.915 14.051,6.794 13.918,6.672 13.660 C 6.554 13.408,6.540 13.344,6.540 13.020 C 6.540 12.700,6.554 12.631,6.664 12.400 C 6.821 12.070,7.070 11.821,7.400 11.664 C 7.631 11.554,7.700 11.540,8.020 11.540 C 8.343 11.540,8.408 11.554,8.654 11.670 C 8.891 11.782,9.036 11.907,9.714 12.578 L 10.500 13.356 13.020 10.843 C 15.629 8.240,15.687 8.188,16.110 8.081 C 16.380 8.013,16.817 8.061,17.092 8.191 "
+                                    fill="#1A98FF" stroke="none" fill-rule="evenodd"></path>
+                            </svg>
+                            <div class="col-auto" style="width: 55%;">
+                                <p class="mb-0 mb-md-2 ">
+                                    Watch with a Prime membership</p>
+                            </div>
+                            <div class="col" style="margin-top: 0.1rem;">
+                                <p class="mb-0 d-none d-md-block fw-bold"><span class="px-2 py-1 rounded">U/A 13+</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center ">
+                            <div class="col-auto">
+                                <a class="btn more-details-button p-3 d-none d-md-block" id="more-details-button"
+                                    style="font-size: 1.3rem;">More details
+                                </a>
+
+                            </div>
+                            <div class="col-auto mt-2">
+                                <a href="#"
+                                    class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle plus"
+                                    style="width: 60px; height: 60px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+                                    <svg width="30" height="30" viewBox="0 0 8 8" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" style="margin-left: 12px; margin-top: 10px;">
+                                        <path
+                                            d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z"
+                                            fill="white" />
+                                    </svg>
+
+                                    <span class="tooltip">Watchlist</span>
+                                </a>
+                            </div>
+                            <div class="col-auto mt-2">
+                                <a href="#"
+                                    class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle plus"></a>
+                                <svg width="30" height="30" viewBox="0 0 8 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z"
+                                        fill="" />
+                                </svg>
+
+                                <span class="tooltip">Watchlist</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="trailer-container"></div>
+
+    </div>
+    <!-- SPOTLIGHT START-->
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning">In the spotlight</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="12,28">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="action-adventure-movies">
+            <div class="d-flex " id="card-wrapper">
+            </div>
+        </div>
+    </div>
+
+    <!-- SPOTLIGHT END -->
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning">Rent new movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-lang="en">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="english-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Subscriptions you might like</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="18">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="drama-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Drama movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="18">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="latest-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Most popular</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="9648,53">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="mystery-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Romantic movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10749">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="romance-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Comedy Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="35">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="comedy-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Horror Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="27">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="horror-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">History Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="36">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="history-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Kids and Family Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10751">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="family-movies">
+            <div class="d-flex ">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Fantasy Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="14">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="fantasy-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Military and War Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="10752">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="war-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Science Fiction Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="878">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="fiction-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Western Movies</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="37">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="western-movies">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid p-3 ml-3">
+        <div class="heading p-1">
+            <span class="text-warning ">Documentaries</span>
+            <a class="text-white ml-3  text-decoration-none see-more-link" data-genre-id="99">See More ></a>
+        </div>
+        <div class="scrollable-images-container" id="documentaries">
+            <div class="d-flex">
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center pt-5 pb-4">
+        <img src="./assets/footer_logo-removebg-preview.png" alt="">
+        <div class="d-flex justify-content-center align-items-center fs-small">
+            <a href="#" class="mx-3 text-decoration-none">Terms and Privacy Notice</a>
+            <a href="#" class="mx-3 text-decoration-none">Send us feedback</a>
+            <a href="#" class="mx-3 text-decoration-none">Help</a>
+            <p class="mb-0 ml-3 text-decoration-none">© 1996-2024, Amazon.com, Inc. or its affliates</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="./scripts/store.js"></script>
+
+</body>
+
+
+</html>
