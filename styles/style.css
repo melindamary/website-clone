@@ -18,7 +18,7 @@ body {
 }
 
 .new-card {
-  width: 200px; /* Adjust as needed */
+  width: 800px; /* Adjust as needed */ 
   padding: 10px;
   border-radius: 10px; /* Adjust to your needs */
   text-align: center;
@@ -58,7 +58,9 @@ body {
 
 .details-card {
   display: none; /* Hide by default */
-  width: 100%;
+  width: 400px;
+  height: 50px;
+
   padding: 10px;
   background-color: black; /* Black background */
   color: white; /* White text */
