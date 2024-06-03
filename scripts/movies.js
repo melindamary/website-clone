@@ -283,7 +283,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<p style="margin: 0;">${movie.title}</p>
 			<div class="button-group" style="display: flex; gap: 10px;">
-				<a href="#" class="custom-plus-size text-white text-decoration-none rounded-circle" style="width: 39px; height: 39px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+				<a href="./login.html" class="custom-plus-size text-white text-decoration-none rounded-circle" style="width: 39px; height: 39px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
 					<svg width="18" height="18" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z" fill="white" />
 					</svg>
@@ -314,7 +314,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
 		<div style="display: flex; justify-content: space-between; align-items: center;">
 			<p style="margin: 0;">${movie.title}</p>
 			<div class="button-group" style="display: flex; gap: 10px;">
-				<a href="#" class="custom-plus-size text-white text-decoration-none rounded-circle" style="width: 39px; height: 39px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
+				<a href="./login.html" class="custom-plus-size text-white text-decoration-none rounded-circle" style="width: 39px; height: 39px; font-size: 2rem; line-height: 1; background-color: #33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
 					<svg width="18" height="18" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M4 0C4.13261 0 4.25979 0.0526785 4.35355 0.146447C4.44732 0.240215 4.5 0.367392 4.5 0.5V3.5H7.5C7.63261 3.5 7.75979 3.55268 7.85355 3.64645C7.94732 3.74021 8 3.86739 8 4C8 4.13261 7.94732 4.25979 7.85355 4.35355C7.75979 4.44732 7.63261 4.5 7.5 4.5H4.5V7.5C4.5 7.63261 4.44732 7.75979 4.35355 7.85355C4.25979 7.94732 4.13261 8 4 8C3.86739 8 3.74021 7.94732 3.64645 7.85355C3.55268 7.75979 3.5 7.63261 3.5 7.5V4.5H0.5C0.367392 4.5 0.240215 4.44732 0.146447 4.35355C0.0526785 4.25979 0 4.13261 0 4C0 3.86739 0.0526785 3.74021 0.146447 3.64645C0.240215 3.55268 0.367392 3.5 0.5 3.5H3.5V0.5C3.5 0.367392 3.55268 0.240215 3.64645 0.146447C3.74021 0.0526785 3.86739 0 4 0Z" fill="white" />
 					</svg>
@@ -480,7 +480,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
 						<a class="btn more-details-button p-3 d-none d-md-block" style="font-size: 1.3rem;" href="./movie-info.html?movieId=${movie.id}">More details</a>
 					</div>
 					<div class="col-auto mt-2">
-						<a href="#"
+						<a href="./login.html"
 							class="custom-plus-size text-white text-decoration-none d-none d-md-block rounded-circle plus"
 							style="width: 60px; height: 60px; font-size: 2rem; line-height: 1; background-color:#33373d; padding: 0.2rem; display: flex; justify-content: center; align-items: center;">
 							<svg width="30" height="30" viewBox="0 0 8 8" fill="none"
