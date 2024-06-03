@@ -60,7 +60,7 @@ document.getElementById('continue-button').addEventListener('click', function() 
 
             // Redirect or further process here
             alert('Login Successful');
-            window.location.href = 'movies.html?email=' + encodeURIComponent(email);
+            window.location.href = '../public/movies.html?email=' + encodeURIComponent(email);
         })
         .catch((error) => {
             const errorCode = error.code;

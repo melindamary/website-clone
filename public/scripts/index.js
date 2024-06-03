@@ -81,7 +81,7 @@ define(["require", "exports", "./config"], function (require, exports, config_1)
                     return;
                 moreDetails.addEventListener("click", (event) => {
                     event.preventDefault();
-                    window.location.href = `./movie-info-design.html?movieId=${movie.id}`;
+                    window.location.href = `../../movie-info.html?movieId=${movie.id}`;
                 });
             }
         });
