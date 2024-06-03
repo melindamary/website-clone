@@ -24,13 +24,13 @@ document.addEventListener('DOMContentLoaded', function() {
               <p class="text-light fs-2 mb-4">New season</p>
               <p class="text-light fs-5 mb-2 fw-bold">First episode free <span class="badge bg-secondary">U/A 16+</span></p>
               <div id="buttons" class="d-flex flex-wrap flex-fill align-items-center">
-                <button class="btn btn-light rounded-circle me-3 flex-wrap"><i class="bi bi-play-fill me-2"></i></button>
-                <span class="text-light fs-3 me-2">Watch Now</span>
-                <button class="btn btn-secondary rounded-circle me-2"><i class="bi bi-plus-lg"></i><span class="popup-text text-dark">Watchlist</span></button>
-                <button class="btn btn-secondary rounded-circle"><i class="bi bi-info-circle"></i><span class="popup-text text-dark">Details</span></button>
-              </div>
+              <button id="play-button" class="card-btn flex-wrap info-buttons border-circle me-1percent d-flex justify-content-center"></button>
+              <button id="text-button" class="flex-wrap fs-21 bg-transparent fw-bold text-white me-5percent d-flex justify-content-center">Watch Now</button>
+              <button id="watchlist-button" class="info-buttons border-circle bg-transparent-gray me-3percent d-flex justify-content-center"><span class="popup-text text-dark">Watchlist</span></button>
+              <button id="info-icon-button" class="flex-wrap info-buttons border-circle bg-transparent-gray me-1percent d-flex justify-content-center"><span class="popup-text text-dark">Details</span></button>
             </div>
           </div>
+        </div>
         `;
         carouselInner.insertAdjacentHTML('beforeend', item);
 

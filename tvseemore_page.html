@@ -20,6 +20,7 @@
       .genre-heading {
         color: white;
         margin: 0 30px;
+        margin-top: 50px;
       }
       #card-container {
         display: flex;
@@ -83,30 +84,34 @@
         color: #666;
       }
       /* <!-- Card details buttons styling  --> */
+      /* buttons common styling */
       .me-1percent {
         margin-right: 1%;
       }
-
       .me-3percent {
         margin-right: 3%;
       }
-
       .me-5percent {
         margin-right: 5%;
       }
-      .movie-info-buttons {
+      .info-buttons {
         border: none;
         border-radius: 5px;
-        height: 40px;
-        padding: 0px 10px;
+        height: 100px;
+        padding: 5px 10px;
+      }
+      .info-buttons:hover {
+        background-color: white;
+        color: #00050d;
+        transform: scale(1.1);
       }
       .bg-transparent-gray {
         background-color: rgba(108, 117, 125, 0.6);
       }
       .border-circle {
         border-radius: 50%;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
       }
       #text-button {
         background-color: black;
@@ -114,27 +119,65 @@
       }
       #play-button {
         background-image: url("/assets/play-button.svg");
-        background-size: 50% 50%;
-        width: 45px;
-        height: 45px;
+        background-size: 40% 40%;
+        width: 50px;
+        height: 50px;
       }
       #trailer-button {
         background-image: url("/assets/movie-video.svg");
-        background-size: 80% 80%;
+        background-size: 60% 60%;
       }
       #watchlist-button {
         background-image: url("/assets/plus.svg");
+        background-size: 50% 50%;
+      }
+      #info-icon-button {
+        background-image: url("/assets/info-white.svg");
         background-size: 60% 60%;
       }
       #watchlist-button,
       #play-button,
-      #trailer-button {
+      #trailer-button,
+      #info-icon-button {
         background-position: center;
         background-repeat: no-repeat;
       }
 
+      .info-buttons:hover .popup-text {
+        display: block;
+      }
+
+      #watchlist-button:hover {
+        background-image: url("/assets/plus-black.svg");
+      }
+
+      #trailer-button:hover {
+        background-image: url("/assets/movie-video-black.svg");
+      }
+      #info-icon-button:hover {
+        background-image: url("/assets/info-black.svg");
+      }
+
+      #play-button:hover {
+        transform: scale(1.3);
+      }
+
+      /* Position the popup text above the +/i button */
+      .popup-text {
+        display: none;
+        position: absolute;
+        top: -25px; /* Adjust this value as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: white;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: xx-small;
+      }
+
       /* Footer styling */
-      footer{
+      footer {
         margin-top: 210px;
       }
       .color-blue {
@@ -154,49 +197,138 @@
   </head>
   <body>
     <section class="navigation">
-      <div class="navbar">
-        <div class="spacer1"></div>
-        <a href="#" class="logo"
-          ><img
-            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
-            alt="Logo"
-        /></a>
-        <div class="menu" id="menu">
-          <div class="dropdown">
-            <a href="#">Home</a>
-            <div class="dropdown-content">
-              <a href="#">Option 1</a>
-              <a href="#">Option 2</a>
-              <a href="#">Option 3</a>
-            </div>
+      <nav
+        class="navbar navbar-expand-sm navbar-dark bg-black py-0 ps-4 fixed-top"
+      >
+        <div class="container-fluid ps-5">
+          <a href="#" class="logo ps-5"
+            ><img
+              src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+              alt="Logo"
+              height="18px"
+              class="ps-5"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse mx-5" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle color-gray4"
+                  href="#"
+                  id="homeDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  >Home
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  aria-labelledby="homeDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">All</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">Movies</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#"
+                      >TV Shows</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle color-gray4"
+                  href="#"
+                  id="storeDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Store
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  aria-labelledby="storeDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">All</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">Rent</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#"
+                      >Channels</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link color-gray4" href="#">Live TV</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link color-gray4" href="#">Categories</a>
+              </li>
+              <li class="nav-item">
+                <img
+                  class="nav-icon"
+                  src="./assets/movie-info-page/magnifying-glass.svg"
+                  height="28px"
+                />
+              </li>
+              <li class="nav-item">
+                <a class="nav-link color-gray4" href="#">Try For Free</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle color-gray4"
+                  href="#"
+                  id="storeDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  EN
+                </a>
+                <ul
+                  class="dropdown-menu bg-dark"
+                  aria-labelledby="storeDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">HI</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">ZH</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item text-secondary" href="#">EN</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <img
+                  class="nav-icon"
+                  src="./assets/movie-info-page/profile-circle.svg"
+                  height="28px"
+                />
+              </li>
+            </ul>
           </div>
-          <div class="dropdown">
-            <a href="#">Store</a>
-            <div class="dropdown-content">
-              <a href="#">Option 1</a>
-              <a href="#">Option 2</a>
-              <a href="#">Option 3</a>
-            </div>
-          </div>
-          <a href="#">Live TV</a>
-          <a href="#">Categories</a>
-
-          <div class="spacer"></div>
-
-          <div class="icon">🔍</div>
-          <a href="#">Try for Free</a>
-          <div class="dropdown">
-            <a href="#">EN</a>
-            <div class="dropdown-content">
-              <a href="#">HI</a>
-              <a href="#">ZH</a>
-              <a href="#">EN</a>
-            </div>
-          </div>
-          <div class="icon">👤</div>
         </div>
-        <div class="hamburger" id="hamburger">&#9776;</div>
-      </div>
+      </nav>
     </section>
     <div class="genre-heading">
       <h1 id="genre-name"></h1>

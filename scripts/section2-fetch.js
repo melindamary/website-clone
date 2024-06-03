@@ -21,48 +21,24 @@ async function fetchTVShowsByGenre(genreId) {
 // Generate TV show card
 function generateTVShowCard(tvShow) {
   return `
-    <div class="card">
-    <img src="${IMAGE_BASE_URL}${tvShow.poster_path}" class="poster" alt="${
-    tvShow.name
-  }"/>
-    <div class="details-display">
-                <div class="details">
-                  <h6>First Episode Free</h6>
-                  <div
-                    id="buttons"
-                    class="d-flex flex-wrap flex-fill align-items-center"
-                  >
-                    <button
-                      id="play-button"
-                      class="card-btn flex-wrap info-buttons border-circle me-1percent d-flex justify-content-center"
-                    ></button>
-                    <button
-                      id="text-button"
-                      class="flex-wrap fs-15 fw-bold text-white me-5percent d-flex justify-content-center"
-                    >
-                      Watch Now
-                    </button>
-                    <button
-                      id="watchlist-button"
-                      class="info-buttons border-circle bg-transparent-gray me-3percent d-flex justify-content-center"
-                    ><span class="popup-text text-dark">Watchlist</span></button>
-                    <button
-                      id="trailer-button"
-                      class="flex-wrap info-buttons border-circle bg-transparent-gray me-1percent d-flex justify-content-center"
-                    ><span class="popup-text text-dark">Watch Trailer</span></button>
-                  </div>
-        <h5>${tvShow.name}</h5>
-        <p>${
-          tvShow.first_air_date.split("-")[0]
-        } <span class="badge bg-secondary text-white">U/A 16+</span></p>
-        <h5>#1 in India</h5>
-        <p class="text-wrap">Season 1 - ${tvShow.overview.substring(
-          0,
-          110
-        )}...</p>
+  <div class="card">
+  <img src="${IMAGE_BASE_URL}${tvShow.poster_path}" class="poster" alt="${tvShow.name}"/>
+  <div class="details-display">
+    <div class="details">
+      <h6>First Episode Free</h6>
+      <div id="buttons" class="d-flex flex-wrap flex-fill align-items-center">
+        <button id="play-button" class="card-btn flex-wrap info-buttons border-circle me-1percent d-flex justify-content-center"></button>
+        <button id="text-button" class="flex-wrap fs-15 fw-bold text-white me-5percent d-flex justify-content-center">Watch Now</button>
+        <button id="watchlist-button" class="info-buttons border-circle bg-transparent-gray me-3percent d-flex justify-content-center"><span class="popup-text text-dark">Watchlist</span></button>
+        <button id="trailer-button" class="flex-wrap info-buttons border-circle bg-transparent-gray me-1percent d-flex justify-content-center"><span class="popup-text text-dark">Watch Trailer</span></button>
       </div>
-      </div>
+      <h5>${tvShow.name}</h5>
+      <p>${tvShow.first_air_date.split("-")[0]} <span class="badge bg-secondary text-white">U/A 16+</span></p>
+      <h5>#1 in India</h5>
+      <p class="text-wrap">Season 1 - ${tvShow.overview.substring(0, 110)}...</p>
     </div>
+  </div>
+</div>
   `;
 }
 
