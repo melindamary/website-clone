@@ -1,16 +1,15 @@
 # Amazon Prime Video Clone
 ## Overview
 
-This project is a clone of Amazon Prime Video, providing a platform to stream video content online. It showcases a range of features similar to the original service, including user authentication, video playback, content browsing, and a responsive user interface.
+This project is a clone of Amazon Prime Video, providing a platform to stream video content online. It showcases a range of features similar to the original service, including user authentication, video playback, and a responsive user interface.
 
 ## Features
 
-* User Authentication: Sign up, log in, and manage user accounts.
-* Responsive Design: Fully responsive design compatible with various devices.
-* Video Playback: Stream videos with play, pause, and seek functionalities.
+* User Authentication: Sign up, log in.
+* Responsive Design: Responsive design compatible with various devices.
+* Video Playback: Play movie trailers
 * Content Browsing: Browse through different genres, categories, and recommendations.
-* Search Functionality: Search for videos by title or genre.
-* User Profiles: Create and manage user profiles with personalized watchlists.
+* Smooth Animations
 
 ## Technologies Used
 
