@@ -51,6 +51,8 @@ const apiKey = 'dfeae97f270b6d300e2e881d950b308d';
                 detailsCard.classList.add('details-card');
                 detailsCard.innerHTML = `
                   <b>Title: ${movie.title}</b>
+                  <p class="icon"><img src="https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png" alt="icon"><b>SUSCRIBE</b></p>
+
                   <p><strong>Release Date:</strong> ${movie.release_date}</p>
                   <p><strong>Description:</strong> ${movie.overview}</p>
                 `;
@@ -74,16 +76,7 @@ const apiKey = 'dfeae97f270b6d300e2e881d950b308d';
           });
       }
 
-                // Show the details card when the image is hovered
-        //         imageContainer.addEventListener('mouseenter', () => {
-        //             detailsCard.style.display = 'block';
-        //         });
-
-        //         imageContainer.addEventListener('mouseleave', () => {
-        //             detailsCard.style.display = 'none';
-        //         });
-        //     });
-        // }
+       
 
         document.addEventListener('DOMContentLoaded', displayMovies);
 
@@ -196,7 +189,9 @@ function showModal(characterIndex) {
 
 async function displayCharacters() {
   const characterList = document.getElementById('characterList');
-  
+
+
+
   try {
     characters = await fetchCharacters(); // Fetch characters and store in global variable
     characters.forEach((character, index) => {
@@ -211,7 +206,9 @@ async function displayCharacters() {
 
 document.addEventListener('DOMContentLoaded', displayCharacters);
 
+let coffees = [];
 
+// Fetch coffee data from the API
 async function fetchCoffees() {
   try {
     const response = await fetch('https://api.sampleapis.com/coffee/hot');
@@ -219,14 +216,15 @@ async function fetchCoffees() {
       throw new Error('Failed to fetch coffees');
     }
     const data = await response.json();
-    return data;
+    return data.slice(0, 19); // Return only the first 19 coffee entries
   } catch (error) {
     console.error(error);
     return [];
   }
 }
 
-function createCards(coffee, index) {
+// Create a card for each coffee
+function createCoffeeCard(coffee, index) {
   const coffeeCard = document.createElement('div');
   coffeeCard.classList.add('card');
   coffeeCard.innerHTML = `
@@ -234,11 +232,12 @@ function createCards(coffee, index) {
       <h5 class="card-title">${coffee.title}</h5>
     </div>
   `;
-  coffeeCard.addEventListener('click', () => showModals(index));
+  coffeeCard.addEventListener('click', () => showCoffeeModal(index));
   return coffeeCard;
 }
 
-function showModals(coffeeIndex) {
+// Show the modal for the selected coffee
+function showCoffeeModal(coffeeIndex) {
   const coffee = coffees[coffeeIndex]; // Get the coffee by index
 
   if (coffee) {
@@ -252,13 +251,14 @@ function showModals(coffeeIndex) {
   }
 }
 
+// Display the coffee cards
 async function displayCoffees() {
   const coffeeList = document.getElementById('coffeeList');
   
   try {
     coffees = await fetchCoffees(); // Fetch coffees and store in global variable
-    coffees.forEach((coffee, index) => {
-      const coffeeCard = createCards(coffee, index);
+    coffees.forEach((coffee, index) => { // Display only the fetched 19 coffees
+      const coffeeCard = createCoffeeCard(coffee, index);
       coffeeList.appendChild(coffeeCard);
     });
   } catch (error) {
@@ -267,7 +267,9 @@ async function displayCoffees() {
   }
 }
 
+// Event listener to display coffees on DOM content loaded
 document.addEventListener('DOMContentLoaded', displayCoffees);
+
 
 (function() {
   async function fetchRecipes() {
@@ -328,6 +330,122 @@ document.addEventListener('DOMContentLoaded', displayCoffees);
   document.addEventListener('DOMContentLoaded', displayRecipes);
 })();
 
+(function() {
+  async function fetchBeers() {
+    try {
+      const response = await fetch('https://api.sampleapis.com/beers/ale');
+      if (!response.ok) {
+        throw new Error('Failed to fetch beers');
+      }
+      const data = await response.json();
+      return data.slice(0, 19); // Only take the first 19 beers
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
 
+  function createCard(beer, index) {
+    const beerCard = document.createElement('div');
+    beerCard.classList.add('card');
+    beerCard.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${beer.name}</h5>
+      </div>
+    `;
+    beerCard.addEventListener('click', () => showModal(index));
+    return beerCard;
+  }
 
- 
+  function showModal(beerIndex) {
+    const beer = beers[beerIndex]; // Get the beer by index
+
+    if (beer) {
+      document.getElementById('modalBeerTitle').textContent = beer.name;
+      document.getElementById('modalBeerDescription').textContent = beer.description || 'No description available';
+      document.getElementById('modalBeerImage').src = beer.image || 'placeholder-image-url.png';
+
+      $('#beerModal').modal('show');
+    } else {
+      console.error('Beer not found');
+    }
+  }
+
+  async function displayBeers() {
+    const beerList = document.getElementById('beerList');
+
+    try {
+      beers = await fetchBeers(); // Fetch beers and store in global variable
+      beers.forEach((beer, index) => {
+        const beerCard = createCard(beer, index);
+        beerList.appendChild(beerCard);
+      });
+    } catch (error) {
+      console.error(error);
+      beerList.innerHTML = '<p>Failed to load beers.</p>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', displayBeers);
+})();
+
+(function() {
+  async function fetchResources() {
+    try {
+      const response = await fetch('https://api.sampleapis.com/codingresources/codingResources');
+      if (!response.ok) {
+        throw new Error('Failed to fetch resources');
+      }
+      const data = await response.json();
+      return data.slice(0, 19); // Only take the first 19 resources
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  }
+
+  function createCard(resource, index) {
+    const resourceCard = document.createElement('div');
+    resourceCard.classList.add('card');
+    resourceCard.innerHTML = `
+      <div class="card-body">
+        <h5 class="card-title">${resource.title}</h5>
+        <p class="card-description">${resource.description || 'No description available'}</p>
+        <span class="card-category">${resource.category || 'Category not available'}</span>
+      </div>
+    `;
+    resourceCard.addEventListener('click', () => showModal(index));
+    return resourceCard;
+  }
+
+  function showModal(resourceIndex) {
+    const resource = resources[resourceIndex]; // Get the resource by index
+
+    if (resource) {
+      document.getElementById('modalResourceTitle').textContent = resource.topics;
+      document.getElementById('modalResourceDescription').textContent = resource.description || 'No description available';
+      document.getElementById('modalResourceImage').src = resource.image || 'placeholder-image-url.png';
+
+      $('#resourceModal').modal('show');
+    } else {
+      console.error('Resource not found');
+    }
+  }
+
+  async function displayResources() {
+    const resourceList = document.getElementById('resourceList');
+
+    try {
+      resources = await fetchResources(); // Fetch resources and store in global variable
+      resources.forEach((resource, index) => {
+        const resourceCard = createCard(resource, index);
+        resourceList.appendChild(resourceCard);
+      });
+    } catch (error) {
+      console.error(error);
+      resourceList.innerHTML = '<p>Failed to load resources.</p>';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', displayResources);
+})();

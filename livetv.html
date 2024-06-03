@@ -4,53 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Live Tv</title>
-<link href='
-https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
-rel='stylesheet'>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="./style/style.css">
 </head>
 <body>
-  <div class="navbar">
-    <div class="spacer1"></div>
-    <a href="#" class="logo"><img src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
-            alt="Logo" /></a>
-    <div class="menu" id="menu">
-        <div class="dropdown">
-            <a href="#">Home</a>
-            <div class="dropdown-content">
-                <a href="#">All</a>
-                <a href="./public/movies.html">Movies</a>
-                <a href="./tvShows.html">TV Shows</a>
+<div class="navbar">
+          <div class="spacer1"></div>
+          <a href="#" class="logo"
+            ><img
+              src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+              alt="Logo"
+          /></a>
+          <div class="menu" id="menu">
+            <div class="dropdown">
+              <a href="#">Home</a>
+              <div class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+              </div>
             </div>
-        </div>
-        <div class="dropdown">
-            <a href="#">Store</a>
-            <div class="dropdown-content">
-                <a href="#">All</a>
-                <a href="#">Rent</a>
-                <a href="#">Subscribe</a>
+            <div class="dropdown">
+              <a href="#">Store</a>
+              <div class="dropdown-content">
+                <a href="#">Option 1</a>
+                <a href="#">Option 2</a>
+                <a href="#">Option 3</a>
+              </div>
             </div>
-        </div>
-        <a href="#">Live TV</a>
-        <a href="#">Categories</a>
-
-        <div class="spacer"></div>
-
-        <div class="icon"><i class='bx bx-search' style='color:#ffffff'></i></div>
-        <a href="#">Try for Free</a>
-        <div class="dropdown">
-            <a href="#">EN</a>
-            <div class="dropdown-content">
+            <a href="#">Live TV</a>
+            <a href="#">Categories</a>
+ 
+            <div class="spacer"></div>
+ 
+            <div class="icon">🔍</div>
+            <a href="#">Try for Free</a>
+            <div class="dropdown">
+              <a href="#">EN</a>
+              <div class="dropdown-content">
                 <a href="#">HI</a>
                 <a href="#">ZH</a>
                 <a href="#">EN</a>
+              </div>
             </div>
+            <div class="icon">👤</div>
+          </div>
+          <div class="hamburger" id="hamburger">&#9776;</div>
         </div>
-        <div class="icon"><i class='bx bx-user' style='color:#969696' ></i></div>
-    </div>
-    <div class="hamburger" id="hamburger">&#9776;</div>
-</div>
  
     <div class="row">
        
@@ -211,11 +211,10 @@ rel='stylesheet'>
                           </div>
                           
           
-                          </div>
+                          
                           <div class="row ">
                             
-                                <p class="yellow-text custom-bg">ManoramaMAX</p>
-                            
+                                <p class="yellow-text custom-bg">ManoramaMAX</p>   
                         </div>
                         <div class="row">
                           
@@ -223,7 +222,25 @@ rel='stylesheet'>
                             <img src="./assets/manorama max.png" alt="logo">
                           
                           </div>
+                          <div id="beerList" class="container"></div>
                          
+  <!-- Modal -->
+  <div class="modal fade" id="beerModal" tabindex="-1" role="dialog" aria-labelledby="beerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalBeerTitle"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img id="modalBeerImage" src="" alt="Beer Image" style="width: 100%; height: auto;">
+          <p id="modalBeerDescription"></p>
+        </div>
+      </div>
+    </div>
+  </div>
                           
                           </div>
                       
@@ -237,41 +254,29 @@ rel='stylesheet'>
                 <div class="image-logocontainer"> 
                   <img src="./assets/Myzen.png" alt="logo">
                 </div>
-                <div id="avatarContainer" class="container">
+                <div id="resourceList" class="container">
                   <!-- Avatar info card will be displayed here -->
                 </div>
                 
                 <!-- Bootstrap Modal -->
-                <div class="modal fade" id="avatarModal" tabindex="-1" aria-labelledby="avatarModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                <div class="modal fade" id="resourceModal" tabindex="-1" role="dialog" aria-labelledby="resourceModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="avatarModalLabel">Avatar Details</h5>
+                        <h5 class="modal-title" id="modalResourceTitle"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
                       <div class="modal-body">
-                        <h2 id="modalAvatarTitle"></h2>
-                        <p id="modalAvatarDescription"></p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <img id="modalResourceImage" src="" alt="Resource Image" style="width: 100%; height: auto;">
+                        <p id="modalResourceDescription"></p>
                       </div>
                     </div>
                   </div>
-                </div>         
-              </div>
-    
-              <footer class="text-center pt-5 pb-4">
-                <img src="../images/prime_video_logo.png" alt="">
-                <div class="d-flex justify-content-center align-items-center fs-small">
-                    <a href="#" class="mx-3 text-decoration-none">Terms and Privacy Notice</a>
-                    <a href="#" class="mx-3 text-decoration-none">Send us feedback</a>
-                    <a href="#" class="mx-3 text-decoration-none">Help</a>
-                    <p class="mb-0 ml-3 text-decoration-none">© 1996-2024, Amazon.com, Inc. or its affliates</p>
                 </div>
-            </footer>
+    
+    
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
