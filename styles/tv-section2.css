@@ -1,0 +1,158 @@
+body {
+  background-color: black;
+}
+
+.second {
+  margin: 3%;
+  overflow-x: auto;
+}
+
+/* card scroll effect container styling */
+.slider-container {
+  margin-top: 1%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.5%;
+}
+
+.slider {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+/* second section genre cards styling */
+.card-container {
+  display: inline-flex;
+  gap: 10px;
+  /* background-color: aqua; */
+}
+
+/* Cards for genre section 2 styling */
+.card {
+  position: relative;
+  width: 290px;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 3px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease-in-out;
+  background-color: black;
+}
+.card:hover {
+  transform: scale(1.1);
+  z-index: 1000;
+}
+.poster {
+  width: 290px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+/* genre cards details display when hovered */
+.details-display {
+  display: none;
+}
+.card:hover .details-display {
+  display: block;
+}
+.details {
+  margin: 2%;
+  color: white;
+  font: bolder;
+}
+.details h5 {
+  margin: 2px;
+  font-size: 18px;
+}
+.details p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* buttons common styling */
+.me-1percent {
+  margin-right: 1%;
+}
+.me-3percent {
+  margin-right: 3%;
+}
+.me-5percent {
+  margin-right: 5%;
+}
+.info-buttons {
+  border: none;
+  border-radius: 5px;
+  height: 100px;
+  padding: 0px 10px;
+}
+.bg-transparent-gray {
+  background-color: rgba(108, 117, 125, 0.6);
+}
+.border-circle {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+}
+#text-button {
+  background-color: black;
+  border: none;
+}
+#play-button {
+  background-image: url("/assets/play-button.svg");
+  background-size: 50% 50%;
+  width: 45px;
+  height: 45px;
+}
+#trailer-button {
+  background-image: url("/assets/movie-video.svg");
+  background-size: 80% 80%;
+}
+#watchlist-button {
+  background-image: url("/assets/plus.svg");
+  background-size: 60% 60%;
+}
+#watchlist-button,
+#play-button,
+#trailer-button {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-button:hover .popup-text {
+  display: block;
+  transform: scale(1.1);
+}
+
+/* Add styles for navigation buttons */
+
+.nav-button {
+  position: absolute;
+  top: 100px;
+  height: 200px;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
