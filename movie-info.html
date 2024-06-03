@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Video: Movie Name</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./styles/movie-info.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <style></style>
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav
+      class="navbar navbar-expand-sm navbar-dark bg-black py-0 ps-4 fixed-top"
+    >
+      <div class="container-fluid ps-5">
+        <a href="#" class="logo ps-5"
+          ><img
+            src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+            alt="Logo"
+            height="18px"
+            class="ps-5"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-5" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle color-gray4"
+                href="#"
+                id="homeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Home
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="homeDropdown">
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">All</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">Movies</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">TV Shows</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle color-gray4"
+                href="#"
+                id="storeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Store
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="storeDropdown">
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">All</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">Rent</a>
+                </li>
+                <li>
+                  <a class="dropdown-item text-secondary" href="#">Channels</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-gray4" href="#">Live TV</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-gray4" href="#">Categories</a>
+            </li>
+            <li class="nav-item">
+              <img
+                class="nav-icon"
+                src="./assets/movie-info-page/magnifying-glass.svg"
+                height="28px"
+              />
+            </li>
+            <li class="nav-item">
+              <a class="nav-link color-gray4" href="#">Try For Free</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle color-gray4"
+                href="#"
+                id="storeDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                EN
+              </a>
+              <ul class="dropdown-menu bg-dark" aria-labelledby="storeDropdown">
+                <li><a class="dropdown-item text-secondary" href="#">HI</a></li>
+                <li><a class="dropdown-item text-secondary" href="#">ZH</a></li>
+                <li><a class="dropdown-item text-secondary" href="#">EN</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <img
+                class="nav-icon"
+                src="./assets/movie-info-page/profile-circle.svg"
+                height="28px"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Movie Details Section -->
+    <div class="d-flex flex-column flex-wrap">
+      <div
+        id="movie-details"
+        class="container-fluid flex-wrap movie-details-div bg-black"
+      >
+        <div
+          id="website-logo"
+          class="prime-blue d-flex justify-content-end pe-3percent bold fs-34 pt-5"
+        >
+          prime
+        </div>
+        <h2
+          id="movie-title"
+          class="text-white pt-1percent ps-4percent bold fs-50"
+        >
+          <!--Movie Title inserted here-->
+        </h2>
+        <p id="movie-overview" class="text-white pt-2percent ps-4percent fs-20">
+          <!--Movie Overview inserted here-->
+        </p>
+
+        <div
+          id="movie-stats"
+          class="text-white ps-4percent mt-neg-10px d-flex flex-wrap"
+        >
+          <p class="color-gray fs-20 me-2percent">
+            IMDb <span id="movie-vote-average"></span>
+          </p>
+          <p id="runtime" class="color-gray fs-20 me-2percent fw-600">
+            <!-- Insert runtime -->
+          </p>
+          <p class="color-gray fs-20 me-2percent fw-600">
+            <span id="movie-release-year">
+              <!-- Insert release year -->
+            </span>
+          </p>
+          <div
+            id="uhd-div"
+            class="bg-color-gray2 border-rounded boxed-div me-point-3percent"
+          >
+            <p id="uhd">UHD</p>
+          </div>
+          <div
+            id="uhd-div"
+            class="bg-color-gray2 border-rounded boxed-div me-point-3percent"
+          >
+            <p id="uhd">U/A 13+</p>
+          </div>
+          <div id="uhd-div" class="bg-color-gray2 border-rounded boxed-div">
+            <p id="uhd">HDR</p>
+          </div>
+        </div>
+
+        <div id="genre" class="text-white ps-4percent d-flex fs-20 mt-neg-10px">
+          <!-- Genres of movie inserted here -->
+        </div>
+
+        <div id="prime-membership" class="d-flex ps-4percent">
+          <div id="check-circle-icon" class="me-1 fs-14 mt-1">
+            <img
+              src="./assets/movie-info-page/checkmark-bold.svg"
+              height="180%"
+            />
+          </div>
+          <p class="text-white fs-18">Watch with a Prime membership</p>
+        </div>
+
+        <div
+          id="buttons"
+          class="ps-4percent d-flex flex-wrap flex-fill align-items-center"
+        >
+          <button
+            id="watch-with-prime"
+            class="movie-info-buttons border-rounded fs-18 fw-600 me-2percent"
+          >
+            Watch with Prime
+          </button>
+          <button
+            id="rent-uhd"
+            class="movie-info-buttons border-rounded fs-18 fw-600 d-flex flex-column bg-color-gray3 me-2percent"
+          >
+            <span>Rent</span>
+            <span>UHD ₹279</span>
+          </button>
+          <button
+            id="rent-uhd"
+            class="movie-info-buttons border-rounded fs-18 fw-600 d-flex flex-column bg-color-gray3 me-2percent"
+          >
+            <span>More purchase</span>
+            <span>options</span>
+          </button>
+
+          <!-- Icons buttons -->
+          <button
+            id="trailer-button"
+            class="flex-wrap movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+          >
+          <span class="popup-text text-dark">Trailer</span></button>
+          <button
+            id="watchlist-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+          ><span class="popup-text text-dark">Watchlist</span></button>
+          <button
+            id="like-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+          ><span class="popup-text text-dark">Like</span></button>
+          <button
+            id="dislike-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+          ><span class="popup-text text-dark">Not for me</span></button>
+          <button
+            id="share-button"
+            class="movie-info-buttons border-circle fs-38 fw-600 bg-color-gray3 text-white me-1percent d-flex justify-content-center"
+          ><span class="popup-text text-dark">Share</span></button>
+        </div>
+
+        <div
+          id="info-text"
+          class="ps-4percent d-flex color-gray4 fs-18 fw-600 mt-2"
+        >
+          <p>
+            Rentals include 30 days to start watching this video and 48 hours to
+            finish once started.
+          </p>
+        </div>
+
+        <div
+          id="movie-info-subnav"
+          class="container-fluid d-flex flex-wrap justify-content-center"
+        >
+          <div class="d-flex justify-content-center">
+            <button
+              class="fs-20 fw-600 text-decoration-none toggle-button-1"
+              onclick="showtab('related-movies-tab')"
+            >
+              Related
+            </button>
+
+            <button
+              class="fs-20 fw-600 text-decoration-none toggle-button-2"
+              onclick="showtab('details-tab')"
+            >
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="more-info" class="container-fluid movie-details-div bg-black">
+        <div
+          id="related-movies-tab"
+          class="text-white ps-4percent pt-5 toggle-content"
+        >
+          <p class="text-white fs-20 bold">Customers also watched</p>
+
+          <div id="related-movies-container" class="">
+            <div id="related-movies-content" class="d-flex flex-row"></div>
+          </div>
+          <div class="related-movies-details" id="related-movies-details"></div>
+        </div>
+        <div
+          id="details-tab"
+          class="text-white ps-4percent pt-5 toggle-content hidden"
+        >
+          <p class="fs-20 bold">More info</p>
+          <p class="fs-18 bold">Content advisory</p>
+          <p class="text-secondary fs-18 bold">
+            Appropriate for age 7 and above
+          </p>
+          <p class="fs-18 bold">Audio languages</p>
+          <p id="lang" class="text-secondary fs-18 bold"><!--Language--></p>
+          <p class="fs-18 bold">Subtitles</p>
+          <p id="subtitles" class="text-secondary fs-18 bold">
+            <!--Language-->
+          </p>
+          <p class="fs-18 bold">Directors</p>
+          <p id="directors"></p>
+          <p class="fs-18 bold">Producers</p>
+          <p id="producers"></p>
+          <p class="fs-18 bold">Starring</p>
+          <p id="actors"></p>
+          <p class="fs-18 bold">Studio</p>
+          <p id="studio"></p>
+          <p class="text-secondary fs-18 bold mt-5">
+            By clicking play, you agree to our
+            <a
+              href="https://www.primevideo.com/help/ref=atv_dp_terms?nodeId=202095490"
+              class="text-white bold text-decoration-underline"
+              >Terms of Use</a
+            >.
+          </p>
+          <div id="horizontal-rule" class="mt-5"></div>
+          <div>
+            <h4 class="mt-5">Feedback</h4>
+            <a class="fs-18 text-white underline">Send us feedback</a>
+          </div>
+          <div>
+            <h4 class="mt-5">Support</h4>
+            <a class="fs-18 text-white underline">Get help</a>
+          </div>
+        </div>
+      </div>
+
+      <footer
+        class="d-flex flex-column justify-content-center bg-black pt-5 pb-3"
+      >
+        <div class="d-flex justify-content-center mx-auto w-10">
+          <img
+            id="brand-logo"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDczIiBoZWlnaHQ9IjE0NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjRkZGIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0xMTQuODMgOTIuMzY2Yy4xNTgtMS4wMjMuOTY3LTEuODAyIDIuMDkxLTEuODAyLjUyNCAwIDEuMTE4LjE3MSAxLjc0NC41NjIgMzQuNzMxIDIxLjc4MSA3Ny42OTcgMzQuOTAzIDEyMi4wNjcgMzQuOTAzIDI5Ljk0MyAwIDYyLjg0MS02LjcwMSA5My4xMTctMjAuNTQ0IDQuNTYzLTIuMDc5IDguMzg2IDMuMjM5IDMuOTIyIDYuODExLTI3LjAwOCAyMS40NzItNjYuMTYzIDMyLjg5Ny05OS44NzkgMzIuODk3LTQ3LjI0OCAwLTg5Ljc5NS0xOC44My0xMjIuMDA0LTUwLjE2OC0uNjMyLS42MTQtLjk2NC0xLjI4Ny0xLjA1OC0xLjkxOXYtLjc0WiIvPjxwYXRoIGQ9Ik0zMTUuNDkzIDk1Ljc1MWM3Ljk4Ni02LjAzIDE4LjYwNC04LjA0MiAyNy40MDgtOC4wNDIgOC4yMzUgMCAxNC44ODYgMS43NjMgMTYuMzAyIDMuNjQ4IDIuOTc2IDMuOTMzLS43NjYgMzEuMjAxLTE1LjI2MSA0NC4yMDYtMi4yMTggMi4wMTQtNC4zMjguOTI5LTMuMzUtMS42OTkgMy4yNTktOC43MjIgMTAuNTUzLTI4LjMwNiA3LjA5Ni0zMy4wNTQtMy40NTItNC43NTktMjIuODM1LTIuMjY4LTMxLjUyNy0xLjE0NS0xLjM0Ny4xNzEtMi4xMTMtLjM4LTIuMjI1LTEuMjAxdi0uNDQzYy4wOTEtLjcxMi41OTYtMS41NDMgMS41NTctMi4yN1pNNDUwLjM1OSAxOS44NjNjNy4xIDAgMTIuNjQ4IDIuMTUyIDE2LjY0NSA2LjQ1NkM0NzEuMDAxIDMwLjYyMiA0NzMgMzYuNTk2IDQ3MyA0NC4yNDFjMCA3LjcwNC0xLjk5OSAxMy43MDgtNS45OTYgMTguMDEyLTMuOTk3IDQuMzA0LTkuNTQ1IDYuNDU2LTE2LjY0NSA2LjQ1Ni03LjA5OSAwLTEyLjY0OC0yLjE1Mi0xNi42NDUtNi40NTZzLTUuOTk2LTEwLjMwOC01Ljk5Ni0xOC4wMTJjMC03LjY0NSAxLjk5OS0xMy42MTkgNS45OTYtMTcuOTIyIDMuOTk3LTQuMzA0IDkuNTQ2LTYuNDU2IDE2LjY0NS02LjQ1NlptMCAxMC4xMTJjLTYuMjY0IDAtOS4zOTYgNC43NTUtOS4zOTYgMTQuMjY2IDAgOS41NyAzLjEzMiAxNC4zNTUgOS4zOTYgMTQuMzU1IDYuMjY0IDAgOS4zOTctNC43ODUgOS4zOTctMTQuMzU1IDAtOS41MTEtMy4xMzMtMTQuMjY2LTkuMzk3LTE0LjI2NlpNNDAzLjE5MSAyMC4yOWM1LjQzMiAwIDkuNjg0IDEuMzI4IDEyLjc0NyAzLjk4NCAzLjA2NCAyLjY1NyA0LjU5OSA2LjIwMSA0LjU5OSAxMC42MjYgMCA0LjQzMi0xLjY1MyA3Ljc4Mi00Ljk0NSAxMC4wNTEtMy4zIDIuMjc1LTguMTY0IDMuNDEtMTQuNTg2IDMuNDEtMy4zMjkgMC02LjIyMy0uMzIxLTguNjczLS45Ny4zNDcgMy45NTQgMS41MzUgNi43OSAzLjU1IDguNDk5IDIuMDE1IDEuNzA4IDUuMDY0IDIuNTY2IDkuMTUzIDIuNTY2IDEuNjMxIDAgMy4yMjYtLjEwNCA0Ljc3Ni0uMzEzIDEuNTQzLS4yMDIgMy42OTEtLjY2NCA2LjQzNy0xLjM2Ni4xNjktLjA1OS4zNDYtLjEwNC41MjQtLjEzNC4xNzctLjAzLjMxNy0uMDQ1LjQzNS0uMDQ1Ljk5NyAwIDEuNDkxLjY3OSAxLjQ5MSAyLjAzN3Y0LjA3NWMwIC45NC0uMTMzIDEuNjA0LS4zOTEgMS45OTItLjI2Ni4zOC0uNzc1LjcyNC0xLjUzNSAxLjAxNS00LjI2NyAxLjY0OS04Ljc5MiAyLjQ3Ny0xMy41ODIgMi40NzctNy4yNDEgMC0xMi44LTItMTYuNjgyLTYuMDIyLTMuODgzLTQuMDE0LTUuODI0LTkuNzY3LTUuODI0LTE3LjI2NiAwLTcuNjcxIDEuOTg1LTEzLjY5MiA1Ljk1Ni0xOC4wNTggMy45NzItNC4zNzIgOS40ODYtNi41NTggMTYuNTUtNi41NThabS0uOTYgOC45NDZjLTUuNjEgMC04Ljg1IDMuNDg1LTkuNzIxIDEwLjQ0NyAyLjMzMi40NzcgNC45MzEuNzA5IDcuNzk1LjcwOSAyLjk3NCAwIDUuMTM3LS40NTYgNi40OC0xLjM3MyAxLjM0NC0uOTExIDIuMDE2LTIuMzE0IDIuMDE2LTQuMjAxIDAtMy43MjQtMi4xOTMtNS41ODItNi41Ny01LjU4MlpNMzY5LjA2OS41NDJjLjgzNSAwIDEuNDE3LjE2NSAxLjc0NS40OTYuMzI4LjMzMS40OTIuOTE4LjQ5MiAxLjc2MXY2Mi4yOThjMCAuNzgzLS4xNjQgMS4zNTQtLjQ5MiAxLjcxNi0uMzI4LjM2MS0uOTEuNTQxLTEuNzQ1LjU0MWgtNy4xNTljLS43MTYgMC0xLjI2OC0uMTUtMS42NTYtLjQ1MS0uMzg3LS4zMDEtLjY3MS0uODEzLS44NS0xLjUzNWwtLjUzNy0yLjA3N2MtMy42OTkgMy4zNzEtOC4wODMgNS4wNTYtMTMuMTU1IDUuMDU2LTMuODc3IDAtNy4yNDgtMS4wMDgtMTAuMTEyLTMuMDI0LTIuODY0LTIuMDE3LTUuMDU2LTQuODE1LTYuNTc3LTguMzk3LTEuNTIyLTMuNTgxLTIuMjgyLTcuNzE5LTIuMjgyLTEyLjQxNCAwLTcuNDY0IDEuNzU5LTEzLjQzOCA1LjI3OS0xNy45MjIgMy41Mi00LjQ4NSA4LjE3NC02LjcyNyAxMy45NjEtNi43MjcgNC43MTMgMCA4LjggMS4zNTQgMTIuMjYgNC4wNjNWMi43OTljMC0uODQzLjE3OS0xLjQzLjUzNy0xLjc2MS4zNTgtLjMzMS45MjUtLjQ5NiAxLjctLjQ5Nmg4LjU5MVptLTE5LjY4OCAyOS4yNTNjLTMuMTYyIDAtNS41MTggMS4xODktNy4wNjkgMy41NjYtMS41NTEgMi4zNzgtMi4zMjcgNS45NzQtMi4zMjcgMTAuNzg5IDAgNC44MTYuODIgOC4zOTcgMi40NjEgMTAuNzQ1IDEuNjQxIDIuMzQ3IDQuMTYxIDMuNTIxIDcuNTYyIDMuNTIxIDIuODY0IDAgNS42MDgtLjg0MyA4LjIzMy0yLjUyOFYzMi4wNTJjLTIuNTY1LTEuNTA1LTUuNTE5LTIuMjU3LTguODYtMi4yNTdaTTMwNy4zMjMgNjcuMzU0Yy0uNzc2IDAtMS4zNDMtLjE4LTEuNzAxLS41NDEtLjM1OC0uMzYyLS41MzctLjkzMy0uNTM3LTEuNzE2VjIzLjQ3NWMwLS44NDMuMTc5LTEuNDMuNTM3LTEuNzYxLjM1OC0uMzMxLjkyNS0uNDk3IDEuNzAxLS40OTdoOC41OTFjLjgzNSAwIDEuNDE3LjE2NiAxLjc0NS40OTcuMzI4LjMzMS40OTIuOTE4LjQ5MiAxLjc2MXY0MS42MjJjMCAuNzgzLS4xNjQgMS4zNTQtLjQ5MiAxLjcxNi0uMzI4LjM2MS0uOTEuNTQxLTEuNzQ1LjU0MWgtOC41OTFaTTMxMS42MTggMTQuMDg1Yy0yLjI2NyAwLTQuMDg3LS42MzItNS40NTktMS44OTYtMS4zNzItMS4yNjQtMi4wNTgtMi45OC0yLjA1OC01LjE0NyAwLTIuMTY2LjY4Ni0zLjg4MiAyLjA1OC01LjE0NkMzMDcuNTMxLjYzMiAzMDkuMzUxIDAgMzExLjYxOCAwYzIuMjY3IDAgNC4wODcuNjMyIDUuNDU5IDEuODk2IDEuMzcyIDEuMjY0IDIuMDU4IDIuOTggMi4wNTggNS4xNDYgMCAyLjE2Ny0uNjg2IDMuODgzLTIuMDU4IDUuMTQ3LTEuMzcyIDEuMjY0LTMuMTkyIDEuODk2LTUuNDU5IDEuODk2Wk0yNzEuODIyIDY3LjM1NGMtLjU5NyAwLTEuMDg5LS4wNzUtMS40NzctLjIyNWEyLjM0IDIuMzQgMCAwIDEtLjk4NC0uNzIzYy0uMjY5LS4zMzEtLjUyMi0uNzk3LS43NjEtMS4zOTlsLTE1LjMwMy00MC4xNzhhMzYuNzI0IDM2LjcyNCAwIDAgMS0uNDQ3LTEuMjY0IDMuMTk2IDMuMTk2IDAgMCAxLS4xNzktLjk5M2MwLS45MDMuNTk3LTEuMzU1IDEuNzktMS4zNTVoOC45NDljLjk1NCAwIDEuNjU1LjE4MSAyLjEwMy41NDIuNDQ3LjM2MS43OS45NjMgMS4wMjkgMS44MDZsOS4yMTcgMzEuOTYyIDkuMzk3LTMxLjk2MmMuMjM4LS44NDMuNTgxLTEuNDQ1IDEuMDI5LTEuODA2LjQ0Ny0uMzYxIDEuMTQ4LS41NDIgMi4xMDMtLjU0Mmg4LjY4YzEuMTk0IDAgMS43OS40NTIgMS43OSAxLjM1NSAwIC4zMDEtLjA1OS42MzItLjE3OS45OTMtLjExOS4zNjEtLjI2OC43ODItLjQ0NyAxLjI2NGwtMTUuMzAzIDQwLjE3OGMtLjIzOS42MDItLjQ5MiAxLjA2OC0uNzYxIDEuMzk5YTIuNDA2IDIuNDA2IDAgMCAxLS45MzkuNzIzYy0uMzU4LjE1LS44NjUuMjI1LTEuNTIyLjIyNWgtNy43ODVaTTIxNC43MTcgMTkuODY5YzUuNTc0IDAgOS45MzYgMS4zNTUgMTMuMDc5IDQuMDY1IDMuMTQyIDIuNzEgNC43MTggNi4zMjYgNC43MTggMTAuODQgMCA0LjUyMS0xLjY5NyA3LjkzOS01LjA3NCAxMC4yNTMtMy4zODYgMi4zMjItOC4zNzYgMy40NzktMTQuOTY1IDMuNDc5LTMuNDE1IDAtNi4zODQtLjMyOC04Ljg5OC0uOTkuMzU2IDQuMDM1IDEuNTc1IDYuOTI3IDMuNjQzIDguNjcgMi4wNjcgMS43NDQgNS4xOTUgMi42MTkgOS4zOSAyLjYxOSAxLjY3NCAwIDMuMzEtLjEwNyA0LjktLjMyIDEuNTgzLS4yMDUgMy43ODYtLjY3NyA2LjYwNC0xLjM5M2EzLjMzIDMuMzMgMCAwIDEgLjUzNy0uMTM3Yy4xODItLjAzLjMyNi0uMDQ2LjQ0Ny0uMDQ2IDEuMDIyIDAgMS41My42OTMgMS41MyAyLjA3OXY0LjE1NmMwIC45NTktLjEzNyAxLjYzNi0uNDAyIDIuMDMyLS4yNzIuMzg4LS43OTUuNzM5LTEuNTc1IDEuMDM1LTQuMzc3IDEuNjgzLTkuMDE5IDIuNTI4LTEzLjkzNCAyLjUyOC03LjQyOSAwLTEzLjEzMi0yLjA0LTE3LjExNS02LjE0My0zLjk4NC00LjA5Ni01Ljk3NS05Ljk2NC01Ljk3NS0xNy42MTUgMC03LjgyNSAyLjAzNy0xMy45NjggNi4xMTEtMTguNDIxIDQuMDc0LTQuNDYxIDkuNzMyLTYuNjkxIDE2Ljk3OS02LjY5MVptLS45ODUgOS4xMjdjLTUuNzU1IDAtOS4wOCAzLjU1NS05Ljk3MyAxMC42NTcgMi4zOTMuNDg3IDUuMDU5LjcyMyA3Ljk5Ny43MjMgMy4wNTIgMCA1LjI3MS0uNDY0IDYuNjQ5LTEuNDAxIDEuMzc4LS45MjggMi4wNjctMi4zNTkgMi4wNjctNC4yODUgMC0zLjc5OS0yLjI0OS01LjY5NC02Ljc0LTUuNjk0Wk0xMjYuMDIzIDI1LjY1NGMzLjE3My0yLjEwOSA2LjAzNi0zLjYwMSA4LjU4LTQuNDY5YTI0LjA2MyAyNC4wNjMgMCAwIDEgNy44NjktMS4zMTdjNS4zOTIgMCA5LjE5MyAxLjkzNCAxMS40MTIgNS43ODYgMy4wNTItMi4wNDggNS45My0zLjUyNSA4LjYyNi00LjQyM2EyNi4wNjQgMjYuMDY0IDAgMCAxIDguMzUzLTEuMzYzYzQuMTk1IDAgNy40NDQgMS4xOCA5Ljc1NCAzLjUyNSAyLjMwMiAyLjM1MiAzLjQ2MSA1LjYzMyAzLjQ2MSA5Ljg1VjY1LjEzYzAgLjc4NC0uMTY3IDEuMzU1LS40OTIgMS43MTMtLjMzNC4zNjUtLjkxNy41NC0xLjc1Ny41NGgtOC42MjZjLS43OCAwLTEuMzQ4LS4xNzUtMS43MDQtLjU0LS4zNjMtLjM1OC0uNTQ1LS45MjktLjU0NS0xLjcxM1YzNi4xMzVjMC00LjA5NS0xLjgyNS02LjE0My01LjQ4My02LjE0My0zLjIzNCAwLTYuNDk4Ljc3Ny05Ljc5MiAyLjM0NVY2NS4xM2MwIC43ODQtLjE2NyAxLjM1NS0uNDkyIDEuNzEzLS4zMzMuMzY1LS45MTcuNTQtMS43NTcuNTRoLTguNjI2Yy0uNzggMC0xLjM0OC0uMTc1LTEuNzA0LS41NC0uMzYzLS4zNTgtLjUzNy0uOTI5LS41MzctMS43MTNWMzYuMTM1YzAtNC4wOTUtMS44MzMtNi4xNDMtNS40ODMtNi4xNDMtMy4zNTUgMC02LjY0OS44MDctOS44OTEgMi40MzZWNjUuMTNjMCAuNzg0LS4xNjYgMS4zNTUtLjQ5MiAxLjcxMy0uMzMzLjM2NS0uOTE2LjU0LTEuNzQ5LjU0aC04LjYzNGMtLjc3MiAwLTEuMzQ4LS4xNzUtMS43MDMtLjU0LS4zNTYtLjM1OC0uNTM4LS45MjktLjUzOC0xLjcxM1YyMy40ODRjMC0uODQ1LjE4Mi0xLjQzMS41MzgtMS43NTguMzU1LS4zMzUuOTMxLS40OTUgMS43MDMtLjQ5NWg2LjQ3NWMxLjM3OSAwIDIuMjEyLjY2MiAyLjUxNSAxLjk4N2wuNzE5IDIuNDM2Wk04OS44MjUgMjMuNDg2YzAtLjg0NS4xODItMS40MzEuNTM4LTEuNzU5LjM2NC0uMzM1LjkzMi0uNTAyIDEuNzEyLS41MDJoOC42MjVjLjg0MSAwIDEuNDI0LjE2NyAxLjc1LjUwMi4zMzMuMzI4LjUuOTE0LjUgMS43NTl2NDEuNjM4YzAgLjc4NC0uMTY3IDEuMzYyLS41IDEuNzItLjMyNi4zNTgtLjkwOS41NDEtMS43NS41NDFoLTguNjI1Yy0uNzggMC0xLjM0OC0uMTgzLTEuNzEyLS41NDEtLjM1Ni0uMzU4LS41MzgtLjkzNi0uNTM4LTEuNzJWMjMuNDg2Wk05Ni4zODQgMTQuMDkyYy0yLjI4IDAtNC4xMDUtLjYzMi01LjQ4My0xLjg5NS0xLjM3OC0xLjI3MS0yLjA2LTIuOTg0LTIuMDYtNS4xNTQgMC0yLjE2OS42ODItMy44ODIgMi4wNi01LjE0NUM5Mi4yNzkuNjM0IDk0LjEwNC4wMDIgOTYuMzg0LjAwMmMyLjI3OSAwIDQuMTA0LjYzMiA1LjQ4MyAxLjg5NiAxLjM3OCAxLjI2MyAyLjA2NyAyLjk3NiAyLjA2NyA1LjE0NSAwIDIuMTctLjY4OSAzLjg4My0yLjA2NyA1LjE1NC0xLjM3OSAxLjI2My0zLjIwNCAxLjg5NS01LjQ4MyAxLjg5NVpNNjYuMzE2IDI4LjA5MmMyLjM5My0yLjY0OSA0LjY1Ny00LjUyOSA2Ljc4NS01LjY0OGExNC40NDEgMTQuNDQxIDAgMCAxIDYuNzg2LTEuNjY3aDEuMjU3Yy44NCAwIDEuNDM5LjE2OCAxLjc5NS40OTUuMzYzLjMzNS41MzcuOTIxLjUzNyAxLjc1OHY3LjU5YzAgLjc4NC0uMTU5IDEuMzU1LS40OTIgMS43Mi0uMzI2LjM1OC0uOTA5LjU0LTEuNzQ5LjU0LS40MjQgMC0uOTYyLS4wMy0xLjYyMS0uMDkxYTI4LjI2NiAyOC4yNjYgMCAwIDAtMi41MTQtLjA5MWMtMS4zNzkgMC0zLjA1Mi4xOTgtNS4wMzYuNTg2LTEuOTc3LjM5Ni0zLjY1MS44OS01LjAyOSAxLjQ5MnYzMC4zNDljMCAuNzg0LS4xNjYgMS4zNTUtLjQ5MiAxLjcyMS0uMzMzLjM1Ny0uOTE2LjU0LTEuNzU3LjU0SDU2LjE2Yy0uNzggMC0xLjM0OC0uMTgzLTEuNzA0LS41NC0uMzYzLS4zNjYtLjU0NS0uOTM3LS41NDUtMS43MjFWMjMuNDg3YzAtLjg0NS4xODItMS40MzEuNTQ1LTEuNzY2LjM1Ni0uMzI3LjkyNC0uNDk1IDEuNzA0LS40OTVoNi40NjhjMS4zNzggMCAyLjIxOS42NjMgMi41MjIgMS45ODdsMS4xNjYgNC44NzlaTTI2LjI0OCAxOS44NzVjNS44MDggMCAxMC40MDUgMi4xMzkgMTMuNzkgNi40MSAzLjM4NSA0LjI3OCA1LjA4MiAxMC4wNTUgNS4wODIgMTcuMzQ4IDAgNC45OTMtLjg0MSA5LjM2Mi0yLjUxNSAxMy4wOTItMS42ODEgMy43MzgtMy45NiA2LjYxNS02LjgzMSA4LjYyNS0yLjg3NyAyLjAyNS02LjE3MiAzLjAyOS05Ljg5IDMuMDI5LTIuNDU0IDAtNC43OTQtLjM4OC03LjAwNS0xLjE3Mi0yLjIxOS0uNzg0LTQuMTA1LTEuODY1LTUuNjY1LTMuMjV2MTkuNzc2YzAgLjg0NS0uMTY2IDEuNDMxLS40OTIgMS43NjYtLjMzMy4zMjctLjkxNi40OTUtMS43NTcuNDk1SDIuMzRjLS43OCAwLTEuMzQ4LS4xNjgtMS43MDQtLjQ5NS0uMzY0LS4zMzUtLjU0Ni0uOTIxLS41NDYtMS43NjZ2LTYwLjI1YzAtLjgzNy4xODItMS40MjMuNTQ2LTEuNzU4LjM1Ni0uMzM1LjkyNC0uNDk1IDEuNzA0LS40OTVoNi40NzRjMS4zNzkgMCAyLjIxMi42NjIgMi41MTUgMS45ODdsLjYyOCAyLjM0NGMxLjc5NS0xLjc0MyAzLjk2OS0zLjEyOCA2LjUxMy00LjE1NiAyLjU0NS0xLjAyIDUuMTQyLTEuNTMgNy43NzgtMS41M1ptLTQuMjI2IDkuOTM0Yy0zLjExMyAwLTYuMDUxLjgxNC04LjgwOCAyLjQzNnYyMy43NTdjMi42MzYgMS42MjkgNS41NzQgMi40NDQgOC44MDggMi40NDQgMy4zNTUgMCA1LjgyNC0xLjE0MiA3LjQxNC0zLjQzMyAxLjU5LTIuMjkyIDIuMzg1LTUuOSAyLjM4NS0xMC44NCAwLTUuMDAxLS43OC04LjY0LTIuMzQtMTAuOTMxLTEuNTYtMi4yOTEtNC4wNDQtMy40MzMtNy40NTktMy40MzNaIi8+PC9nPjwvc3ZnPg=="
+          />
+        </div>
+        <div class="d-flex justify-content-center flex-wrap pt-1">
+          <a class="color-blue px-2">Terms and Privacy Notice</a>
+          <a class="color-blue px-2">Send us feedback</a>
+          <a class="color-blue px-2">Help</a>
+          <p class="color-storm-petrel px-2">
+            © 1996-2024, Amazon.com, Inc. or its affiliates
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const showtab = (tabName, btn) => {
+        var tabs = document.querySelectorAll(".toggle-content");
+        tabs.forEach((tab) => {
+          if (tab.id === tabName) {
+            tab.classList.remove("hidden");
+          } else {
+            tab.classList.add("hidden");
+          }
+        });
+      };
+    </script>
+    <script src="./scripts/movie-info.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </body>
+</html>
