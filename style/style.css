@@ -1,0 +1,242 @@
+body {
+    background-color: black;
+}
+.custom-bg {
+    /* color: white; */
+     padding: 40px; 
+   
+}
+.white-text {
+    color: white;
+}
+.yellow-text {
+    color: yellow;
+    font-weight: 900;
+}
+.container {
+  display: flex;
+}
+
+.new-card {
+  width: 200px; /* Adjust as needed */
+  padding: 10px;
+  border-radius: 10px; /* Adjust to your needs */
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  width: 120%;
+  overflow: hidden; 
+}
+
+.image-container img {
+  width: 100%;
+  border-radius: 10px; /* Adjust to your needs */
+  transition: transform 0.3s ease-in-out; /* Animation for the hover effect */
+}
+
+.image-container img:hover {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+.image-container .release-date {
+   position: absolute; 
+  bottom: 10px; /* Adjust position as needed */
+    left: 50%;  
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 9px;
+}
+
+.details-card {
+  display: none; /* Hide by default */
+  width: 100%;
+  padding: 10px;
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border-top: 1px solid #ccc;
+  text-align: left;
+  position: absolute;
+  top: 100%; /* Position below the card */
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.details-card p {
+  margin: 5px 0;
+}
+
+.image-container:hover + .details-card {
+  display: block; 
+}
+
+  .card {
+    background-color: rgb(48, 46, 46);
+    color: white;
+    width: 200px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    position: relative;
+  }
+  .card img {
+    max-width: 100%;
+  } 
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .card-title,
+  .card-description,
+  .card-price {
+    white-space: nowrap;
+    margin: 5px 0;
+  }
+  .card-description,
+  .card-price {
+    display: none;
+  }
+  .card:hover {
+    width: 800px;
+    background-color: rgb(114, 114, 114);
+  }
+  .card:hover .card-description,
+  .card:hover .card-price {
+    display: block;
+  }
+  .image-logocontainer{
+    width: 10%;
+    height: 10%;
+  }
+
+.navbar {
+    background-color: black;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px !important;
+    font-weight: 600;
+}
+ 
+.logo img{
+    width: 96px;
+    height: 18px !important;
+}
+.navbar {
+  background-color: black;
+  color: white;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px !important;
+  font-weight: 600;
+}
+
+.logo img {
+  width: 96px;
+  height: 18px !important;
+}
+
+.navbar a {
+  color: gray;
+  text-decoration: none;
+  padding: 0 15px;
+  line-height: 40px;
+}
+
+.navbar img {
+  height: 30px;
+}
+
+.navbar .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 100px;
+  z-index: 1;
+}
+
+.navbar .dropdown-content a {
+  padding: 10px 15px;
+  display: block;
+  color: #fff;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.spacer1 {
+  flex: 0.3;
+}
+
+.navbar .spacer {
+  flex: 0.5;
+}
+
+.navbar .icon {
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+  }
+
+  .menu a,
+  .menu .dropdown,
+  .menu .icon {
+    padding: 10px 15px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+}
