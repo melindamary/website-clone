@@ -51,6 +51,8 @@ const apiKey = 'dfeae97f270b6d300e2e881d950b308d';
                 detailsCard.classList.add('details-card');
                 detailsCard.innerHTML = `
                   <b>Title: ${movie.title}</b>
+                  <p class="icon"><img src="https://m.media-amazon.com/images/G/01/digital/video/DVUI/favicons/favicon.png" alt="icon"><b>SUSCRIBE</b></p>
+
                   <p><strong>Release Date:</strong> ${movie.release_date}</p>
                   <p><strong>Description:</strong> ${movie.overview}</p>
                 `;
