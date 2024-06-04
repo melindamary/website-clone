@@ -47,31 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
       let date = new Date(movie.release_date);
       movieReleaseYear.innerHTML = date.getFullYear();
   
-      console.log(movie.genre_ids);
-      let movieGenres = movie.genre_ids;
-  
       // Genres for movie
-      fetch("https://api.themoviedb.org/3/genre/movie/list?", options)
-        .then((response) => response.json())
-        .then((response) => {
-          console.log("genres", response.genres);
-          let genres = response.genres;
-  
-          movieGenres.map((movieGenre) => {
-            let paraElement = document.createElement("p");
-            paraElement.style.marginRight = "2%";
-            let anchorElement = document.createElement("a");
-            anchorElement.style.textDecoration = "underline";
-            anchorElement.style.cursor = "pointer";
-            let textNode = document.createTextNode(
-              genres.filter((genre) => genre.id == movieGenre)[0].name
-            );
-            anchorElement.appendChild(textNode);
-            paraElement.appendChild(anchorElement);
-            let movieGenreDiv = document.getElementById("genre");
-            movieGenreDiv.appendChild(paraElement);
-          });
-        });
+      let movieGenres = movie.genres;
+      for (let i = 0; i < movieGenres.length; i++) {
+        let paraElement = document.createElement("p");
+        paraElement.style.marginRight = "2%";
+        let anchorElement = document.createElement("a");
+        anchorElement.style.textDecoration = "underline";
+        anchorElement.style.cursor = "pointer";
+        let textNode;
+        textNode = document.createTextNode(movieGenres[i].name);
+
+        anchorElement.appendChild(textNode);
+        paraElement.appendChild(anchorElement);
+        let movieGenreDiv = document.getElementById("genre");
+        movieGenreDiv.appendChild(paraElement);
+      }
   
       // Movie Trailer Button onclick
       document.getElementById("trailer-button").onclick = () => {
