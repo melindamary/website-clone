@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Sign-In</title>
+    <link rel="stylesheet" href="styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://m.media-amazon.com/images/G/01/digital/video/avod/AV_Logo_150._CB430404026_.png" alt="Logo">
+        </div>
+        <div id="sign-in-form">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1 id="form-title">Create Account</h1>
+                </div>
+                <div class="form-body">
+
+                    <div class="input-container">
+                        <label for="name">Your name</label><br>
+                        <input type="text" id="username" placeholder="First and last name"><br>
+                    </div>
+
+                    <div class="input-container">
+                        <label for="mobile-number">Mobile number</label><br>
+                        <div class="mobile-input">
+                            <select id="country-code">
+                                <option value="+93">AF +93</option>
+                                <option value="+355">AL +355</option>
+                                <option value="+213">DZ +213</option>
+                                <option value="+376">AD +376</option>
+                                <option value="+244">AO +244</option>
+                                <option value="+54">AR +54</option>
+                                <option value="+61">AU +61</option>
+                                <option value="+43">AT +43</option>
+                                <option value="+880">BD +880</option>
+                                <option value="+32">BE +32</option>
+                                <option value="+55">BR +55</option>
+                                <option value="+359">BG +359</option>
+                                <option value="+1">CA +1</option>
+                                <option value="+86">CN +86</option>
+                                <option value="+57">CO +57</option>
+                                <option value="+385">HR +385</option>
+                                <option value="+357">CY +357</option>
+                                <option value="+420">CZ +420</option>
+                                <option value="+45">DK +45</option>
+                                <option value="+593">EC +593</option>
+                                <option value="+20">EG +20</option>
+                                <option value="+358">FI +358</option>
+                                <option value="+33">FR +33</option>
+                                <option value="+49">DE +49</option>
+                                <option value="+30">GR +30</option>
+                                <option value="+91">IN +91</option>
+                                <option value="+62">ID +62</option>
+                                <option value="+98">IR +98</option>
+                                <option value="+353">IE +353</option>
+                                <option value="+39">IT +39</option>
+                                <option value="+81">JP +81</option>
+                                <option value="+962">JO +962</option>
+                                <option value="+7">KZ +7</option>
+                                <option value="+254">KE +254</option>
+                                <option value="+82">KR +82</option>
+                                <option value="+961">LB +961</option>
+                                <option value="+60">MY +60</option>
+                                <option value="+52">MX +52</option>
+                                <option value="+212">MA +212</option>
+                                <option value="+31">NL +31</option>
+                                <option value="+64">NZ +64</option>
+                                <option value="+234">NG +234</option>
+                                <option value="+47">NO +47</option>
+                                <option value="+92">PK +92</option>
+                                <option value="+51">PE +51</option>
+                                <option value="+63">PH +63</option>
+                                <option value="+48">PL +48</option>
+                                <option value="+351">PT +351</option>
+                                <option value="+974">QA +974</option>
+                                <option value="+40">RO +40</option>
+                                <option value="+7">RU +7</option>
+                                <option value="+966">SA +966</option>
+                                <option value="+65">SG +65</option>
+                                <option value="+27">ZA +27</option>
+                                <option value="+34">ES +34</option>
+                                <option value="+94">LK +94</option>
+                                <option value="+46">SE +46</option>
+                                <option value="+41">CH +41</option>
+                                <option value="+886">TW +886</option>
+                                <option value="+66">TH +66</option>
+                                <option value="+90">TR +90</option>
+                                <option value="+256">UG +256</option>
+                                <option value="+44" selected>GB +44</option>
+                                <option value="+1">US +1</option>
+                                <option value="+58">VE +58</option>
+                                <option value="+84">VN +84</option>
+                                <option value="+967">YE +967</option>
+                                <option value="+260">ZM +260</option>
+                                <option value="+263">ZW +263</option>
+                                <option value="+252">SO +252</option>
+                            </select>
+                            
+                            <input type="text" id="mobile-number" placeholder="Mobile number">
+                        </div>
+                    </div>
+
+                    <p id="text1">
+                        <a href="#">Use your email instead <i class="fas fa-caret-right" title="Edit"></i></a></p>
+
+                    <div class="input-container" id="ic3" style="display: none;">
+                        <input type="text" id="email" placeholder="Enter email" style="display: none;">
+                    </div>
+
+                    <p id="text2" style="display: none;"><a href="#">Use your mobile number instead <i class="fas fa-caret-right" title="Edit"></i></a></p>
+                    
+                    <div class="input-container">
+                        <label for="pass">Password</label><br>
+                        <input type="text" id="password" placeholder="At least 6 characters"><br>
+                    </div>
+
+                    <p id="text2"><i class="fa-solid fa-info" style="color: #0066c0;;"></i>&ensp;Passwords must be at least 6 characters.</p>
+
+                    <p id="text3">To verify your number, we will send you a text<br>message with a temporary code. Message and data<br>rates may apply.</p>
+                    <button id="continue-button">Continue</button>
+                    <div id="form-body2">
+                        <p>By creating an account, you agree to Amazon <br><a href="#">Conditions of Use and Privacy Notice.</a></p>
+                    </div>
+                    <hr>
+                    <p>Already have an account? <a href="login.html">Sign in <i class="fas fa-caret-right" title="Edit"></i></a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <hr>
+        <ul>
+            <li><a href="#">Terms and Privacy Notice</a></li>
+            <li><a href="#">Send us feedback</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+        <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+    </div>
+    <script type="module" src="scripts/signup.js"></script>
+</body>
+</html>

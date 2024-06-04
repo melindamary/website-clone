@@ -1,0 +1,146 @@
+@import url('https://fonts.cdnfonts.com/css/amazon-ember');
+:root{
+    --body-color:black;
+    --text-color:white;
+}
+
+body{
+    background-color: var(--body-color);
+    color: var(--text-color);
+    font-family: 'Amazon Ember Display', sans-serif;
+    font-weight: 700;
+    font-size: large;
+    /* background-color: white; */
+}
+
+.scrollable-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center; 
+    margin-left: 0.5rem;
+}
+
+.scrollable-images-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    border-radius: 8px;
+    min-width: 18rem;
+    margin-right: 20px;
+    /* overflow: hidden; */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    aspect-ratio: 16/9;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 2;
+    border-radius: 8px 8px 0 0;
+    transition-delay: 0.2s;
+}
+
+.card:hover .card-details{
+    transform: scale(1.1);
+    z-index: 2;
+    transition-delay: 0.2s;
+    display: block;
+}
+
+.card-details {
+    /* display: none; */
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    width: 18rem;
+    height: 18rem; 
+    overflow: hidden; 
+    padding: 10px;
+    position: absolute;
+    transition: opacity 0.3s ease;
+}
+
+.card-details p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    background-color: #33373d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    margin-left: 0.5rem;
+    margin-top: 2rem;
+}
+
+.dropdown-toggle-icon {
+    margin-left: 10px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-menu label {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown-menu label:hover {
+    background-color: #ddd;
+}
+
+.dropdown-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
+.heading{
+    margin-left: 0.5rem;
+    margin-top:2rem;
+    font-size: 3rem;
+}

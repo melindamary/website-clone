@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Video</title>
+    <link href="styles/home.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href='
+     https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="spacer1"></div>
+      <a href="#" class="logo"
+        ><img
+          src="https://m.media-amazon.com/images/G/01/digital/video/web/Logo-min.png"
+          alt="Logo"
+      /></a>
+      <div class="menu" id="menu">
+        <div class="dropdown">
+          <a href="#">Home</a>
+          <div class="dropdown-content">
+            <a href="#">All</a>
+            <a href="./movies.html">Movies</a>
+            <a href="./tvShows.html">TV shows</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="./store.html">Store</a>
+          <div class="dropdown-content">
+            <a href="">All</a>
+            <a href="#">Rent</a>
+            <a href="#">Channels</a>
+          </div>
+        </div>
+        <a href="./livetv.html">LiveTV</a>
+        <a href="#">Categories</a>
+
+        <div class="spacer"></div>
+
+        <div class="icon"><i class='bx bx-search' style='color:#ffffff'></i></div>
+        <a class="try" href="#">Try for Free</a>
+        <div class="dropdown">
+          <a href="#"><span class="language">EN</span></a>
+          <div class="dropdown-content">
+            <a href="#" id="lang-hi">HI</a>
+            <a href="#" id="lang-zh">ZH</a>
+            <a href="#" id="lang-en">EN</a>
+          </div>
+        </div>
+        <div class="icon"><i class='bx bx-user' style='color:#969696'></i></div>
+      </div>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </div>
+
+    <main>
+      <div class="b1">
+        <div class="tx1 container">
+          <h1 class="bigtext1">Welcome to Prime Video</h1>
+          <h4 class="smalltext1">
+            Join Prime to watch the latest movies, TV shows and award-winning
+            Amazon Originals
+          </h4>
+          <div class="btn1">
+            <a href="signup.html"
+              ><button class="btn btn-primary">
+                <span class="btn-text1">Sign in to join Prime</span>
+              </button></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="b2">
+        <div class="tx2 container">
+          <h1 class="bigtext2">Movie rentals on Prime Video</h1>
+          <h4 class="smalltext2">
+            Early Access to new movies, before digital subscription
+          </h4>
+          <div class="btn2">
+            <button class="btn btn-primary">
+              <span class="btn-text2">Rent now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="b3">
+        <div class="col1">
+          <div class="tx3">
+            <h1 class="bigtext3">Your favorite channels all in one place</h1>
+            <h4 class="smalltext3">
+              With Prime Video Channels, find shows and movies from your
+              favorite channels all in one place. Enjoy with an add-on
+              subscription to Channels of your choice
+            </h4>
+          </div>
+        </div>
+
+        <div class="col2">
+          <div class="channeldiv" id="hehe">
+            <div class="i"><img src="assets/channel1.jpg" /></div>
+            <div class="i"><img src="assets/channel2.jpg" /></div>
+            <div class="i"><img src="assets/channel3.png" /></div>
+            <div class="i"><img src="assets/channel4.jpg" /></div>
+            <div class="i"><img src="assets/channel5.jpg" /></div>
+            <div class="i"><img src="assets/channel6.png" /></div>
+            <div class="i"><img src="assets/channel7.jpg" /></div>
+            <div class="i"><img src="assets/channel8.png" /></div>
+            <div class="i"><img src="assets/channel9.png" /></div>
+            <div class="i"><img src="assets/channel10.png" /></div>
+            <div class="i"><img src="assets/channel11.jpg" /></div>
+            <div class="i"><img src="assets/channel12.png" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="b4">
+          <div class="tx3">
+              <div class="txx">
+                  <h1>Even Better with firestick</h1>
+                  <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam impedit qui pariatur fugiat consequatur! Commodi rerum </h2>
+                  <div class="btn1"><button>Get started</button></div>
+              </div>
+          </div>
+      </div> -->
+
+      <div class="b5">
+        <img src="assets/footer_logo.png" />
+        <div class="links">
+          <a href="" class="link1">Terms and Privacy Notice</a>
+          <a href="" class="link2">Send us feedback</a>
+          <a href="" class="link3">Help</a>
+        </div>
+        <h4 class="smalltext5">
+          © 1996-2024, Amazon.com, Inc. or its affiliates
+        </h4>
+      </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyAXyfOJAVxBMRUJhEL50XWj5G7Ut1tKLA0",
+        authDomain: "primehome-dec5e.firebaseapp.com",
+        databaseURL:
+          "https://primehome-dec5e-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "primehome-dec5e",
+        storageBucket: "primehome-dec5e.appspot.com",
+        messagingSenderId: "612247300560",
+        appId: "1:612247300560:web:5e8df9ea133f49820d31d5",
+        measurementId: "G-51140L60RJ",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="scripts/home.js"></script>
+  </body>
+</html>
